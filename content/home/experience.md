@@ -44,6 +44,16 @@ date_format = "Jan 2006"
   In association with QinetiQ and DSTL."""
   
 [[experience]]
+  title = "Postgraduate study"
+  company = "Aberystwyth University"
+  company_url = "http://aber.ac.uk/"
+  location = "Aberystwyth, UK"
+  date_start = "2014-09-01"
+  date_end = "2020-02-26"
+  description = """Working towards a PhD in [UESMANN](research/uesmann), an unusual 
+  neuromodulatory system."""
+
+[[experience]]
   title = "Research Assistant (Industrial Year)"
   company = "Aberystwyth University"
   company_url = "http://aber.ac.uk/"
@@ -51,9 +61,11 @@ date_format = "Jan 2006"
   date_start = "2013-09-01"
   date_end = "2014-08-30"
   description = """
-  * Working on the EADS-funded ENDOVER project, developing a possible 
+  
+  Working on the EADS-funded ENDOVER project, developing a possible 
   power management option for the ExoMars rover based on an artificial endocrine system.
-  * Testing the viability of robot surveys of Scottish lochs for locating submerged logs
+  
+  Testing the viability of robot surveys of Scottish lochs for locating submerged logs
   for dendrochronological study. Part of the Scot2K project with Dr. Mark Neal in association
   with Richard Bates at St. Andrews. My responsibility was the development of a monitoring
   software suite in C++ and Python."""
