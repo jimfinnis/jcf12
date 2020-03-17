@@ -1,0 +1,36 @@
+$sta-alert-note-bg: adjust-hue($sta-background, 60);
+$sta-alert-note-dark-bg: adjust-hue($sta-dark-background, 60);
+
+.card-simple {
+  background: #e8e8d0;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 3px;
+  margin-top: 20px;
+  padding: 15px 20px 15px 20px;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #e8e8d0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  transition: all 0.2s ease-out;
+}
+
+.article-style aside,
+.alert-note {
+  color: #222;
+  background-color: $sta-alert-note-bg;
+  border-color: #209cee;
+}
+
+.article-style aside,
+.dark .alert-note {
+  color: #ddd;
+  background-color: $sta-alert-note-dark-bg;
+  border-color: #209cee;
+}
+
+

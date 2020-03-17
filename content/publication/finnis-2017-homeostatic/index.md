@@ -6,6 +6,7 @@ authors: ["James C Finnis"]
 publication_types: ["1"]
 abstract: ""
 featured: true
+tags: ["artificial endocrine system", "phd","robot","homeostasis","UESMANN"]
 publication: "*Proceedings of TAROS (Towards Autonomous Robotic Systems)*"
 ---
 

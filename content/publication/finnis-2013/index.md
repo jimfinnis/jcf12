@@ -7,6 +7,6 @@ publication_types: ["1"]
 abstract: ""
 featured: false
 publication: "*Proceedings of TAROS (Towards Autonomous Robotic Systems)*"
-tags: ["artificial endocrine system", "phd","UESMANN","robot","homeostasis"]
+tags: ["artificial endocrine system", "phd","robot","homeostasis"]
 ---
 
