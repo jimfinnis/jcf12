@@ -93,7 +93,7 @@ address = {street = "Computer Science Department, Aberystwyth University", city 
 coordinates = {latitude = "52.415764", longitude = "-4.065432"}
 
 # Directions for visitors to locate you.
-directions = "First floor of the Physics Building" 
+directions = "MP 1.44, on the first floor of the Physics Building" 
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
@@ -101,7 +101,7 @@ office_hours = []
 
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://calendly.com"
+# appointment_url = "https://calendly.com"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.

@@ -73,9 +73,9 @@ Since then, my research has been looking at what UESMANN can do in terms of
 * pairs of boolean functions: UESMANN can smoothly transition
 between any two boolean functions in a network with two hidden neurons, the minimum required to learn any single function in a normal network (which is quite astonishing);
 * classification problems: UESMANN networks can learn to switch
-between detecting vertical to detecting horizontal lines as h changes, and can also learn to label handwritten digits in two different ways;
+between detecting vertical to detecting horizontal lines as $h$ changes, and can also learn to label handwritten digits in two different ways;
 * robot control: in experiments on both in simulation and on a real
-robot, UESMANN can shift between exploration of a space to heading towards a power source as h changes, which (when h is linked to battery charge) achieves homeostasis.
+robot, UESMANN can shift between exploration of a space to heading towards a power source as $h$ changes, which (when $h$ is linked to battery charge) achieves homeostasis.
 
 {{< figure src="outhinton.png" title="Proportion of correct networks generated for all possible boolean pairings" lightbox="true" >}}
 

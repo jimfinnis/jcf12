@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -vrhzu --progress public/* pale.org:test.pale.org/
+rsync -vrzu --progress public/* pale.org:test.pale.org/
