@@ -4,6 +4,14 @@ $sta-alert-note-dark-bg: adjust-hue($sta-dark-background, 60);
 $sta-alert-code-bg: darken($sta-background, 10%);
 $sta-alert-code-dark-bg: lighten($sta-dark-background, 10%);
 
+.section-heading p {
+  color: #774;
+}
+
+.dark .section-heading p {
+  color: #788;
+}
+
 .dark pre {
   font-family: $sta-font-mono, monospace;
   color: #ddd;

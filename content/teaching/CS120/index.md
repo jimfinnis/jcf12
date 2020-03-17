@@ -1,6 +1,7 @@
 ---
 date: 2020-03-16
 title: CS12020
+subtitle: Programming Using an Object-Oriented Language
 summary: Introduction to Programming
 image:
   preview_only: true
