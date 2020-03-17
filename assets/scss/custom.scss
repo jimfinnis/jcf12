@@ -1,6 +1,33 @@
 $sta-alert-note-bg: adjust-hue($sta-background, 60);
 $sta-alert-note-dark-bg: adjust-hue($sta-dark-background, 60);
 
+$sta-alert-code-bg: darken($sta-background, 10%);
+$sta-alert-code-dark-bg: lighten($sta-dark-background, 10%);
+
+.dark pre {
+  font-family: $sta-font-mono, monospace;
+  color: #ddd;
+  background-color: $sta-alert-code-dark-bg;
+}
+
+pre {
+  font-family: $sta-font-mono, monospace;
+  color: #222;
+  background-color: $sta-alert-code-bg;
+}
+
+.dark code {
+  font-family: $sta-font-mono, monospace;
+  color: #ddd;
+  background-color: $sta-alert-code-dark-bg;
+}
+
+code {
+  font-family: $sta-font-mono, monospace;
+  color: #222;
+  background-color: $sta-alert-code-bg;
+}
+
 .card-simple {
   background: #e8e8d0;
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
