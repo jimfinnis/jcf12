@@ -37,6 +37,8 @@ If you have any problems with this, please email me as soon as possible.
 
 ## Arduino cheatsheet
 
-[Here is a (hopefully) useful cheatsheet](/pdfs/arduino.pdf) describing almost
+
+{{< download file=arduino.pdf text="Here is a (hopefully) useful cheatsheet">}}
+describing almost
 the entire Arduino C language on 4 sides of A4. It might make a useful
 reference or revision aid.
