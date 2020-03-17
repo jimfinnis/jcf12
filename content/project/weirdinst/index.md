@@ -1,7 +1,7 @@
 ---
 date: 2020-03-16
 title: Instruments
-summary: "A collection of odd musical instruments"
+summary: "A collection of odd musical instruments."
 tags: ["music"]
 ---
 
