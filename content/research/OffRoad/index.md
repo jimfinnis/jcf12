@@ -1,6 +1,6 @@
 ---
 date: 2020-03-17
-title: "Off Road Driving"
+title: "Off-road driving"
 summary: "Work with Fred Labrosse on autonomous off-road driving."
 tags: ["robot","driving"]
 ---
