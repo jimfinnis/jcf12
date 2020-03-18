@@ -5,8 +5,7 @@ summary: "A tiny Mars rover."
 tags: ["robot"]
 ---
 
-This isn't really a "spare time" project, but nor is it
-research. Blodwen was built during my industrial year. It's a
+Blodwen was built during my industrial year. It's a
 small Mars rover, with a wheel model similar to that which is
 being used in the ExoMars rover.
 

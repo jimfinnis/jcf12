@@ -3,9 +3,11 @@ date: 2020-03-16
 title: Instruments
 summary: "A collection of odd musical instruments."
 tags: ["music"]
+image:
+    preview_only: true
 ---
 
-Sometimes I make odd musical instruments, and here are two of them.
+Sometimes I make odd musical instruments. Here are a few of them.
 
 ## The Roboglock
 
