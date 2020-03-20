@@ -33,6 +33,8 @@ education:
   - course: BSc in Computer Science
     institution: Aberystwyth University
     year: 2014
+    
+
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -67,7 +69,10 @@ email: ""
 #- Visitors
 ---
 
-Dr James Finnis is a lecturer in Computer Science at Aberystwyth University. His research interests include
-artificial neuroendocrine and neuromodulatory systems, modulatory neural network architectures,
-and intelligent robotics (particularly autonomous off-road driving).
+Dr James Finnis is a lecturer in Computer Science at Aberystwyth University.
+While he is currently teaching-only, his research interests include artificial
+neuroendocrine and neuromodulatory systems, modulatory neural network
+architectures, and intelligent robotics (particularly autonomous off-road
+driving). He spent over 20 years working in the games industry before
+moving into academia.
 
