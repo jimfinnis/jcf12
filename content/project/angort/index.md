@@ -111,7 +111,7 @@ the columns:
 # with a local variable i.
 
 (|:i|
-    # f or each key, store the iterator value in "i" so it's
+    # for each key, store the iterator value in "i" so it's
     # accessible within a closure
     ?Keys each { i!i
         # create a pair consisting of the iterator (i.e. key name)

@@ -55,5 +55,5 @@ can guard you if you ask them, and the publican described above.
 Making friends is fun.
 
 [^1]: The observant among you may notice a resemblance of the "action
-syntax" here to my [Angort](/project/Angort) language. What can I say -
+syntax" here to my [Angort](/project/angort) language. What can I say -
 stack languages are really easy to write.

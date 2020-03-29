@@ -10,6 +10,8 @@ tags: ["artificial endocrine system", "phd","UESMANN"]
 
 ---
 
+{{< toc >}}
+
 UESMANN is the subject of my recently completed PhD, and is a rather
 odd kind of artificial neural network[^1].
 
@@ -50,6 +52,7 @@ good solutions to test problems would emerge. However, my research took a
 possible" (possibly) neuromodulatory system: UESMANN.
 
 ## UESMANN
+### Introduction
 In UESMANN, the standard feed-forward neural network is modified, so that
 every connection into every neuron is modified by a global parameter, $h$. This
 is our neuromodulator. If
@@ -66,22 +69,71 @@ $x_i$, and each weight is $w_i$. UESMANN adds a modulator $h$:
 $$
 y = \sigma \left( b+(h+1)\sum_i w_i x_i \right)
 $$
+Training a network requires changing the weight by 
+following the gradient with respect to 
+the modulated weight, i.e.
+$$
+\frac{\partial C}{\partial (h+1)w_i}\quad \text{or}\quad \nabla_{(h+1)w} C.
+$$
+This requires a few changes to the core back-propagation equations.
 
-
-Since then, my research has been looking at what UESMANN can do in terms of
+### Experimental work
+My research has been looking at what UESMANN can do in terms of
 
 * pairs of boolean functions: UESMANN can smoothly transition
-between any two boolean functions in a network with two hidden neurons, the minimum required to learn any single function in a normal network (which is quite astonishing);
-* classification problems: UESMANN networks can learn to switch
-between detecting vertical to detecting horizontal lines as $h$ changes, and can also learn to label handwritten digits in two different ways;
-* robot control: in experiments on both in simulation and on a real
+between any two boolean functions in a network with two hidden neurons, the minimum required to learn any single function in a normal network (which is quite astonishing):
+{{< figure src="outhinton.png" title="Proportion of correct networks generated for all possible boolean pairings ($\eta$=0.1, 75000 epochs, initial weights in $[-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}]$)" lightbox="true" >}}
+* Classification problems: UESMANN networks can learn to switch
+between detecting vertical to detecting horizontal lines as $h$ changes, and can also learn to label handwritten digits in two different ways.
+* Robot control: in experiments on both in simulation and on a real
 robot, UESMANN can shift between exploration of a space to heading towards a power source as $h$ changes, which (when $h$ is linked to battery charge) achieves homeostasis.
 
-{{< figure src="outhinton.png" title="Proportion of correct networks generated for all possible boolean pairings" lightbox="true" >}}
 
 I have also been looking at how UESMANN does what it does, by examining
-exactly what happens when the modulation is applied in the context of boolean
+what happens inside the network when the modulation is applied in the context of boolean
 function pairs.
+
+{{< youtube tn0F-SWygE4 >}}
+
+## Code repository
+
+Code for a reference implementation of UESMANN can be found on [my Github
+page](https://github.com/jimfinnis/uesmanncpp). This is still a work in
+progress: the original code used in the thesis is integrated tightly with my
+[Angort](/project/angort) programming language and has a large number of
+"hacks" designed to help me analyse the training process. These were added
+on an ad-hoc basis, making the code very messy.
+
+The code itself is
+simplistic, using scalar as opposed to matrix operations and no GPU
+acceleration. This is to make it as clear as possible, as befits a
+reference implementation, and also to match the implementation used in the
+thesis. There are no dependencies on any libraries beyond those found in a
+standard C++ install, and libboost-test for testing. You may find the code
+somewhat lacking in modern C++ style because I'm an 80's coder.
+
+I originally intended to use Keras/Tensorflow,
+but would have been limited to using the low-level Tensorflow operations
+because of the somewhat peculiar nature of optimisation in UESMANN:
+we descend the gradient relative to the weights for one function,
+and the gradient relative to the weights times some constant for the other,
+alternating between the two. This makes the standard optimisers (such as ADAM)
+unsuitable. More investigation is planned, however, because 
+a UESMANN layer may prove useful within a larger system.
+**If you can help with this, please let me know.**
+
+
+Implementations of some of the other network types mentioned in the thesis
+are also included:
+
+* output blending (training two networks with identical architectures
+to perform the two different functions and using the modulator to
+linearly interpolate between their outputs);
+* h-as-input (applying the modulator as an extra input to a standard MLP
+and training accordingly)
+* plain (a straightforward MLP with no modifications)
+
+## Publications
 
 See [here](/tags/uesmann) for a list of publications.
 
