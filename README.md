@@ -8,12 +8,14 @@
 * clone this repo into `jcf12`, e.g. 
 `git clone git@github.com:jimfinnis/academic-kickstart jcf12`
 * pull the academic theme submodule:
+```
     cd jcf12
     git submodule update --init --recursive
+```
 * build with `hugo`
 * if you want to run a local server:
 ```
-hugo server --baseURL http://127.0.0.1
+    hugo server --baseURL http://127.0.0.1
 ```
 
 
