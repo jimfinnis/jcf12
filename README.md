@@ -31,7 +31,14 @@ edit the `weight` (ascending order: higher goes further down the page).
 Either do it by hand by creating a new directory under `content/<type>/`
 or use `hugo new`, for example
 
-    hugo new --kind post post/<post_name>
+    hugo new --kind post blog/<post_name>
+    
+will create a new post in the `blog` section. That `blog` is really
+a page, and you could go to `/research` to just see research items,
+but because that has no index it has to invent a title.
+
+Currently the blog is commented out - it's the `blog` page (see below)
+but its entry in the menu file (see below again) is commented.
 
 ## Creating new pages
 To create a new page of widgets, create a new directory under
@@ -39,11 +46,15 @@ To create a new page of widgets, create a new directory under
 format:
 ```
 ---
-title: "Landing Page"  # Add a page title.
-summary: "Hello!"  # Add a page description.
-date: "2019-01-01T00:00:00Z"  # Add today's date.
-type: "widget_page"  # Page type is a Widget Page
+title: "Landing Page"  # Add a page title. (required)
+summary: "Hello!"  # Add a page description. (optional)
+date: "2019-01-01T00:00:00Z"  # Add today's date (optional)
+type: "widget_page"  # Page type is a Widget Page (required)
 ---
 ```
 Now we can use the Page Builder stuff in Academic:
-[PageBuilder](`https://sourcethemes.com/academic/docs/page-builder/`)
+[PageBuilder](`https://sourcethemes.com/academic/docs/page-builder/`),
+or just copy widget sections over as markdown files from `home`.
+
+Look at the `blog` directory for an example. To create links to this, edit
+`config/_default/menus.toml`.
