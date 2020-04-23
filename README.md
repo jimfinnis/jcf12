@@ -6,7 +6,7 @@
 `https://github.com/gohugoio/hugo/releases`
 * install with `dpkg -i <name>.deb`
 * clone this repo into `jcf12`, e.g. 
-`git clone git@github.com:jimfinnis/academic-kickstart jcf12`
+`git clone git@github.com:jimfinnis/jcf12
 * pull the academic theme submodule:
 ```
     cd jcf12
@@ -17,6 +17,11 @@
 ```
     hugo server --baseURL http://127.0.0.1
 ```
+but if you want it accessible from outside (e.g. running on cranberry)
+```
+    hugo server --baseURL http://cranberry.lan --bind cranberry.lan
+```
+It will be accessible on port 1313 in both cases.
 
 ## Activating/deactivating sections in the home page, and moving them
 The various sections, each of which has different kinds of thing in it,
