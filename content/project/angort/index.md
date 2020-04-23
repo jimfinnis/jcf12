@@ -64,7 +64,7 @@ systems;
 ## Brief examples
 
 First, the familiar recursive quicksort algorithm:
-{{< highlight  "linenos=table" "style=bw">}}
+{{< highlight "linenos=table" "style=bw">}}
 # Colon at the start of a line introduces a named function definition.
 # This function has one parameter "lst" and one local variable "piv".
 :qs |lst:piv| 
