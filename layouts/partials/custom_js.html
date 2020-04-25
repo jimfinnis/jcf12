@@ -1,0 +1,17 @@
+{{/* Copied from academic, as it says in here. Loads any custom scripts in scripts array in the frontmatter. */}}
+{{/* Instead, create a `layouts/partials/custom_head.html` file in your site and add your code to it. */}}
+
+{{/* This partial is included in `themes/academic/layouts/partials/site_head.html`. */}}
+
+{{- with .Params.scripts -}}
+  {{- range . -}}
+    {{- . | safeHTML -}}Foo
+  {{- end -}}
+{{- end -}}
+
+{{- with .Params.localscripts -}}
+{{- range . -}}
+    {{ $foo := . | resources.Get }}
+    <script src="{{- $foo.RelPermalink -}}"></script>
+  {{- end -}}
+{{- end -}}

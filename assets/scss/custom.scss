@@ -69,3 +69,14 @@ code {
 }
 
 
+.rbresult {
+  margin-bottom: 1.5rem;
+  padding:1em;
+  font-family:serif;
+  text-align:center;
+  font-size:30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #d2d0e8;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
