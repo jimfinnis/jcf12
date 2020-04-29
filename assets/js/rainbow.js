@@ -416,6 +416,8 @@ function getn(n){
     const col = n%cols.length
     const noun = Math.floor(n/cols.length)
     
+    console.log(cols.length*nouns.length)
+    
     return (cols[col]+" "+nouns[noun]).toUpperCase()
 }
 
