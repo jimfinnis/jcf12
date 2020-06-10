@@ -36,4 +36,4 @@ Technology:
 * Everything is tied together with Jack and controlled through a
 custom set of programs in Python, Angort and C++.
 
-{{< figure src="blockdiag.png" title="Data flow diagram" >}}
+{{< figure src="blockdiag.png" title="Data flow diagram. Blue is MIDI, red is OSC, green is my own Diamond Apparatus comms, and black is Jack audio data." >}}
