@@ -1,7 +1,7 @@
 ---
 date: 2020-03-16
 title: Angort
-summary: "A concatenative language with first-class function and full lexical closure."
+summary: "A concatenative language with first-class functions and full lexical closure."
 tags: ["angort"]
 image:
     preview_only: true
