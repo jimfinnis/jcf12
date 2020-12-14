@@ -1,6 +1,9 @@
 ---
 date: 2020-03-16
-title: CS12320
+title: A UML Example
+type: cs123
+categories:
+    - cs123
 subtitle: Programming Using an Object-Oriented Language
 summary: Programming Using an Object-Oriented Language
 image:

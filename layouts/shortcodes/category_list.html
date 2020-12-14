@@ -1,0 +1,6 @@
+{{ $id := (.Get 0) }}
+<ul>
+    {{ range (index .Site.Taxonomies.categories $id) }}
+        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+</ul>

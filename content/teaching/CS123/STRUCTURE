@@ -1,0 +1,20 @@
+landing/    : top level page, shown in home page widgets because it has type "teaching" (implicitly,
+              being under the "/teaching" hierarchy. It shows all items with the cs123 category.
+              Now everything else under here needs to have the cs123 type, so we can exclude it
+              from the main menu.    
+    
+    index.md : its contents, which show a list of all items in the "cs123" category
+    featured.jpg : its picture for home page  
+
+
+UML/        : UML example, has category "cs123"
+    index.md : the contents and what sets up that category      
+
+
+examples/   : Java code examples; tried to make it a widget page and it
+              didn't like it. Under here should be a list of examples,
+              which are each in folders, each in category "example123"
+              Again, cs123 type.
+    _index.md : think this needs to have the underscore because it's
+                a "branch", not a "leaf", so the examples don't get
+                traversed if this isn't there
