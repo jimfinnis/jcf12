@@ -2,7 +2,7 @@
 {{ $text := (.Get "text") }}
 {{ $asset := (.Page.Resources.GetMatch $name ) }}
 {{ if $asset }}
-<a href = "{{ $asset.RelPermalink }}">{{$text}}</a>
+<a href = "{{ $asset.Permalink }}">{{$text}}</a>
 {{ else }}
 {{$text}} (Bad link to: {{$name}})
 {{ end }}
