@@ -1,0 +1,28 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface IGrid {
+}
+
+class Grid {
+}
+
+IGrid <|-- Grid
+
+interface ISolver {
+}
+
+class Solver {
+}
+
+class Main {
+}
+
+Solver --|> ISolver
+
+Solver "1" *-- "1" IGrid
+
+Main ...> Grid
+Main ...> Solver
+
+@enduml    
