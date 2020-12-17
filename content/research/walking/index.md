@@ -33,8 +33,8 @@ between them.
 Angort is still used for everyday driving in Blodwen: it is trivial
 to connect to the system and type
 
-{{< highlight "linenos=table" "style=bw">}}
+```bash
 reset calib
 300 d
-{{< / highlight >}}
+```
 to reset, recalibrate and drive.

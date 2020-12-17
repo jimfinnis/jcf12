@@ -51,7 +51,7 @@ these helped me keep track of which wire went where.
 Blodwen is controlled via a C++ library on the on-board PC, which communicates
 with the Arduino. It's fairly straightforward:
 
-{{< highlight cpp "linenos=table" "style=bw">}}
+```cpp
 int main(int argc,char *argv[]){
     Rover r;
     
@@ -107,5 +107,4 @@ int main(int argc,char *argv[]){
         return 0;
     }
 }        
-
-{{< / highlight >}}
+```

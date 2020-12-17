@@ -64,7 +64,7 @@ systems;
 ## Brief examples
 
 First, the familiar recursive quicksort algorithm:
-{{< highlight "linenos=table" "style=bw">}}
+```bash
 # Colon at the start of a line introduces a named function definition.
 # This function has one parameter "lst" and one local variable "piv".
 :qs |lst:piv| 
@@ -84,7 +84,7 @@ First, the familiar recursive quicksort algorithm:
         ?lst (?piv >=) filter qs + 
         # resulting list is left on the stack, and so returned.
     then;
-{{< / highlight >}}
+```
 Angort doesn't (yet) have tail-call optimisation so actually doing it
 like this is probably a bad idea.
 
@@ -92,7 +92,7 @@ like this is probably a bad idea.
 Next, a program to read a CSV file and print the sums of all
 the columns:
 
-{{< highlight  "linenos=table" "style=bw">}}
+```bash
 # load the CSV plugin but do not import the symbols into the
 # default namespace, so we have to access them with csv$...
 `csv library drop
@@ -124,8 +124,7 @@ the columns:
         "," intercalate.
     }
 )@ quit # run the slug and quit
-{{< / highlight >}}
-
+```
 
 
 [^1]: The name is an entirely random pair of syllables,

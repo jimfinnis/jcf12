@@ -63,8 +63,7 @@ So our algorithm is:
 For the curious, here's the JavaScript source code for the simulation.
 
 
-{{< highlight js >}}
-
+```js
 // get the canvas and its drawing context 
 var canv = document.getElementById("piCanvas");
 var c = canv.getContext("2d");
@@ -147,5 +146,4 @@ function animate() {
 
 // queue up the first frame!
 animate();
-
-{{< / highlight >}}
+```

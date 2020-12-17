@@ -25,7 +25,7 @@ the Minecraft plugin.
 
 Chatbots primarily consist of patterns and responses. For example:
 
-{{< highlight  "linenos=table" "style=bw">}}
+```bash
 +(.* $c=~drink .*)
     isdrunk if
         ^refusedrink.
@@ -35,7 +35,7 @@ Chatbots primarily consist of patterns and responses. For example:
             +&thanks ^yourewelcome;
         } next
     then;
-{{< / highlight >}}
+```
 This pattern responds to anything of the "drink" category being
 mentioned in the sentence, and assumes you want that drink. There's
 another pattern with higher priority that deals with the word "not" 
