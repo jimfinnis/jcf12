@@ -37,3 +37,19 @@ class SomeClassOrOther {
         logger.log(Logger.FATAL,"Something really bad happened");
     }
 ```
+
+but that's wasteful. There might be a need for multiple loggers in some
+code, where different loggers do different things with their data, but
+not here - I only really want one logger which I can use
+everywhere. To leave both possibilities open, I'll create a single
+Logger object and make it a *public static* instance variable inside
+the Logger class itself. The bare bones of our class now look like this:
+```java
+public class Logger {
+    public Logger(){
+
+    }
+
+    public static Logger log = new Logger();
+}
+```
