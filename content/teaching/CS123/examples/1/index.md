@@ -8,14 +8,13 @@ type = "example"
 
 ## Introduction
 In this example I'll talk about how we can make links between objects,
-and how this is often done in the constructor of one of the classes.
-I'm going to be using real code from a real project I've worked on.
+using real code from a real project I've worked on.
 
 Let's imagine that we want to create some kind of logging system so
 that we can see warning messages. There will be a Logger object, or
 perhaps several, with each having a different "severity level." When
-we want to log something, we just get access to the logger and send
-a message to it, perhaps something like 
+we want to log something, we just get access to the logger and call
+one of its methods, perhaps something like 
 
 ```java
 // I'll talk about Logger.FATAL later on.
@@ -27,7 +26,7 @@ just logging fatal errors most of the time.
 
 ## Creating and using a logger
 
-Now each class can create a logger:
+Each class could create a logger as a private instance variable:
 ```java
 public class SomeClass {
     // create a private logger as an instance variable
@@ -39,21 +38,21 @@ public class SomeClass {
     }
 ```
 
-This is OK, but it's a bit
-wasteful - we only really need one for the whole program. If all classes
-do that, you end up with something like this:
+This is OK, but it's a bit wasteful - we only really need one for the whole
+program. If we create several objects, we will end up with something like
+this:
 
 {{< figure src="obj1.png" >}}
 
-with lots of loggers, and all of them could have different severity levels
-(which isn't what we want). Later on, I'll write code to let all classes use a
-single logger with ease with a *class variable*. I won't do that yet, though.
-Instead, I'll have all objects own a *reference* to just one logger object.
-That means they can all share the same logger, like this:
+Another problem is that all the loggers could have different severity
+levels (which isn't what we want). Later on, I'll write code to let all
+objects use a single logger with ease with a *class variable*. I won't do that
+yet, though. Instead, I'll have all objects own a *reference* to just one
+logger object. That means they can all share the same logger, like this:
 
 {{< figure src="obj2.png" >}}
 
-We can do this by writing the class constructor for SomeClass so
+We can do this by writing the constructor for SomeClass so
 that it takes a Logger as a parameter, which we can then store in
 an instance variable:
 ```java
@@ -72,7 +71,7 @@ Note that I've had to say ```this.logger``` in the constructor because
 the parameter and the instance variable have the same name. Because
 the parameter name (and local variable names) takes precedence, I tell
 the compiler "no, I really mean the *instance* variable" by putting
-"this." in front.
+"this" in front.
 
 We can now use SomeClass and Logger in another class - let's say Main:
 ```java
@@ -122,12 +121,31 @@ string.
 The logger should have a "severity level", and ignore any log messages
 which are lower than the current level. That means we're going
 to need to compare the severity codes, so we'll make them integers.
-We'll implement these with a group of public constants inside Logger.
-Now we've made that decision we can start to write the logger:
+We'll implement these with a group of constants inside Logger, which we'll
+declare as "public static final":
+* **public** means that other classes can use them;
+* **static** means that they belong to the class, not to objects of
+the class (they aren't instance variables);
+* **final** means they are constant: once their value has been assigned
+it can never be changed.
+
+### The methods
+
+The logger will two methods:
+* **public void setSeverityLevel(int level)** will change
+the logger's severity level;
+* **public void log(int severity,String message)** will print the message,
+but only if the severity is higher than (or equal to) the logger's severity
+level.
+
+### The code
+Now we can write the Logger class:
 
 ```java
 public class Logger {
-    // these our the different severity codes
+
+    // these are the different severity codes as "public static final"
+    // values.
     
     public static final int FATAL=4; // most severe
     public static final int ERROR=3;
