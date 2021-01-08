@@ -7,8 +7,7 @@ image:
   preview_only: true
 ---
 
-This page contains information my CS12320 tutorial groups may
-find useful.
+This page contains useful resources for CS12320 students.
 
 
 {{< category_list cs123 >}}

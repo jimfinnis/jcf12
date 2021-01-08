@@ -57,8 +57,10 @@ that it takes a Logger as a parameter, which we can then store in
 an instance variable:
 ```java
 public class SomeClass {
+
     // instance variable which holds a logger
     private Logger logger;
+
     // constructor which takes a logger and stores it in an
     // instance variable
     public SomeClass(Logger logger) {
@@ -95,6 +97,7 @@ are quite a few references to Logger in the system, there's only one
 actual Logger object. Copying a reference to an object, or passing
 it as a parameter, doesn't make a copy of the object. It just gives you
 a new "pointer" to it.
+
 
 Now each SomeClass object can use the logger (as they do in the SomeClass
 constructor),
@@ -138,7 +141,7 @@ the logger's severity level;
 but only if the severity is higher than (or equal to) the logger's severity
 level.
 
-### The code
+### The code {#loggercode}
 Now we can write the Logger class:
 
 ```java
@@ -169,8 +172,9 @@ public class Logger {
         if(severity<INFO || severity>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
         }
-        if(severity>=severityLevel)
+        if(severity>=severityLevel) {
             System.out.println(message);
+        }   
     }
     
     // and we can use this to change the severity level.
@@ -207,6 +211,29 @@ set of things.
 
 I'll talk about these in later posts.
 
+## One last word
+
+If you need a logging system and don't really care how it works,
+you should probably use something more powerful - there's a handy guide
+to modern Java logging systems
+[here](https://www.marcobehler.com/guides/java-logging).
+I wrote this logging system
+before I was aware of these systems, and because I enjoy "reinventing
+the wheel."
+
+However, I also suggest that you build my system. 
+Reinventing the wheel is not a complete waste of time,
+provided that you are aware that you are doing it. It's often a good
+way to practice coding.
+
+[In the next example]({{<relref "../2/">}}) we'll look at how to change what the logging
+system actually does in a flexible way.
+Sometimes we might want to write to a file,
+sometimes we might want to write to the console, or even pop up a message.
+We might even want to do all these things, or do something we haven't
+yet thought of.
+
 [^1]: There's a better way - we could use an *enumeration* instead.
 That brings in some complications (we can't use "<" or ">" to compare
 enumerations), so I'm not doing it here.
+

@@ -1,0 +1,18 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Logger {
+    - severityLevel:int
+    
+    + Logger()
+    + log(severity:int,message:String):void
+    + setSeverityLevel(level:int):void
+}
+
+class SomeClass {
+    - logger:Logger
+}
+
+SomeClass "1..1" --> "1..1" Logger
+
+@enduml
