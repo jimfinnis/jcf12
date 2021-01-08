@@ -9,6 +9,8 @@ landing/    : top level page, shown in home page widgets because it has type "te
 
 UML/        : UML example, has category "cs123"
     index.md : the contents and what sets up that category      
+    
+
 
 
 examples/   : Java code examples; tried to make it a widget page and it
@@ -17,4 +19,10 @@ examples/   : Java code examples; tried to make it a widget page and it
               Again, cs123 type.
     _index.md : think this needs to have the underscore because it's
                 a "branch", not a "leaf", so the examples don't get
-                traversed if this isn't there
+                traversed if this isn't there.
+
+ANYTHING ELSE is stuff which randomly gets linked from other example pages. I'm not
+happy with that solution, but putting stuff under examples automatically indexes
+it, and I can't see a way of avoiding that.
+
+

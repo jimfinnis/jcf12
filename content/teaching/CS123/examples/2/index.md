@@ -1,6 +1,6 @@
 +++
-title = "Changing behaviours by changing objects" 
-summary = "Changing what the logger does by making what it does dependent on another object"
+title = "Changing behaviours with abstract classes" 
+summary = "Changing what the logger does by making it abstract and using subclasses"
 date=2020-12-14  # Add today's date.
 categories = ["example123"]
 type = "example"
@@ -94,8 +94,9 @@ a method which doesn't have any code in it. Abstract classes cannot be instantia
 instance of an abstract class with "new". They can't actually exist in a running program.
 
 So what's the point of them? We can create subclasses of abstract classes which have the abstract methods filled in
-with code that does things. Each of these subclasses is a member of the abstract class, and so can be used wherever
-we have code that uses the abstract class. Each subclass can, however, do things differently.
+with code that does things. If an object is an instance of one of the subclasses, it is also
+an instance of the abstract class, and so can be used wherever
+we have code that uses the abstract class. 
 
 Let's look at how this might work in our Logger. We're going to replace the printing code in *log()* with a call to
 an abstract method called *performLog()* that will actually do this logging. However, we won't write any code
@@ -112,21 +113,19 @@ public abstract class Logger {
 
     private int severityLevel=INFO; // the current severity level
 
-    // constructor does nothing - the severity level is already set
-    // above
-
-    public Logger(){
-    }
-
     // the actual logging function, which calls performLog in the subclass to
     // actually do logging if the severity of the message is higher or
     // equal to the current severity level
 
-    public void log(int severity,String message) throws IllegalArgumentException {
+    public void log(int severity,String message)
+        throws IllegalArgumentException {
+        
         if(severity<INFO || severity>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
         }
         if(severity>=severityLevel) {
+            // call the abstract method that will actually do the logging.
+            // That will be in one of the subclasses of this class.
             performLog(message);
         }
     }
@@ -146,7 +145,7 @@ public abstract class Logger {
 }
 ```
 
-Now we can write *concrete* subclasses of Logger which actually does some logging (*concrete*
+Now we can write *concrete* subclasses of Logger which actually do some logging (*concrete*
 just means "not abstract").
 Here's one which just prints the messages to the console, as the previous version did:
 
@@ -188,4 +187,8 @@ This will then check the severity in its *log* method, and call *performLog* if 
 enough. Because this Logger is really a ConsoleLogger, the *performLog* in ConsoleLogger is the one
 that will run, and we'll see a message on the console.
 
-We could also write a class like this:
+We could write a FileLogger too, and I've put that in a [separate page]({{< ref "../../file/" >}})
+because while it's quite long and involved, most of that complication isn't necessary to
+understanding the core idea of abstract classes.
+
+
