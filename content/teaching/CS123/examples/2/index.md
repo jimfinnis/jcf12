@@ -8,7 +8,10 @@ type = "example"
 
 ## Introduction
 
-[Last time]({{<relref "../1/">}}) we built very simple logging system based around the **Logger** class.
+[Last time]({{<relref "../1/">}}) we built very simple logging system based around the **Logger** class:
+
+{{< figure src="../1/obj2.png" >}}
+
 
 If an object needs to log information, you provide a reference to a 
 Logger object as a parameter to its constructor. It then stores that reference as an instance
@@ -178,17 +181,19 @@ Note that line:
 ```java
         Logger logger = new ConsoleLogger();
 ```
-We're creating a ConsoleLogger and assigning it to a variable of type Logger. This is absolutely
-fine, because ConsoleLogger is a subclass of Logger. We're just saying that *logger* is a Logger of
-some kind, and we don't care what.
+We're creating a ConsoleLogger and assigning it to a variable of type Logger.
+This is absolutely fine, because ConsoleLogger is a subclass of Logger. We're
+just saying that *logger* is a Logger of some kind, and we don't care what.
 
-Now, when SomeClass calls its logging code, the actual Logger that will be called is a ConsoleLogger.
-This will then check the severity in its *log* method, and call *performLog* if the severity is high
-enough. Because this Logger is really a ConsoleLogger, the *performLog* in ConsoleLogger is the one
+Now, when SomeClass calls its logging code, the actual Logger that will be
+called is a ConsoleLogger. This will then check the severity in its *log*
+method, and call *performLog* if the severity is high enough. Because this
+Logger is really a ConsoleLogger, the *performLog* in ConsoleLogger is the one
 that will run, and we'll see a message on the console.
 
-We could write a FileLogger too, and I've put that in a [separate page]({{< ref "../../file/" >}})
-because while it's quite long and involved, most of that complication isn't necessary to
-understanding the core idea of abstract classes.
+We could write a FileLogger too, and I've put that in a [separate page]({{<
+ref "../../file/" >}}) because while it's quite long and involved, most of
+that complication isn't necessary to understanding the core idea of abstract
+classes.
 
 
