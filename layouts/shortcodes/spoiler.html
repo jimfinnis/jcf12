@@ -1,0 +1,9 @@
+{{ $id := (.Get "id") }}
+{{ $text := (.Get "text") }}
+
+
+<div class="spoiler_container">
+    <a class="spoiler_link" href="#spoiler-{{ $id }}">{{ $text }}</a> 
+    <a class="spoiler_target" id="spoiler-{{ $id }}"></a>
+    <div class="spoiler">{{ .Inner }} <a href="#" class="hide_spoiler">Hide Spoilers</a></div>    
+</div>

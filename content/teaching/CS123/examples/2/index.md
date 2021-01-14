@@ -8,10 +8,10 @@ type = "example"
 
 ## Introduction
 
-[Last time]({{<relref "../1/">}}) we built very simple logging system based around the **Logger** class:
+[Last time]({{<relref "../1/">}}) we built very simple logging system based around the **Logger** class, where several objects can share
+a single Logger object like this:
 
 {{< figure src="../1/obj2.png" >}}
-
 
 If an object needs to log information, you provide a reference to a 
 Logger object as a parameter to its constructor. It then stores that reference as an instance
@@ -39,7 +39,16 @@ public class SomeClass {
 }
 ```
 
-You might use it like this in your **Main** class:
+Here's a UML diagram of what we have so far:
+
+{{< figure src="uml1.png" title="Basic Logger and an example class which uses it" >}}
+
+Note that the link between object and logger is still one-to-one,
+despite objects sharing loggers. This is because each object only has a connection
+to a single logger, and loggers do not have connections to the objects
+that use them: the link is one way.
+
+Here is an example of how the logger might be used in a **Main** class:
 ```java
 public class Main {
     public static void main(String args[]){
@@ -83,16 +92,12 @@ We could simply write a *switch* statement inside the *log()* method which does
 different things, but we might want to be able to add new kinds of logging action - we don't
 want to limit them to code we provide in the class.
 
-Here's a UML diagram of what we have so far:
-
-{{< figure src="uml1.png" title="Basic inflexible Logger" >}}
-
 One possibility is to do the actual logging in an *abstract method*, and implement different
 kinds of logger as subclasses of Logger. Like this:
 
 {{< figure src="uml2.png" title="Using an abstract Logger" >}}
 
-Here, the Logger class is an *abstract class* because it contains an *abstract method*: *performLog()*. This is
+Here, the Logger class is an *abstract class* because it contains an *abstract method* called *performLog()*. This is
 a method which doesn't have any code in it. Abstract classes cannot be instantiated: you can never create an
 instance of an abstract class with "new". They can't actually exist in a running program.
 
@@ -182,7 +187,7 @@ Note that line:
         Logger logger = new ConsoleLogger();
 ```
 We're creating a ConsoleLogger and assigning it to a variable of type Logger.
-This is absolutely fine, because ConsoleLogger is a subclass of Logger. We're
+This is absolutely fine, because a ConsoleLogger is a kind of Logger (that's what subclasses are). We're
 just saying that *logger* is a Logger of some kind, and we don't care what.
 
 Now, when SomeClass calls its logging code, the actual Logger that will be
@@ -191,8 +196,8 @@ method, and call *performLog* if the severity is high enough. Because this
 Logger is really a ConsoleLogger, the *performLog* in ConsoleLogger is the one
 that will run, and we'll see a message on the console.
 
-We could write a FileLogger too, and I've put that in a [separate page]({{<
-ref "../../file/" >}}) because while it's quite long and involved, most of
+We could write a FileLogger too, and I've put that in a
+[separate page]({{< ref "../../file/" >}}) because while it's quite long and involved, most of
 that complication isn't necessary to understanding the core idea of abstract
 classes.
 

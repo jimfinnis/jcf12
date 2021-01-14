@@ -20,6 +20,11 @@ examples/   : Java code examples; tried to make it a widget page and it
     _index.md : think this needs to have the underscore because it's
                 a "branch", not a "leaf", so the examples don't get
                 traversed if this isn't there.
+                
+file/       : just holds a filelogger example which is linked from
+              the main examples; its type is set to "unindexed" so it
+              doesn't get added to the "teaching" cards on the main page
+              
 
 ANYTHING ELSE is stuff which randomly gets linked from other example pages. I'm not
 happy with that solution, but putting stuff under examples automatically indexes
