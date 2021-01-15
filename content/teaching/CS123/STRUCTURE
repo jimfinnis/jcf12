@@ -17,6 +17,8 @@ examples/   : Java code examples; tried to make it a widget page and it
               didn't like it. Under here should be a list of examples,
               which are each in folders, each in category "example123"
               Again, cs123 type.
+              Each index.md in here has a weight, determining its ordering
+              in the example list
     _index.md : think this needs to have the underscore because it's
                 a "branch", not a "leaf", so the examples don't get
                 traversed if this isn't there.

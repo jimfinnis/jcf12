@@ -1,14 +1,15 @@
 +++
-title = "Changing behaviours with abstract classes" 
+title = "2. Changing behaviours with abstract classes" 
 summary = "Changing what the logger does by making it abstract and using subclasses"
 date=2020-12-14  # Add today's date.
 categories = ["example123"]
+weight = 101
 type = "example"
 +++
 
 ## Introduction
 
-[Last time]({{<relref "../1/">}}) we built very simple logging system based around the **Logger** class, where several objects can share
+[Last time]({{<relref "../1/">}}) we built a very simple logging system based around the **Logger** class, where several objects can share
 a single Logger object like this:
 
 {{< figure src="../1/obj2.png" >}}
