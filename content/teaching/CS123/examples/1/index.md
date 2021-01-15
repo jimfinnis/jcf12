@@ -67,6 +67,13 @@ public class SomeClass {
         this.logger = logger;
         logger.log(Logger.INFO,"SomeClass instance created");
     }
+    
+    // a method which doesn't actually do anything - it's just
+    // an example showing how the logger instance variable might
+    // be used.
+    public void someMethod(){
+        logger.log(Logger.INFO,"Did something");
+    }   
 }
 ```
 Note that I've had to say ```this.logger``` in the constructor because
@@ -74,6 +81,8 @@ the parameter and the instance variable have the same name. Because
 the parameter name (and local variable names) takes precedence, I tell
 the compiler "no, I really mean the *instance* variable" by putting
 "this" in front.
+
+
 
 We can now use SomeClass and Logger in another class - let's say Main:
 ```java
@@ -163,7 +172,7 @@ public class Logger {
     public Logger(){
     }
     
-    // the actual logging function, which prints a message
+    // the actual logging method, which prints a message
     // to output if the severity of the message is higher or
     // equal to the current severity level
     

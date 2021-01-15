@@ -157,25 +157,37 @@ written to the disk, but might slow things down because we're forcing the system
 
 Here is an example of using both the FileLogger and the ConsoleLogger. Perhaps
 *obj1* is a really important task where we want all the log data to be stored in 
-a file, while *obj2* and *obj3* are less important:
+a file, while *obj2* and *obj3* are less important, so we'll give *obj1*
+a FileLogger while the other two objects have a ConsoleLogger.
+
+Note how we create the FileLogger: we have to catch the exception
+that might be thrown by the constructor if we can't open the file.
+Here, I don't know what else to do so I'm going to "convert" it into
+a RuntimeException which will stop the program.
 
 ```java
 public class Main {
-    public static void main(String args[]){
+ public static void main(String args[]){
         // create loggers
-        FileLogger fileLogger = new FileLogger();
         Logger consLogger = new ConsoleLogger();
+        FileLogger fileLogger;
+        try {
+            fileLogger = new FileLogger("/tmp/log.txt");
+        } catch(IOException e){
+            throw new RuntimeException("cannot create logger");
+        }
         
+
         // create some objects using the loggers - obj1 uses
         // the file logger, the others use the console logger.
-        
+
         SomeClass obj1 = new SomeClass(fileLogger);
-        SomeClass obj2 = new SomeClass(consoleLogger);
-        SomeClass obj3 = new SomeClass(consoleLogger);
-        
+        SomeClass obj2 = new SomeClass(consLogger);
+        SomeClass obj3 = new SomeClass(consLogger);
+
         // add some code here which actually does things with those
         // objects!
-        
+
         // when we're finished, shut down the file logger
 
         fileLogger.close();
@@ -193,7 +205,7 @@ Why is one variable declared as FileLogger, while the other one is a generic Log
 Read all the code and try to work this out.
 
 
-{{% spoiler id="0" text="click to show the answer" %}}
+{{% spoiler id="0" text="click to show the answer before moving on" %}}
 
 We need to be able to close the logger. If the *fileLogger* variable were just a plain Logger
 we would not be able to call the *close()* method, because Logger does not have that method. Even
@@ -202,8 +214,67 @@ though the variable is actually pointing to a FileLogger, the program doesn't kn
 As far as the program is concerned, *fileLogger* is a Logger. It might be a ConsoleLogger, it might
 be a FileLogger, but it doesn't know, so we can only call the methods we know Logger has.
 
-The only way we can fix this is to tell the program what kind of Logger the variables is:
+The only way we can fix this is to tell the program what kind of Logger the variable is:
 make *fileLogger* actually a FileLogger, so we can call *close()*
 on it.
 
 {{% /spoiler %}}
+
+This causes a problem. At the moment, when the program can't
+create a FileLogger it simply exits (by throwing a RuntimeException). 
+It might be better if *obj1* simply used the ConsoleLogger in this case,
+so even though we aren't logging to a file, the program still runs and
+some logging is done.
+
+However, I have to do something like this:
+```java
+public class Main {
+ public static void main(String args[]){
+        // create loggers
+        Logger consLogger = new ConsoleLogger();
+        Logger obj1Logger;
+        
+        FileLogger fileLogger;
+        try {
+            // try to create a file logger, and if that
+            // works, copy a reference to the object to obj1Logger
+            // (the logger we'll use for obj1).
+            fileLogger = new FileLogger("/tmp/log.txt");
+            obj1Logger = fileLogger;
+        } catch(IOException e){
+            // if it fails, set the file logger to null (not entirely
+            // necessary but good style) and set obj1's logger to
+            // be the console logger we already have
+            fileLogger = null;
+            obj1Logger = consLogger;
+        }
+        
+
+        // create some objects using the loggers - obj1 uses
+        // the logger we set up (either a file or console logger),
+        // the others use the console logger.
+
+        SomeClass obj1 = new SomeClass(obj1Logger);
+        SomeClass obj2 = new SomeClass(consLogger);
+        SomeClass obj3 = new SomeClass(consLogger);
+
+        // add some code here which actually does things with those
+        // objects!
+
+        // when we're finished, shut down the file logger if it was
+        // created OK
+
+        if(fileLogger != null){ 
+            fileLogger.close();
+        }
+    }
+}
+```
+What's going on here is that we need to pass either a FileLogger (if creating
+it worked) or a ConsoleLogger (if it didn't) to the constructor of *obj1*, so
+the variable to hold that needs to be a Logger (so it can hold either kind).
+
+However, we still need to keep the original FileLogger so that it can be
+closed (if it was ever opened successfully). It's really ugly.
+
+There are other ways to do it, but they are all messy in different ways.

@@ -81,12 +81,28 @@ code {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
+.spoiler-container {
+    padding-bottom: 20px;
+}
+
 .spoiler {
+    background-color: $sta-alert-code-bg;
     display: none;
 }
-.spoiler_target:target {
-    position: fixed;
+
+.dark .spoiler {
+    background-color: $sta-alert-code-dark-bg;
+    display: none;
 }
-.spoiler_target:target + .spoiler {
-    display: inline;
+
+.spoiler-link {
+    background-color: #888;
+    color: #fff;
+    padding: 5px;
+}
+
+.dark .spoiler-link {
+    background-color: #446;
+    color: #fed;
+    padding: 5px;
 }
