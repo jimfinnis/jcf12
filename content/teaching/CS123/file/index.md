@@ -4,7 +4,7 @@ date=2020-12-14  # Add today's date.
 type="unindexed" # stops it being indexed as "teaching", could be anything
 +++
 This is the code for a FileLogger class, a subclass
-of the Logger abstract class introduced [here]({{< ref "../examples/2/" >}}) which
+of the Logger abstract class introduced [here]({{< ref "../examples/logger2/" >}}) which
 logs to files. 
 
 To use it, you pass a filename for a log file into its constructor. When you've finished
