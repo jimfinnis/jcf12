@@ -1,0 +1,50 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Entity {
+    + Entity(p:Position)
+    + move():void
+    + makeNoise():void
+    + render():void
+}
+
+class Player {
+    + Player(p:Position)
+    + move():void
+    + render():void
+}
+
+Player -up-|> Entity
+
+class Monster {
+    + Monster(p:Position)
+    + move():void
+    + makeNoise():void
+    + render():void
+}
+
+Monster -up-|> Entity
+
+class Guard {
+    + Guard(p:Position)
+    + move():void
+    + makeNoise():void
+    + render():void
+}
+
+Guard -up-|> Monster
+
+class GuardStealth {
+    + makeNoise():void
+    + render():void
+}
+
+GuardStealth -up-|> Guard
+
+class GuardFast {
+    + move():void
+}
+
+GuardFast -up-|> Guard
+
+@enduml

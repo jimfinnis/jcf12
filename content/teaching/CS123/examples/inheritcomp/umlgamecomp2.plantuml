@@ -1,0 +1,79 @@
+@startuml
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Entity {
+    + Entity(p:Position, m:Mover, a:Appearance)
+    + move():void
+    + makeNoise():void
+    + render():void
+    
+    - mover: Mover
+    - appearance: Appearance
+}
+
+interface Mover {
+    + move()
+}
+
+interface Appearance {
+    + makeNoise()
+    + render()
+}
+
+Entity "1..1" --> "1..1" Appearance
+Entity "1..1" --> "1..1" Mover
+
+class PlayerMover {
+    + PlayerMover(e:Entity)
+    + move()
+    - entity:Entity
+}
+PlayerMover -up-|> Mover
+PlayerMover "1..1" --> "1..1" Entity
+
+class GuardMover {
+    + GuardMover(e:Entity)
+    + move()
+    - entity:Entity
+}
+GuardMover -up-|> Mover
+GuardMover "1..1" --> "1..1" Entity
+
+class GuardFastMover {
+    + GuardFastMover(e:Entity)
+    + move()
+    - entity:Entity
+}
+GuardFastMover -up-|> Mover
+GuardFastMover "1..1" --> "1..1" Entity
+
+class PlayerAppearance {
+    + PlayerAppearance(e:Entity)
+    + makeNoise()
+    + render()
+    - entity:Entity
+}
+PlayerAppearance -up-|> Appearance
+PlayerAppearance "1..1" --> "1..1" Entity
+
+class GuardAppearance {
+    + GuardAppearance(e:Entity)
+    + makeNoise()
+    + render()
+    - entity:Entity
+}
+GuardAppearance -up-|> Appearance
+GuardAppearance "1..1" --> "1..1" Entity
+
+class GuardStealthAppearance {
+    + GuardStealthAppearance(e:Entity)
+    + makeNoise()
+    + render()
+    - entity:Entity
+}
+GuardStealthAppearance -up-|> Appearance
+GuardStealthAppearance "1..1" --> "1..1" Entity
+
+
+@enduml

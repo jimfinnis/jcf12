@@ -198,8 +198,10 @@ Logger is really a ConsoleLogger, the *performLog* in ConsoleLogger is the one
 that will run, and we'll see a message on the console.
 
 We could write a FileLogger too, and I've put that in a
-[separate page]({{< ref "../../file/" >}}) because while it's quite long and involved, most of
+[separate page]({{< ref "../../filelogger/" >}}) because while it's quite long and involved, most of
 that complication isn't necessary to understanding the core idea of abstract
 classes.
 
 
+[In the next section]({{< ref "../logger3/" >}}), we'll look at how to make this a little tidier
+and more flexible by **favouring composition over inheritance**.

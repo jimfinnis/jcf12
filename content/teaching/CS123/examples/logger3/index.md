@@ -15,6 +15,6 @@ behaviour by creating a new subclass of Logger. This left the actual logging met
 in the Logger abstract, so that the subclasses could provide it in different ways.
 Here's the UML diagram:
 
-{{< figure src="../logger1/uml2.png" title="The abstract Logger" >}}
+{{< figure src="../logger2/uml2.png" title="The abstract Logger" >}}
 
 Unfortunately we found this was a little messy.
