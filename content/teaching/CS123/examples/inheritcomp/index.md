@@ -34,14 +34,15 @@ even when it might feel more natural to use inheritance. Some programming
 languages (like Go) don't allow inheritance at all.
 
 ## Why is it a good idea?
-Firstly, it's actually easier once you get used to it. Building a "family
+Firstly, it can be easier once you get used to it. Building a "family
 tree" of classes with inheritance involves finding common properties and
 behaviours they all have, and this can be difficult. It can be tempting
 to try to put things into the tree which don't really belong there.
 
 Secondly, you get more flexible code which is easier to reuse because the
-links between objects are much "looser." A subclass will inherit all of
-its parent's properties when perhaps it doesn't need to.
+links between objects are much "looser." You often find the systems you
+build this way are more powerful and easier to work with. We'll
+see an example of this later on.
 
 ## But how does polymorphism work?
 Remember that **polymorphism** is the idea that one class (say Collection)
@@ -51,7 +52,7 @@ Code which uses a Collection can use any of those subclasses instead.
 How can this work if we don't use inheritance? 
 
 The answer is that while we avoid inheritance of classes, we can still
-implement interfaces. Implementing an interface is a lot like creating
+use **interfaces**. Implementing an interface is a lot like creating
 a subclass, except that the methods we are implementing don't have 
 any actual "body code" (code which does stuff) in the interface definition.
 
@@ -59,9 +60,9 @@ any actual "body code" (code which does stuff) in the interface definition.
 
 ### With inheritance
 
-Let's try a simple example. Imagine we are writing a game which has 
-a player and some monsters. The monsters behave in different ways, but
-have some things in common with the player. We might write something
+Let's try a simple example. Imagine we are writing a game which has a player
+and some monsters. The monsters behave in different ways, but have some things
+in common with the player - we'll call them "guards." We might write something
 like this using inheritance:
 
 {{< figure src="umlgameinher.png" title="Game design with inheritance" >}}
@@ -69,7 +70,7 @@ like this using inheritance:
 At the root of this tree we have the Entity class, which is anything 
 in the game which can move around. 
 We can see that each class has a constructor, which takes the object's
-initial position in the world, and Entity has three members which the
+initial position in the world, and Entity has three instance variables which the
 subclasses can override to change the behaviour:
 * **move** to move the object,
 * **makeNoise** to make some kind of random noise at intervals,
@@ -79,7 +80,7 @@ Entity will have some kind of default behaviour
 for each method - for example, *makeNoise* might not do anything. In this
 case, Player doesn't override it, so the Player doesn't make any noise.
 
-There are probably going to be lots of other members too, but this is just
+There are probably going to be lots of other instance variables too, but this is just
 an outline.
 
 
@@ -97,14 +98,18 @@ Let's also imagine that we've designed this system and got it all working,
 when our manager walks in and asks us to make a new kind of monster: a fast,
 silent guard. It's going to be very difficult, because we need a class which
 is a subclass of Guard, but has the *move* of GuardFast and the *makeNoise*
-and *render* of GuardSilent.
+and *render* of GuardSilent. We're going to have to do some ugly things
+to get this to work.
+
+Let's try rewriting the entire system, this time using composition and
+no inheritance.
 
 ### With composition
 
-With composition, we imagine our Entity contains different objects, each
+With composition our Entity contains different objects, each
 of which controls a different aspect of its behaviour. We'll combine
 sound and visuals into a single concept for convenience, so Entity needs:
-* A **Mover** to move the object around,
+* A **Mover** to move the object around and give it a location in the world,
 * an **Appearance** to draw the object and make sounds.
 
 We'll create these as **interfaces**, and then create classes which implement
@@ -113,17 +118,268 @@ will specify that there must be a *move* method to move an entity,
 and Appearance will specify  *render* and *makeNoise* methods.
 Each class will have constructors which take the Entity they should work on.
 
+Now we can think about the classes which will implement the Mover and
+Appearance interfaces. Movers first:
+* **PlayerMover** will make any entity it is attached to move like a player -
+that is, it will be controlled by the mouse and keyboard
+* **GuardMover** will make the entity behave like guard monster - it will
+move using AI to hunt the player (you'll learn how to write this sort of 
+pathfinding and obstacle avoidance AI in later modules!)
+* **GuardFastMover** will the it behave similarly, but faster
+
+Now Appearances:
+* **PlayerAppearance** will make it look and sound like a player
+* **GuardAppearance** will make it look at sound like a guard
+* **GuardStealthAppearance** will be similar, but much harder to see and hear.
+
+Each Mover and Appearance is going to need to store the entity
+it works with, and Entity is going to need to be able to modify 
+the Mover and Appearance.
+
 This leads us to something like this:
 
 {{< figure src="umlgamecomp.png" title="Game design with composition (click to zoom)" >}}
 
-Note that there should also be relationships going from each behaviour class
+Note that we no longer pass a Position into the Entity constructor - this
+will probably be part of the Mover classes now. Without a Mover, an entity doesn't
+need a Position. In a real system, the Mover would probably have a way of
+getting the position of the entity.
+
+Also note that there should also be relationships going from each behaviour class
 to Entity, since they each keep a reference to the Entity they control,
 but that makes the UML very messy!
 
-{{< figure src="umlgamecomp.png" title="Above with ALL relationships" >}}
+{{< figure src="umlgamecomp2.png" title="Above with ALL relationships" >}}
 
 ### Code for composition example
 
-How would we use this in actual code?
+Let's write the two interfaces - they're very simple:
 
+```java
+public interface Appearance {
+    public void render();
+    public void makeNoise();
+}
+```
+
+```java
+public interface Mover {
+    public void move();
+}
+```
+
+The method declarations don't have
+any actual "bodies" (code in curly brackets that does things), because
+as with all interfaces, they just say which methods should be contained
+in any class which implements them. 
+
+Now we can write the Entity class:
+
+```java
+public class Entity {
+    private Mover mover;
+    private Appearance appearance;
+
+    // constructor which initialises the entity's mover and appearance to null.
+    // By default, entities do not move (and do not have a position), they are
+    // invisible, and make no noise.
+    
+    public Entity(){
+        mover = null;
+        appearance = null;
+    }
+
+    // set the Mover of an entity. Returns the entity itself for 
+    // "fluent" programming.
+    public Entity setMover(Mover m){
+        mover = m;
+        return this;
+    }
+
+    // set the Appearance of an entity. Returns the entity itself
+    // for "fluent" programming.
+    public Entity setAppearance(Appearance a){
+        appearance = a;
+        return this;
+    }
+
+    // move the entity by calling its Mover (if it has one!)
+    public void move(){
+        if(mover != null) {
+            mover.move();
+        }
+    }
+
+    // draw the entity by calling its Appearance's render (if it has one!)
+    public void render(){
+        if(appearance != null) {
+            appearance.render();
+        }
+    }
+
+    // make sound by calling the entity's Appearance's makeNoise
+    public void makeNoise(){
+        if(appearance!=null) {
+            appearance.makeNoise();
+        }
+    }
+}
+```
+In this class, there are two private instance variables - the Mover and Appearance
+used by each entity. There's a constructor which sets up those two
+variables, and then the actual methods.
+
+All the methods do is **forward** the
+operation to the Mover or Appearance: for example *move* just tells the
+connected Mover to do its *move*.
+
+You may have noticed that *setMover* and *setAppearance* both return
+the entity itself ("return this"). That may seem a little strange,
+but it permits a useful trick I'll explain later.
+
+Here is an example Mover - in this case it's the PlayerMover:
+```java
+public class PlayerMover implements Mover {
+    // the entity to which mover should move
+    private Entity entity;
+
+    // set up the mover, taking the entity we should
+    // be moving
+    public PlayerMover(Entity e){
+        entity = e;
+    }
+
+    // this is the implementation of Mover.move(), which
+    // moves the entity
+    @Override
+    public void move() {
+        // ... code that moves the entity based on mouse
+        // and keyboard, because this is a PlayerMover
+    }
+}
+```
+
+And here is the PlayerAppearance. In both cases I've left the methods
+empty - the actual code would probably be quite complicated and depend
+on the graphics engine we were using:
+
+```java
+public class PlayerAppearance implements Appearance {
+    // the entity for which this class controls the appearance
+    // and sound, making it look/sound like a player.
+    private Entity entity;
+
+    // set up the appearance, taking the entity whose appearance
+    // this class should control
+    public PlayerAppearance(Entity e){
+        entity = e;
+    }
+
+    @Override
+    public void render() {
+        // code that draws the entity as a player
+    }
+
+    @Override
+    public void makeNoise() {
+        // this will probably stay empty unless you
+        // want the player to make a noise
+    }
+}
+```
+
+#### Making some entities
+
+Now we can start to create some entities which behave the same
+as the classes we had in the inheritance-based system. Here, for
+example, is how we would create an Entity which behaves like a Player:
+```java
+        // create an entity. After this, it's invisible,
+        // inaudible and has no location!
+        Entity player = new Entity();
+
+        // make the entity move like a player by creating
+        // a PlayerMover and setting it into the entity.
+        Mover m = new PlayerMover(player);
+        player.setMover(m);
+
+        // make it look and sound like a player in a similar
+        // way
+        Appearance a = new PlayerAppearance(player);
+        player.setAppearance(a);
+```
+Note how the two-way link between the player and its "behaviour objects"
+is set up: we create the Mover and the Appearance, passing 
+a reference to the player entity into their constructors.
+The Mover and Appearance each store that
+reference in a private instance variable. Once created, references to
+the Mover and Appearance are set inside the player entity.
+
+Now for that trick I mentioned earlier. Because *setMover* and
+*setAppearance* return *this*, I can do this:
+```java
+        Entity player = new Entity();
+        Mover m = new PlayerMover(player);
+        Appearance a = new PlayerAppearance(player);
+        
+        // "fluent" trick: because setMover returns this,
+        // I can "chain" a method call to setAppearance:
+        
+        player.setMover(m).setAppearance(a);
+```
+That's quite nice, and easy to read. This is **fluent programming**,
+and you may find examples of it in your own reading.
+
+Now we've created a player, we can create a guard in a similar way:
+
+```java
+        Entity m = new Entity();
+        m.setAppearance(new GuardAppearance(m))
+            .setMover(new GuardMover(m)); 
+```
+This code is a lot shorter than the previous code because I'm not
+bothering to assign the Appearance and Model to variables before passing
+them into the *set* methods. It's exactly the same idea, though.
+
+You can see how we can combine Appearance and Model methods to build
+all the different behaviours the interitance example had - but now we can
+also easily make a "fast, stealthy guard":
+
+```java
+        Entity m = new Entity();
+        m.setAppearance(new GuardStealthAppearance(m))
+            .setMover(new GuardFastMover(m)); 
+```
+We can even create a guard that looks like the player:
+```java
+        Entity m = new Entity();
+        m.setAppearance(new PlayerAppearance(m))
+            .setMover(new GuardFastMover(m)); 
+```
+In fact, we can combine any Mover with any Appearance to make many
+more combinations without having to create a new subclass for each
+one - everything is just an Entity, but the objects that entity is
+linked to control how it behaves.
+
+## Conclusion
+
+I hope you can see that favouring composition over inheritance is
+a powerful way to get a lot of flexibility into your code, although
+it does need you to think about your design in a very different way!
+For example, in the system I've described above
+it doesn't seem as natural to think about
+"behaviours" (our Mover and Appearance interfaces) as "things", which
+is how we usually think about objects and classes.
+
+Remember, always try to think in terms of **things having things**
+rather than **things being kinds of things**, even if it means some
+of the "things" have to be rather abstract.
+
+Also, sometimes it's still better to use inheritance: there are some
+disadvantages of using composition. The code is often more complex
+and there are a large number of *forwarding methods* - methods whose
+only job is to call a method inside another object (look at the code
+for Entity, for example).
+
+Finally, this is exactly how the Unity and Unreal game
+engines work. Actually, Unity takes it quite a lot further.
