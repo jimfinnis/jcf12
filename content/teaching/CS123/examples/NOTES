@@ -1,0 +1,23 @@
+What code examples should illustrate in order
+
+OO - what is it and what is it good for?
+    it's just organising your programs by data, rather than by tasks.
+
+    That might seem odd, but I remember when I started with C++...
+
+    And all your tasks operate on data, so it makes sense to organise
+    it by the kinds of data.
+    
+    A class is just a description of what a bunch of data which
+    naturally goes together actually looks like.
+    
+
+References (and sharing them doesn't copy)
+
+Nulls
+
+
+
+Ongoing notes:
+Example 1 used to use "static", but I want to reserve that for a later
+example. I've kept the text in "static.md".

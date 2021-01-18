@@ -1,5 +1,5 @@
 +++
-title = "1. Creating links between objects"
+title = "Logging, Part 1: Creating links between objects"
 summary = "An 'error logger' from an old project"  # Add a page description.
 date=2020-12-14  # Add today's date.
 categories = ["example123"]

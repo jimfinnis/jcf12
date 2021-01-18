@@ -2,14 +2,14 @@
 skinparam classAttributeIconSize 0
 
 class Entity {
-    + Entity(p:Position)
+    + Entity()
     + move():void
     + makeNoise():void
     + render():void
 }
 
 class Player {
-    + Player(p:Position)
+    + Player()
     + move():void
     + render():void
 }
@@ -17,7 +17,7 @@ class Player {
 Player -up-|> Entity
 
 class Monster {
-    + Monster(p:Position)
+    + Monster()
     + move():void
     + makeNoise():void
     + render():void
@@ -26,7 +26,7 @@ class Monster {
 Monster -up-|> Entity
 
 class Guard {
-    + Guard(p:Position)
+    + Guard()
     + move():void
     + makeNoise():void
     + render():void
