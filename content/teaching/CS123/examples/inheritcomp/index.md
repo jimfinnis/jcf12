@@ -158,17 +158,37 @@ but that makes the UML very messy!
 ### Code for composition example
 
 Let's write the two interfaces - they're very simple:
-
 ```java
+/**
+ * Interface for Appearance classes, which control
+ * how an Entity looks and sounds.
+ * Classes should take the Entity as a parameter of a
+ * constructor and store it in an instance variable.
+ */
 public interface Appearance {
-    public void render();
-    public void makeNoise();
+    /**
+     * Draw the Entity to the display.
+     */
+    void render();
+
+    /**
+     * Make a sound of some kind.
+     */
+    void makeNoise();
 }
 ```
 
 ```java
+/**
+ * Interface which classes which control how an Entity moves.
+ * Classes should take the Entity as a parameter of a
+ * constructor and store it in an instance variable.
+ */
 public interface Mover {
-    public void move();
+    /**
+     * Move the entity in some way.
+     */
+    void move();
 }
 ```
 
@@ -177,51 +197,85 @@ any actual "bodies" (code in curly brackets that does things), because
 (as with all interfaces) they just say which methods should be contained
 in any class which implements them. 
 
+We don't need to add a *public* keyword to the methods, all interface
+methods are public.
+
 Now we can write the Entity class:
 
 ```java
+/**
+ * The Entity class, which is used for objects which are part
+ * of the "game world" and can move within it.
+ */
 public class Entity {
+    /**
+     * The "mover" is responsible for moving the entity in
+     * the world 
+     */
     private Mover mover;
+    /**
+     * The "appearance" controls how the entity looks
+     * and what it sounds like
+     */
     private Appearance appearance;
 
-    // constructor which initialises the entity's mover and appearance to null.
-    // By default, entities do not move, they are invisible,
-    // and make no noise.
-    
+    /**
+     * constructor which initialises the entity's mover and appearance to null. 
+     * By default, entities do not move (and do not have a position), they are
+     * invisible, and make no noise.
+     */
+
     public Entity(){
         mover = null;
         appearance = null;
     }
+    
 
-    // set the Mover of an entity. Returns the entity itself for 
-    // "fluent" programming.
+    /**
+     * set the Mover of an entity. Returns the entity itself for
+     * "fluent" programming.
+     * @param m the mover to use
+     * @return the entity itself
+     */
     public Entity setMover(Mover m){
         mover = m;
         return this;
     }
 
-    // set the Appearance of an entity. Returns the entity itself
-    // for "fluent" programming.
+    /**
+     * set the Appearance of an entity. Returns the entity
+     * itself for  "fluent" programming.
+     * @param a the appearance to use
+     * @return the entity itself
+     */
     public Entity setAppearance(Appearance a){
         appearance = a;
         return this;
     }
 
-    // move the entity by calling its Mover (if it has one!)
+    /**
+     * Move the entity by calling its mover (if it has one)
+     */
     public void move(){
         if(mover != null) {
             mover.move();
         }
     }
 
-    // draw the entity by calling its Appearance's render (if it has one!)
+    /**
+     * draw the entity by calling its Appearance's render
+     * (if it has one!)
+     */
     public void render(){
         if(appearance != null) {
             appearance.render();
         }
     }
 
-    // make sound by calling the entity's Appearance's makeNoise
+    /**
+     * make a sound by calling the Appearance's makeNoise
+     * (if it has one!)
+     */
     public void makeNoise(){
         if(appearance!=null) {
             appearance.makeNoise();
@@ -244,22 +298,32 @@ but it allows a useful trick I'll explain later.
 
 Here is an example Mover - in this case it's the PlayerMover:
 ```java
+/**
+ * This Mover, when attached to an Entity, will make it move
+ * in response to keyboard and mouse.
+ */
 public class PlayerMover implements Mover {
-    // the entity to which mover should move
+    /**
+     * the entity to be controlled
+     */
     private Entity entity;
 
-    // set up the mover, taking the entity we should
-    // be moving
+    /**
+     * Constructor: set the controlled entity
+     * to the parameter passed in
+     * @param e the entity to be controlled
+     */
     public PlayerMover(Entity e){
         entity = e;
     }
 
-    // this is the implementation of Mover.move(), which
-    // moves the entity
+    /**
+     * The method which moves the entity in response
+     * to mouse and keyboard
+     */
     @Override
     public void move() {
-        // ... code that moves the entity based on mouse
-        // and keyboard, because this is a PlayerMover
+        // TODO!
     }
 }
 ```
@@ -269,29 +333,72 @@ empty - the actual code would probably be quite complicated and depend
 on the graphics engine we were using:
 
 ```java
+/**
+ * This class makes the entity to which it is
+ * attached look and sound like a player.
+ */
 public class PlayerAppearance implements Appearance {
-    // the entity for which this class controls the appearance
-    // and sound, making it look/sound like a player.
+    /**
+     * the entity to be displayed/make a noise
+     */    
     private Entity entity;
 
-    // set up the appearance, taking the entity whose appearance
-    // this class should control
+    /**
+     * Constructor
+     * @param e the entity to be displayed etc.
+     */    
     public PlayerAppearance(Entity e){
         entity = e;
     }
 
+    /**
+     * Draw the entity like a player
+     */
     @Override
     public void render() {
-        // code that draws the entity as a player
+        // TODO!
     }
 
+    /**
+     * Make a noise - will probably remain empty.
+     */
     @Override
     public void makeNoise() {
-        // this will probably stay empty unless you
-        // want the player to make a noise
+        
+    }
+}
+
+#### Default methods in interfaces
+
+As a side note, you may be aware that Java interfaces can (after Java 8)
+have **default methods**. I don't like them, I think they go against
+the basic idea of interfaces. They let you write interfaces like this:
+```java
+public interface Appearance {
+    default void render() {
+        // add code to draw a "default" appearance
+    }
+    default void makeNoise() {
+        // probably leave this empty to make no noise
+        // by default
     }
 }
 ```
+Then we could write PlayerAppearance without *makeNoise* or *render*, and the class
+would use the default implementation in the interface.
+
+As I said, I don't like default methods. I think an interface should
+be exactly that: a description of what methods a class should have,
+with no actual "body code." However, they can make coding a lot easier
+sometimes - they let developers add new methods to an interface without
+breaking existing code. Naturally, this should never happen, but sometimes
+it does.
+
+It might seem that interfaces with default methods are just the same
+as abstract classes: both are classes in which some methods don't have
+any code. However, there are still differences:
+* abstract classes can have constructors, interfaces can't
+* abstract classes can have instance variables, interfaces can't.
 
 #### Making some entities
 
@@ -390,28 +497,19 @@ How can we limit the "cognitive load?"
 
 But it might be possible to let the Mover and Appearance link the 
 Entity in their constructors. Look at this alternative version of
-PlayerMover:
+PlayerMover's constructor:
 ```java
-public class PlayerMover implements Mover {
-    // the entity to which mover should move
-    private Entity entity;
-
-    // set up the mover, taking the entity we should
-    // be moving
+    /**
+     * Constructor: set the controlled entity to the
+     * parameter passed in, and also links the entity
+     * back to the mover by using setMover().
+     * @param e the entity to be controlled
+     */
     public PlayerMover(Entity e){
         entity = e;
-        // link the entity to me
+        // link the entity back to me
         e.setMover(this);
     }
-
-    // this is the implementation of Mover.move(), which
-    // moves the entity
-    @Override
-    public void move() {
-        // ... code that moves the entity based on mouse
-        // and keyboard, because this is a PlayerMover
-    }
-}
 ```
 This calls *setMover* inside the constructor, linking the Entity
 to the Mover itself. If we did a similar thing inside PlayerAppearance

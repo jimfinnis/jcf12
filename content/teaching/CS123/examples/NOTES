@@ -11,6 +11,22 @@ OO - what is it and what is it good for?
     A class is just a description of what a bunch of data which
     naturally goes together actually looks like.
     
+    Then show how an object looks in memory so we can show how
+    pointers work. Maybe point out that in Java, a variable can
+    only hold a number. That's all.
+    
+Examples in order:
+
+* objects, an introduction
+* references
+* how to debug! (Using the logger as an example?)
+* logger, part 1
+* a bit on inheritance and abstract classes?
+* logger, part 2
+* comp over inher
+* logger, part 3 (using the above)
+    
+    
 
 References (and sharing them doesn't copy)
 
@@ -21,3 +37,4 @@ Nulls
 Ongoing notes:
 Example 1 used to use "static", but I want to reserve that for a later
 example. I've kept the text in "static.md".
+

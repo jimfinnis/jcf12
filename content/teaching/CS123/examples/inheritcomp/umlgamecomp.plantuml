@@ -31,7 +31,7 @@ class PlayerMover {
     + move()
     - entity:Entity
 }
-PlayerMover -up-|> Mover
+PlayerMover .up.|> Mover
 'PlayerMover "1..1" --> "1..1" Entity
 
 class GuardMover {
@@ -39,7 +39,7 @@ class GuardMover {
     + move()
     - entity:Entity
 }
-GuardMover -up-|> Mover
+GuardMover .up.|> Mover
 'GuardMover "1..1" --> "1..1" Entity
 
 class GuardFastMover {
@@ -47,7 +47,7 @@ class GuardFastMover {
     + move()
     - entity:Entity
 }
-GuardFastMover -up-|> Mover
+GuardFastMover .up.|> Mover
 'GuardFastMover "1..1" --> "1..1" Entity
 
 class PlayerAppearance {
@@ -56,7 +56,7 @@ class PlayerAppearance {
     + render()
     - entity:Entity
 }
-PlayerAppearance -up-|> Appearance
+PlayerAppearance .up.|> Appearance
 'PlayerAppearance "1..1" --> "1..1" Entity
 
 class GuardAppearance {
@@ -65,7 +65,7 @@ class GuardAppearance {
     + render()
     - entity:Entity
 }
-GuardAppearance -up-|> Appearance
+GuardAppearance .up.|> Appearance
 'GuardAppearance "1..1" --> "1..1" Entity
 
 class GuardStealthAppearance {
@@ -74,7 +74,7 @@ class GuardStealthAppearance {
     + render()
     - entity:Entity
 }
-GuardStealthAppearance -up-|> Appearance
+GuardStealthAppearance .up.|> Appearance
 'GuardStealthAppearance "1..1" --> "1..1" Entity
 
 
