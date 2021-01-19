@@ -18,24 +18,34 @@ If an object needs to log information, you provide a reference to a
 Logger object as a parameter to its constructor. It then stores that reference as an instance
 variable, so it can use it whenever we need to log something:
 ```java
+/**
+ * A class which uses a logger provided to it in
+ * its constructor
+ */
 public class SomeClass {
 
-    // instance variable which holds a logger
+    /** instance variable which holds a logger */
     private Logger logger;
 
-    // constructor which takes a logger and stores it in an
-    // instance variable
+    /**
+     * Constructor which takes a reference to a logger
+     * and stores it in an instance variable
+     * @param logger
+     */
     public SomeClass(Logger logger) {
         this.logger = logger;
         logger.log(Logger.INFO,"SomeClass instance created");
     }
-    
-    // an example of a method which does logging
-    public void someMethod() {
+
+    /** a method which doesn't actually do anything - it's just
+     * an example showing how the logger instance variable might
+     * be used.
+     */
+    public void someMethod(){
         // .. insert code here to actually do something ..
 
-        // logs a message
-        logger.log(Logger.INFO,"SomeClass object did something");
+        // log a message
+        logger.log(Logger.INFO,"Did something");
     }
 }
 ```
@@ -51,7 +61,11 @@ that use them: the link is one way.
 
 Here is an example of how the logger might be used in a **Main** class:
 ```java
+/** Main class */
 public class Main {
+    /** Main method
+     * @param args command line arguments
+     */
     public static void main(String args[]){
         // create a logger
         Logger logger = new Logger();
@@ -68,16 +82,25 @@ At the moment, the Logger class itself doesn't do much except print the message.
 Here's the *log()* method (the entire
 class can be found [in the previous example]({{< relref "../logger1/#loggercode">}})):
 ```java
-    // the actual logging function, which prints a message
-    // to output if the severity of the message is higher or
-    // equal to the current severity level
-    
+    /**
+     * the actual logging method, which calls performLog - an abstract method -
+     * to do something with the message if the severity of the message
+     * is higher or equal to the current severity level
+     * @param severity
+     * @param message
+     * @throws IllegalArgumentException
+     */
+
     public void log(int severity,String message)
-                    throws IllegalArgumentException {
+            throws IllegalArgumentException {
+
         if(severity<INFO || severity>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
         }
         if(severity>=severityLevel) {
+            // if the severity of the message is greater than
+            // or equal to the current severity level, print
+            // the message
             System.out.println(message);
         }
     }
@@ -112,23 +135,53 @@ an abstract method called *performLog()* that will actually do this logging. How
 for *performLog()* - just the method signature:
 
 ```java
+/**
+ * This is the abstract logger class, which cannot be instantiated
+ * (you can't make one of these with "new"). Instead, create a subclass
+ * which extends this and provides code for the performLog()
+ * method.
+ */
 public abstract class Logger {
-    // these our the different severity codes
+    // these are the different severity codes as "public static final"
+    // values.
 
-    public static final int FATAL=4; // most severe
+    /** Most severe code - the error is fatal and the program
+      * will probably exit */
+    public static final int FATAL=4;
+    /** A serious error - the program will not work correctly */
     public static final int ERROR=3;
+    /** A warning - the program will work, but the user should be careful */
     public static final int WARN=2;
-    public static final int INFO=1;  // least severe
+    /** Information message, not an error */
+    public static final int INFO=1;
+    /** Debugging message */
+    public static final int DEBUG=0;
 
-    private int severityLevel=INFO; // the current severity level
+    /**
+     * The current severity level - messages with a LOWER severity
+     * will be ignored.
+     */
+    private int severityLevel=INFO;
 
-    // the actual logging function, which calls performLog in the subclass to
-    // actually do logging if the severity of the message is higher or
-    // equal to the current severity level
+    /**
+     * Constructor which does nothing, but it's good practice to have one.
+     */
+    public Logger(){
+    }
+
+    /**
+     * the actual logging method, which calls performLog - an
+     * abstract method -to do something with the message
+     * if the severity of the message is higher than or equal
+     * to the current severity level
+     * @param severity
+     * @param message
+     * @throws IllegalArgumentException
+     */
 
     public void log(int severity,String message)
-        throws IllegalArgumentException {
-        
+            throws IllegalArgumentException {
+
         if(severity<INFO || severity>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
         }
@@ -139,13 +192,20 @@ public abstract class Logger {
         }
     }
 
-    // this method must be implemented by concrete subclasses of Logger
-
+    /**
+     * this method must be implemented by concrete subclasses of Logger
+     * @param message
+     */
     protected abstract void performLog(String message);
 
-    // and we can use this to change the severity level.
+    /**
+     * Change the severity level - after this is called, messages
+     * of severity >= level will be logged.
+     * @param level
+     * @throws IllegalArgumentException
+     */
 
-    public void setSeverityLevel(int level)  throws IllegalArgumentException {
+    public void setSeverityLevel(int level) throws IllegalArgumentException {
         if(level<INFO || level>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
         }
@@ -159,16 +219,25 @@ just means "not abstract").
 Here's one which just prints the messages to the console, as the previous version did:
 
 ```java
+/**
+ * Console logger: prints logging messages the console
+ */
 public class ConsoleLogger extends Logger {
+    /**
+     * Method which does the actual logging,
+     * printing a message to the console.
+     * Called from log() in the superclass.
+     * @param message message to log
+     */
     @Override
     protected void performLog(String message) {
-        System.out.println(message);
+        System.out.println("Console Logger: "+message);
     }
 }
 ```
 
 Of course, we have to change our Main code - we can't create a Logger any more, we have to create
-concrete classes:
+concrete classes (I'm omitting the Javadoc on Main here, you know how it works):
 
 ```java
 public class Main {

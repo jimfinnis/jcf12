@@ -25,6 +25,10 @@ Our class is called **FileLogger** and it's a subclass of **Logger**, so we can 
 it:
 
 ```java
+/**
+ * File logger - logs messages to a file. Will write
+ * to disk on every call to log(), so don't call it to often.
+ */
 public class FileLogger extends Logger {
 ```
 
@@ -39,8 +43,10 @@ to write to the file.
 (Closing the file is rather more of a problem, and I'll come to that later.)
 
 ```java
-    // an object representing an open file we are writing log
-    // messages to
+    /**
+     * an object representing an open file we are writing log
+     * messages to
+     */
 
     FileWriter fw;
 ```
@@ -59,10 +65,15 @@ how to do that later.
 
 
 ```java
-    // create a new file logger, opening a file and storing
-    // a reference to it. This file will remain open for the
-    // entire run of the program - remember to close it at
-    // the end by calling close() on this logger.
+    /**
+     * create a new file logger, opening a file and storing
+     * a reference to it. This file will remain open for the
+     * entire run of the program - remember to close it at
+     * the end by calling close() on this logger.
+     *
+     * @param filename the name of the log file
+     * @throws IOException
+     */
 
     public FileLogger(String filename) throws IOException {
         super(); // call the superclass (Logger) constructor
@@ -84,9 +95,10 @@ We'll also have to handle a possible IOException again, but here I'll just print
 probably not a complete disaster if the close fails.
 
 ```java
-    // call this at the end of the program to close the output file
-    // and set it to null (so we can check it has been closed)
-
+    /**
+     * call this at the end of the program to close the output file
+     * and set it to null (so we can check it has been closed)
+     */
     public void close(){
         try {
             if (fw!=null) { // if file writer is opened
@@ -113,11 +125,17 @@ print the message we were trying to log to the console (it's better than nothing
 exception.
 
 ```
-    // actually perform the logging, writing the message to the open
-    // file and "flushing" the writer, to guarantee the message is
-    // stored on the disk. If we don't do this, and we forget to call
-    // shutdown(), the final messages might never make it into the
-    // actual disk file.
+    /**
+     * actually perform the logging, writing the message to the open
+     * file and "flushing" the writer, to guarantee the message is
+     * stored on the disk. If we don't do this, and we forget to call
+     * shutdown(), the final messages might never make it into the
+     * actual disk file.
+     *
+     * This is called by log() in the superclass.
+     *
+     * @param message
+     */
 
     @Override
     protected void performLog(String message) {

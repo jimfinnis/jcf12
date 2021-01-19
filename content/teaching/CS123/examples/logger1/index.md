@@ -29,11 +29,16 @@ just logging fatal errors most of the time.
 
 Each class could create a logger as a private instance variable:
 ```java
+/**
+ * A class which creates its own private logger
+ */
 public class SomeClass {
-    // create a private logger as an instance variable
+    /** create a private logger as an instance variable */
     private Logger logger = new Logger();
     
-    // and use it in the constructor
+    /**
+     * Constructor which uses the logger instance variable
+     */
     public SomeClass() {
         logger.log(Logger.INFO,"SomeClass instance created");
     }
@@ -57,24 +62,35 @@ We can do this by writing the constructor for SomeClass so
 that it takes a Logger as a parameter, which we can then store in
 an instance variable:
 ```java
+/**
+ * A class which uses a logger provided to it in
+ * its constructor
+ */
 public class SomeClass {
 
-    // instance variable which holds a logger
+    /** instance variable which holds a logger */
     private Logger logger;
 
-    // constructor which takes a logger and stores it in an
-    // instance variable
+    /**
+     * Constructor which takes a reference to a logger
+     * and stores it in an instance variable
+     * @param logger
+     */
     public SomeClass(Logger logger) {
         this.logger = logger;
         logger.log(Logger.INFO,"SomeClass instance created");
     }
-    
-    // a method which doesn't actually do anything - it's just
-    // an example showing how the logger instance variable might
-    // be used.
+
+    /** a method which doesn't actually do anything - it's just
+     * an example showing how the logger instance variable might
+     * be used.
+     */
     public void someMethod(){
+        // .. insert code here to actually do something ..
+
+        // log a message
         logger.log(Logger.INFO,"Did something");
-    }   
+    }
 }
 ```
 Note that I've had to say ```this.logger``` in the constructor because
@@ -87,7 +103,11 @@ the compiler "no, I really mean the *instance* variable" by putting
 
 We can now use SomeClass and Logger in another class - let's say Main:
 ```java
+/** Main class */
 public class Main {
+    /** Main method
+     * @param args command line arguments
+     */
     public static void main(String args[]){
         // create a logger
         Logger logger = new Logger();
@@ -155,40 +175,73 @@ level.
 Now we can write the Logger class:
 
 ```java
-public class Logger {
 
+/**
+ * This is the basic logger class given in the first Logger example.
+ * It has no flexibility, and only logs messages to the console.
+ * Use it by creating a Logger object and then calling its log() method.
+ * Typically, we will create a single Logger (perhaps in the Main class)
+ * and give pass all objects a reference to this, so they can access it.
+ */
+public class Logger {
     // these are the different severity codes as "public static final"
     // values.
-    
-    public static final int FATAL=4; // most severe
+
+    /** Most severe code - the error is fatal and the program
+      * will probably exit */
+    public static final int FATAL=4;
+    /** A serious error - the program will not work correctly */
     public static final int ERROR=3;
+    /** A warning - the program will work, but the user should be careful */
     public static final int WARN=2;
-    public static final int INFO=1;  // least severe
-    
-    private int severityLevel=INFO; // the current severity level
-    
-    // constructor does nothing - the severity level is already set
-    // above
-    
+    /** Information message, not an error */
+    public static final int INFO=1;
+    /** Debugging message */
+    public static final int DEBUG=0;
+
+    /**
+     * The current severity level - messages with a LOWER severity
+     * will be ignored.
+     */
+    private int severityLevel=INFO;
+
+    /**
+     * Constructor which does nothing, but it's good practice to have one.
+     */
     public Logger(){
     }
-    
-    // the actual logging method, which prints a message
-    // to output if the severity of the message is higher or
-    // equal to the current severity level
-    
+
+    /**
+     * the actual logging method, which calls performLog - an
+     * abstract method -to do something with the message
+     * if the severity of the message is higher than or equal
+     * to the current severity level
+     * @param severity
+     * @param message
+     * @throws IllegalArgumentException
+     */
+
     public void log(int severity,String message)
-                    throws IllegalArgumentException {
+            throws IllegalArgumentException {
+
         if(severity<INFO || severity>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
         }
         if(severity>=severityLevel) {
+            // if the severity of the message is greater than
+            // or equal to the current severity level, print
+            // the message
             System.out.println(message);
-        }   
+        }
     }
-    
-    // and we can use this to change the severity level.
-    
+
+    /**
+     * Change the severity level - after this is called, messages
+     * of severity >= level will be logged.
+     * @param level
+     * @throws IllegalArgumentException
+     */
+
     public void setSeverityLevel(int level) throws IllegalArgumentException {
         if(level<INFO || level>FATAL){
             throw new IllegalArgumentException("invalid severity level!");
