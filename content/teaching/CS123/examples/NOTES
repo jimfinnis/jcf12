@@ -17,7 +17,8 @@ OO - what is it and what is it good for?
     
 Examples in order:
 
-* objects, an introduction
+* objects, an introduction. Remember to talk about the Application class
+and associated object.
 * references
 * how to debug! (Using the logger as an example?)
 * logger, part 1
