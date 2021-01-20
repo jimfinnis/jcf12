@@ -2,9 +2,9 @@
 title = "Logging, Part 2: Changing behaviours with abstract classes" 
 summary = "Changing what the logger does by making it abstract and using subclasses"
 date=2020-12-14  # Add today's date.
-categories = ["example123"]
 weight = 101
 type = "example"
+hidden = true
 +++
 
 ## Introduction

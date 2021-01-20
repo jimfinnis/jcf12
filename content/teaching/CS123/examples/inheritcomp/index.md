@@ -3,8 +3,7 @@ title = "Favour composition over inheritance"
 summary = "Use 'has a' instead of 'is a' relationships"
 date=2020-12-14  # Add today's date.
 weight = 80
-categories = ["example123"]
-type = "example"
+hidden = true
 +++
 
 ## Introduction

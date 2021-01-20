@@ -33,3 +33,5 @@ happy with that solution, but putting stuff under examples automatically indexes
 it, and I can't see a way of avoiding that.
 
 
+NOTE THAT pages can be hidden from the examples list by setting "hidden=true" - I've
+modified layouts/_default/list.html to do this.
