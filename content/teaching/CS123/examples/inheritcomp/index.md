@@ -4,6 +4,7 @@ summary = "Use 'has a' instead of 'is a' relationships"
 date=2020-12-14  # Add today's date.
 weight = 80
 hidden = true
+type="example"
 +++
 
 ## Introduction

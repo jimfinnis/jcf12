@@ -4,14 +4,16 @@ summary="What are objects? What problems do they solve? How are classes and obje
 date=2021-01-19
 weight=-1
 #hidden=true
+type="example"
 +++
 
     
 ## What's the problem?
-Before I get to objects and classes, I'm going to talk about data
-structures - blocks of data in memory. The point of object oriented
+The point of object oriented
 code is to make it easier to organise your data (and the operations on
 them, but I'll come to that later).
+Before I get to objects and classes, I'm going to talk about data
+structures - blocks of data in memory. 
 
 Imagine that you are writing a game[^1] - let's say it's a very
 simple 2D game, with a player and some enemies. Each enemy has
@@ -48,7 +50,8 @@ int x3,y3;
 float hp3;
 int ammo3;
 ```
-and so on, but that would be very difficult to work with! And what if
+and so on, but that would be very difficult to work with. And what 
+happens if
 there are hundreds of enemies?
 
 We could try to solve it using **arrays** (at least, this is how
@@ -63,7 +66,9 @@ each enemy. Remember how arrays work: ```hp``` is now a block of 16 integers
 and we can (for example) get Enemy Zero's hit points with ```hp[0]```. This is
 workable, but still horrible - we have to make sure all the array sizes are
 the same, and it's difficult to manage data which is spread across lots of
-variables. We might want to call a function and pass all the enemy data
+variables. 
+
+More importantly, we might want to call a function and pass all the enemy data
 as an argument, and that would be very difficult here.
 
 ### The solution in C (from CS12020)
@@ -87,7 +92,9 @@ struct Enemy enemies[16];
 ```
 We can then refer to all the variables for Enemy Zero again as 
 ```enemies[0]```. For example, the hit points for this enemy will be
-```enemies[0].hp```. More importantly, we can use **pointers** to pass
+```enemies[0].hp```.
+
+Even better, we can use **pointers** to pass
 an entire block of data about an enemy into a function.
 
 ### References and pointers
@@ -98,20 +105,81 @@ address on the right:
 
 {{< svg src="struct1.svg" title="Data structure for an Enemy" >}}
 
+Here, the Enemy structure starts at the memory location 3. 
 Of course, a real computer has a lot more than 11 memory locations!
 
 We want to put our data structures into variables, so we can pass them
 into functions more conveniently, but we can't do that because the
 structures are too big. 
+Instead, we can **store the location of our data structure in memory**.
+Let's create a variable ```enemy``` to hold this address:
 
-Instead, we can store the location of our data structure in memory:
+{{< svg src="struct2.svg" title="Data structure for an Enemy" >}}
 
+The ```enemy``` variable is really just a number, but that number is 
+a memory location that holds our Enemy data. Here, Enemy is a
+**pointer** (you may remember this from CS12020 with Andy Starr).
+In the Java world we call this a **reference**.
 
+## Back to Java: instantiation
+Here is how we would define our data structure in Java:
+```java
+class Enemy {
+    public int x,y;
+    public float hp;
+    public int ammo;
+}
+```
+It's nearly the same: here it's called a **class** and there are
+"public" keywords before each field. These simply tell the compiler
+that the fields (we call often them *instance variables* in classes)
+can be seen by code outside the class itself. We'll see why that's
+necessary later on.
 
+But apart from those differences, this is exactly the same as a C struct.
+Here's how you would create an Enemy:
+```
+Enemy enemy = new Enemy();
+```
+This will:
+* allocate a block of memory big enough to hold the Enemy data, as specified
+in the class definition;
+* fill in default values for all the fields (instance variables) in that
+block;
+* return the memory address of the data - this is our **reference**;
+* store the reference in the "enemy" variable.
 
+### Objects, instances and instantiation
+When we use the "new" keyword like this we make a new **object** of
+the class, using the class as a kind of template. This object
+is sometimes called an **instance** of that class.
 
-We'll now return to Java. C has pointers, Java has references, but essentially
-they are the same thing: the location of some data in memory. 
+This process is called **instantiation** ("making an instance"),
+and what you get back
+from "new" is a **reference to an new object of that class**. In
+other words, a pointer to a bit of memory containing that object's data.
+
+When we use the name of the class ("Enemy") as the type of a variable,
+it means the variable is a reference to memory laid out according to
+that class definition.
+
+* A **class** is a blueprint or template for creating objects.
+* An **object** is an actual data structure in memory.
+* An **instance** of a class is any object which belongs to that class.
+
+All objects "belong" to the class which created them, so "Enemy" is the class,
+while the variable "enemy" holds a reference to an object of class "Enemy."
+
+## Summing up
+That's a lot of information, so let's sum up:
+* A **class** is a description of some data in memory (there's a bit more, but we'll come to that).
+You define a class in Java with the "class" keyword.
+* An **object** is the actual data in memory - an object is a member of
+a particular class.
+* An object of a class is sometimes called an **instance** of that class.
+* Using the "new" keyword **instantiates** a new object of a class.
+* Objects are referred to by **references**: values
+holding the location of an object in memory.
 
 
 [^1]: Most of my examples are from games. There are two reasons
