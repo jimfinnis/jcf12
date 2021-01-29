@@ -71,7 +71,7 @@ variables.
 More importantly, we might want to call a function and pass all the enemy data
 as single argument, like this:
 ```java
-updateEnemy(enemy);
+updateEnemy(anEnemy);
 ```
 and that would be very difficult here - we would have to write code like this:
 ```java
@@ -124,12 +124,12 @@ We want to put our data structures into variables, so we can pass them
 into functions more conveniently, but we can't do that because the
 structures are too big. 
 Instead, we can **store the location of our data structure in memory**.
-Let's create a variable ```enemy``` to hold this address:
+Let's create a variable ```myEnemy``` to hold this address:
 
 {{< svg src="struct2.svg" title="Data structure for an Enemy" >}}
 
-The ```enemy``` variable is really just a number, but that number is 
-a memory location that holds our Enemy data. Here, Enemy is a
+The ```myEnemy``` variable is really just a number, but that number is 
+a memory location that holds our Enemy data. Here, ```myEnemy``` is a
 **pointer** (you may remember this from CS12020 with Andy Starr).
 In the Java world we call this a **reference**.
 
@@ -150,15 +150,15 @@ necessary later on.
 
 Here's how you would create an Enemy:
 ```
-Enemy enemy = new Enemy();
+Enemy myEnemy = new Enemy();
 ```
-This will:
+This line of code will:
 * allocate a block of memory big enough to hold the Enemy data, as specified
 in the class definition;
 * fill in default values for all the fields (instance variables) in that
 block;
 * return the memory address of the data - this is our **reference**;
-* store the reference in the "enemy" variable.
+* store the reference in the ```myEnemy``` variable.
 
 ### Objects, instances and instantiation
 When we use the "new" keyword like this we make a new **object** which
@@ -179,11 +179,12 @@ that class definition.
 * An **instance** of a class is any object which belongs to that class.
 
 All objects "belong" to the class which created them, so "Enemy" is the class,
-while the variable "enemy" holds a reference to an object of class "Enemy."
+while the variable "myEnemy" holds a reference to an object of class "Enemy."
 
 ## Summing up
 That's a lot of information, so let's sum up:
-* A **class** is a description of some data in memory (there's a bit more, but we'll come to that).
+* A **class** is a description of a block of data in memory
+(there's a bit more, but we'll come to that).
 You define a class in Java with the "class" keyword.
 * An **object** is the actual data in memory - an object is a member of
 a particular class.
