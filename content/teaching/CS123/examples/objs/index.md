@@ -69,14 +69,25 @@ the same, and it's difficult to manage data which is spread across lots of
 variables. 
 
 More importantly, we might want to call a function and pass all the enemy data
-as an argument, and that would be very difficult here.
+as single argument, like this:
+```java
+updateEnemy(enemy);
+```
+and that would be very difficult here - we would have to write code like this:
+```java
+updateEnemy(x[0],y[0],hp[0],ammo[0]);
+```
+Even then, this code wouldn't be able to change
+the values of those variables once they were inside the updateEnemy
+function - they will be copied into local variables that belong to the
+function.
 
 ### The solution in C (from CS12020)
 I'm going to talk about how we might deal with this in C before I
 look at Java, partly because Java is descended from C.
 
 It would be good if we could bundle together all the variables that
-describe an enemy so that we could pass them in a single block.
+describe an enemy.
 You may have already learned that C provides a way of doing this:
 the **struct**. Here's what our Enemy would look like:
 ```c
@@ -95,13 +106,14 @@ We can then refer to all the variables for Enemy Zero again as
 ```enemies[0].hp```.
 
 Even better, we can use **pointers** to pass
-an entire block of data about an enemy into a function.
+an entire block of data about an enemy into a function. Java has something
+similar: **references**.
 
 ### References and pointers
-Java has a rule about variables: any variable can only occupy one memory location.
-Our "data structure" takes up four. A picture of the computer's memory
-might look like this, with the memory address on the left, and the contents of that
-address on the right:
+Java has a rule about variables: any variable can only occupy one memory
+location. Our "data structure" takes up four. A picture of the computer's
+memory might look like this, with the memory address on the left, and the
+contents of that address on the right:
 
 {{< svg src="struct1.svg" title="Data structure for an Enemy" >}}
 
@@ -136,7 +148,6 @@ that the fields (we call often them *instance variables* in classes)
 can be seen by code outside the class itself. We'll see why that's
 necessary later on.
 
-But apart from those differences, this is exactly the same as a C struct.
 Here's how you would create an Enemy:
 ```
 Enemy enemy = new Enemy();
@@ -150,8 +161,8 @@ block;
 * store the reference in the "enemy" variable.
 
 ### Objects, instances and instantiation
-When we use the "new" keyword like this we make a new **object** of
-the class, using the class as a kind of template. This object
+When we use the "new" keyword like this we make a new **object** which
+belongs to the class, using the class as a kind of template. This object
 is sometimes called an **instance** of that class.
 
 This process is called **instantiation** ("making an instance"),

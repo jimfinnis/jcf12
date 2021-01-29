@@ -1,6 +1,11 @@
 # SITE SETUP
 # Documentation: https://sourcethemes.com/academic/
 
+# If this is true, items which have "hidden" set to true will not
+# be shown in lists.
+
+hidethings = false
+
 ############################
 ## Theme
 ############################
