@@ -21,7 +21,7 @@ We can write blocks of code inside our classes which look very much
 like functions. However, we don't call them functions - we call them
 **methods** of the class they are inside. They are almost exactly like
 functions, but they have extra features. Here's what a method called
-``moveBy``` might look like inside the Enemy class:
+```moveBy``` might look like inside the Enemy class:
 ```java
 class Enemy {
     public int x,y;
