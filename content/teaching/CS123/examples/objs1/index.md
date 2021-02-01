@@ -2,12 +2,12 @@
 title="Objects and methods"
 summary="How are classes different from structs?"
 date=2021-01-19
-weight=1
+weight=3
 hidden=true
 type="example"
 +++
 
-[Last time]({{< relref "../objs/" >}}) we looked at **objects**, which are
+[Earlier]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
 blocks of data in memory, and **classes**, which describe how those blocks
 are made up.
 
