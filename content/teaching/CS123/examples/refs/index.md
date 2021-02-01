@@ -20,18 +20,19 @@ starting at address 3:
 Variables are really just named memory locations - and Java has a rule about them:
 a variable can only be one memory location in length.
 
-We want to put our data structures into variables, so we can pass them
-into functions more conveniently, but we can't do that because the
+We want to put our data structures into single variables so we can manipulate them
+conveniently - for example passing them into and out of functions -
+but we can't do that because the
 structures are too big. 
-Instead, we can **store the location of our data structure in memory**.
-Let's create a variable ```myEnemy``` to hold this address:
+Instead, we can store the **location** of our data structure in a variable.
+Let's create a variable ```myEnemy``` to hold this location:
 
 {{< svg src="struct2.svg" title="Object in memory referenced by a variable" >}}
 
 The ```myEnemy``` variable is really just a number, but that number is 
 a memory location that holds our Enemy data. Here, ```myEnemy``` is a
-**pointer** (you may remember this from CS12020 with Andy Starr).
-In the Java world we call this a **reference**.
+**reference**. You may remember this from CS12020 with Andy Starr that
+a similar concept in C is called a "pointer."
 
 ## Back to Java: instantiation
 
@@ -68,13 +69,6 @@ that class definition.
 All objects "belong" to the class which created them, so "Enemy" is the class,
 while the variable "myEnemy" holds a reference to an object of class "Enemy."
 
-## Summing up
-That's a lot of information, so let's sum up:
-* A **class** is a description of a block of data in memory
-(there's a bit more, but we'll come to that).
-You define a class in Java with the "class" keyword.
-* An **object** is the actual data in memory - an object is a member of
-a particular class.
 * An object of a class is sometimes called an **instance** of that class.
 * Using the "new" keyword **instantiates** a new object of a class.
 * Objects are referred to by **references**: values

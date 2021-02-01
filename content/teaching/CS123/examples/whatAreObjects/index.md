@@ -79,6 +79,8 @@ struct Enemy {
     int ammo;
 };
 ```
+This code describes what the data for an enemy should look like, how it should be
+structured. That's why we call it a "data structure."
 We can then define an array of enemies:
 ```c
 struct Enemy enemies[16];
@@ -118,12 +120,13 @@ You'll see that four memory locations starting at location 3 are reserved for
 our object, and the class definition in your program gives the meaning of each location.
 Of course, a real computer has a lot more than 11 memory locations!
 
-### References and pointers
-Variables are named memory locations - and Java has a rule about them.
-A variable can only be one memory
-location. Our "data structure" takes up four. In the example above,
-the Enemy structure starts at the memory location 3. 
-
+## Summing up
+* A **class** is a description of the structure of a block of data in memory
+(there's a bit more, but we'll come to that). Think of a class as a sort of template
+for data, but no actual data.
+You define a class in Java with the "class" keyword.
+* An **object** is the actual data in memory - an object is a member of
+a particular class, and the class describes what the raw data in memory "means."
 
 
 [^1]: Most of my examples are from games. There are two reasons
