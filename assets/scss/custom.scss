@@ -81,6 +81,17 @@ code {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
+.todo-header {
+    color: #ccff66;
+    font-size:80%;
+}
+
+.todo {
+    background-color: #0f7173;
+    color: #e7ecef;
+    padding: 20px;
+}
+
 .spoiler-container {
     padding-bottom: 20px;
 }
@@ -105,4 +116,11 @@ code {
     background-color: #446;
     color: #fed;
     padding: 5px;
+}
+
+
+.important {
+    border: 2px solid black;
+    padding: 5px;
+    margin: 10px 0 10px 0;
 }

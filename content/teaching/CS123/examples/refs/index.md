@@ -7,6 +7,11 @@ hidden=true
 type="example"
 +++
 
+{{< todo >}}
+Quizzes / try-yourself counter examples
+{{< /todo >}}
+
+
 ## References are pointers
 [Last time]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
 blocks of data in memory, and **classes**, which describe how those blocks
@@ -18,7 +23,8 @@ starting at address 3:
 {{< svg src="struct1.svg" title="an Enemy object in memory" >}}
 
 Variables are really just named memory locations - and Java has a rule about them:
-a variable can only be one memory location in length.
+a variable can only be one memory location in length. **So how can we store an object
+in a variable?**
 
 We want to put our data structures into single variables so we can manipulate them
 conveniently - for example passing them into and out of functions -
@@ -33,6 +39,37 @@ The ```myEnemy``` variable is really just a number, but that number is
 a memory location that holds our Enemy data. Here, ```myEnemy``` is a
 **reference**. You may remember this from CS12020 with Andy Starr that
 a similar concept in C is called a "pointer."
+
+{{< todo >}}
+Check over the basic information below.
+{{< /todo >}}
+
+What is the name of the type of a reference? We need to know this to declare
+a reference. It's just the name of the class. So if we do
+```java
+Enemy e;
+```
+we are declaring ```e``` to be a variable which can hold a reference
+to an Enemy object, just like if we do
+```
+int x;
+```
+we are declaring ```x``` to be a variable which can hold an integer.
+
+{{< important >}}
+Remember, **we are not saying that ```e``` is an Enemy, we are saying
+that ```e``` is a reference to an enemy**. This is a really important
+point.
+{{< /important >}}
+
+Quite often in programming
+experienced programmers look at code like
+```Enemy e;```
+and say "this means ```e``` is an Enemy," but that's because it takes
+too long to say "this means ```e``` is a reference to an object of
+class Enemy." We're lazy like that.
+
+
 
 ## Back to Java: instantiation
 

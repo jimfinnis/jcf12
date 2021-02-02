@@ -42,7 +42,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="125.00307"
+     inkscape:cx="156.5867"
      inkscape:cy="93.370842"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -320,7 +320,8 @@
          sodipodi:role="line"
          id="tspan4221"
          x="-25.457642"
-         y="184.96223">3</tspan></text>
+         y="184.96223"
+         style="font-weight:bold">3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -408,7 +409,8 @@
          sodipodi:role="line"
          id="tspan4222"
          x="67.886337"
-         y="335.55252">3</tspan></text>
+         y="335.55252"
+         style="font-weight:bold">3</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
        d="m 92.827409,320.79625 c 0,0 53.972731,-59.07942 55.194351,-95.95939 0.51516,-15.55271 -20.54714,-41.91878 -20.54714,-41.91878"
@@ -472,6 +474,8 @@
          sodipodi:role="line"
          x="170"
          y="262.9873"
-         id="tspan4937">it is a reference</tspan></text>
+         id="tspan4937">it is a <tspan
+   style="font-weight:bold"
+   id="tspan4215">reference</tspan>.</tspan></text>
   </g>
 </svg>
