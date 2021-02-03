@@ -1,6 +1,5 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 <script>
-    var choices = "{{ .Get "choices"}}".split(",");
     var id = "{{with .Parent }}{{.Get 0}}{{ end }}";
     var question = "{{ .Inner | markdownify | emojify }}";
     var hint = "{{ .Get "hint"}}";
@@ -8,6 +7,7 @@
     if (! (id in questions)){
       questions[id] = [];
     }
-    questions[id].push(new Question(question, choices, answers, hint));
+    questions[id].push(new Question(question, questionchoices, answers, hint));
+    questionchoices=[]
 </script>
 

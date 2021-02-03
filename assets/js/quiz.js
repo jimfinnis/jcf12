@@ -3,6 +3,8 @@
 
 var questions = {}
 
+var questionchoices = []
+
 
 /**
  * Quiz
