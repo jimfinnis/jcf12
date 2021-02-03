@@ -7,22 +7,20 @@ type="example"
 topscripts=["js/quiz.js"]
 +++
 
-# Hugo Quiz
+{{<spoiler text="Click to open quiz">}}
 
-Here is a simple example of a quiz, written in markdown using hugo shortcodes
-
-## Quiz header
+The image below shows some data in memory. Don't worry if you don't quite
+understand all of it, although you might want to think about what it could mean.
+{{< svg src="quiz1.svg" title="a Person object in memory" >}}
 
 {{< quiz test_quiz >}}
 
 {{< qitem 
-    answers="2" 
-    choices="tim,tom,carl"
-    hint="Tom's name is tom..."
+    answers="1" 
+    choices="It is a local integer variable,It is an instance variable of a Person"
+    hint=""
 >}}
-What is Tom's name?
-{{< svg src="struct1.svg" title="an Enemy object in memory" >}}
-
+What is the value "5" stored at location 1?
 {{</qitem>}}
 
 
@@ -46,3 +44,4 @@ Bigger numbers?
 
 Click on the `submit` button to see the result.
 
+{{</spoiler>}}

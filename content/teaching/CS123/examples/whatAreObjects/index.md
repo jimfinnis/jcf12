@@ -5,6 +5,7 @@ date=2021-01-19
 weight=1
 hidden=true
 type="example"
+topscripts=["js/quiz.js"]
 +++
 
 {{< todo >}}
