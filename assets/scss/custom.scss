@@ -128,12 +128,14 @@ code {
 
 .quiz fieldset {
     border:solid;
+    border-top: solid;
     border-color: black;
     border-width: 2px;
     margin-bottom: 1em;
+    background-color: #eee;
 }
 
-.quiz legend {
+.quiz p {
     font-size: 120%;
     font-weight: bold;
     padding-left: 15px;

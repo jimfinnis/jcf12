@@ -2,7 +2,7 @@
 <script>
     var choices = "{{ .Get "choices"}}".split(",");
     var id = "{{with .Parent }}{{.Get 0}}{{ end }}";
-    var question = "{{ .Get "question"}}";
+    var question = "{{ .Inner | markdownify | emojify }}";
     var hint = "{{ .Get "hint"}}";
     var answers = {{ .Get "answers"}}.split(",").map(Number);
     if (! (id in questions)){

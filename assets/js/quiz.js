@@ -234,7 +234,7 @@ Question.prototype.getOptions = function() {
  */
 Question.prototype.render = function() {
     var fieldset = document.createElement("fieldset"),
-        legend = document.createElement("legend"),
+        legend = document.createElement("p"),  // JCF - was "legend"
         self = this;
 
     fieldset.id = this.uid;
