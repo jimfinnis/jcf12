@@ -14,8 +14,8 @@ Quizzes / try-yourself counter examples
 
 ## References are pointers
 [Last time]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
-blocks of data in memory, and **classes**, which describe how those blocks
-are made up.
+blocks of data in memory, and **classes**, which describe the structure
+of those blocks.
 
 Look at this example, in which our object occupies four memory locations
 starting at address 3:

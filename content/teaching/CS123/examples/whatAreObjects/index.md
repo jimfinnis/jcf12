@@ -115,9 +115,11 @@ necessary later on.
 We often call the fields *instance variables* in classes, and we'll
 see why later.
 
+{{< important >}}
 A **class** is a description of a data structure and operations on it (the things
 it can do). We'll talk about the operations later. An **object** is some data
 made from that description. 
+{{< /important >}}
 
 It can be helpful to think about what is actually going on inside the
 computer, so here's an example of what this might look like inside the
@@ -134,7 +136,10 @@ location a meaning.
 
 {{< svg src="struct1.svg" title="an Enemy object in memory" >}}
 
-Of course, a real computer has a lot more than 11 memory locations!
+Remember, what's written in the pink box on the right ("int x, int y" and so
+on) is not part of the computer's memory - these are just labels your program
+gives to different locations in memory. Variables, in other words. Of course,
+a real computer has a lot more than 11 memory locations!
 
 ## Summing up
 * A **class** is a description of the structure of a block of data in memory
@@ -147,6 +152,10 @@ a particular class, and the class describes what the raw
 data in the object's memory "means."
 * Each class can have many objects, but each object belongs to only
 one class.
+
+
+
+
 
 [Next]({{< relref "../refs/" >}}) we'll look at **references**,
 which are how objects can link to and even "contain" other objects.
