@@ -1,6 +1,8 @@
 <div class="quiz" id="{{ .Get 0}}">
 {{ .Inner }}
 <script>
-var quiz = new Quiz("{{ .Get 0}}", questions);
+var quiz = new Quiz("{{ .Get 0}}")
+postmsggood = defltpostmsggood
+postmsgbad= defltpostmsgbad
 </script>
 </div>

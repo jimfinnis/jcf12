@@ -94,10 +94,12 @@ code {
 
 .spoiler-container {
     padding-bottom: 20px;
+    
 }
 
 .spoiler {
     background-color: $sta-alert-code-bg;
+    padding:5px;
     display: none;
 }
 
@@ -125,6 +127,15 @@ code {
     margin: 10px 0 10px 0;
 }
 
+.dark .quiz fieldset {
+    background-color: #667;
+    
+}
+
+
+.quiz input[type=checkbox] {
+    transform: scale(1.5);
+}
 
 .quiz fieldset {
     border:solid;
@@ -154,7 +165,7 @@ code {
 .quiz label {
     margin-left: 15px;
     display: block;
-    font-size:1.25rem;
+    font-size:100%;
     line-height: 1.75em;
 }
 
@@ -165,7 +176,8 @@ code {
 }
 
 .quiz input[type="submit"] {
-    background: black;
+    border:solid;
+    background: #aaa;
     color: white;
     display: block;
     font-weight: bold;

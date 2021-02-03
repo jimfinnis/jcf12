@@ -5,6 +5,12 @@ var questions = {}
 
 var questionchoices = []
 
+var defltpostmsggood = "Well done."
+var defltpostmsgbad = "Try again."
+
+var postmsggood = defltpostmsggood
+var postmsgbad= defltpostmsgbad
+
 
 /**
  * Quiz
@@ -15,6 +21,8 @@ var questionchoices = []
 function Quiz(id) {
     this.id = id;
     this.questions = questions[id];
+    this.postmsggood = postmsggood
+    this.postmsgbad = postmsgbad
     this.create();
 }
 
@@ -123,7 +131,16 @@ Quiz.prototype.submit = function() {
  * @param {integer} wrong
  */
 function Result(missing, right, wrong) {
-    this.html = document.createElement("table");
+    var table = document.createElement("table");
+    this.html = document.createElement("div");
+    var txt=postmsgbad
+    
+    if(missing==0 && wrong==0){
+        txt=postmsggood
+    }
+    
+    this.html.appendChild(document.createTextNode(txt))
+    this.html.appendChild(table)
 
     var icons = [
       '<i class="fas fa-circle-notch"></i>',
@@ -148,7 +165,7 @@ function Result(missing, right, wrong) {
         // tr.appendChild(score);
     }
 
-    this.html.appendChild(tr);
+    table.appendChild(tr);
 }
 
 
