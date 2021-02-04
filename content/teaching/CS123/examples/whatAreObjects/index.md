@@ -162,7 +162,7 @@ understand all of it, although you might want to think about the meaning of the
 parts you don't understand.
 {{< svg src="quiz1.svg" title="a Person object in memory" >}}
 
-{{<quiz test_quiz>}}
+{{<quiz quiz1>}}
 
 {{<postmsgbad>}}
 Try again - I've added hints to the questions you got wrong.
@@ -170,7 +170,7 @@ Try again - I've added hints to the questions you got wrong.
 
 
 {{<postmsggood>}}
-Well done - and you worked out that the data stored at location 3 is a String object.
+Well done - and you worked out that the data stored at location 5 is a String object.
 I've designed my version of the String object as an integer instance variable (the length of the string)
 followed by memory containing the characters:
 * **3** : the length of the string
@@ -204,8 +204,8 @@ What is the value stored at location 1?
 
 {{<choice "It is a local integer variable">}}
 {{<choice "It is an integer instance variable in a Person object">}}
-{{<choice "It is a reference to a Person object at location 5">}}
-{{<choice "It is a reference to a String object at location 5">}}
+{{<choice "It is an instance variable, a reference to a Person object at location 5">}}
+{{<choice "It is an instance variable, a reference to a String object at location 5">}}
 {{<question answers="4" hint="Look at the type of this location, and think what that actually is.">}}
 What is the meaning of the value 5 at address 3?
 {{</question>}}

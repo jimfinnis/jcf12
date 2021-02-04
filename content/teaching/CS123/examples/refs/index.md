@@ -5,6 +5,7 @@ date=2021-02-01
 weight=2
 hidden=true
 type="example"
+topscripts=["js/quiz.js","js/slides.js"]
 +++
 
 {{< todo >}}
@@ -12,7 +13,7 @@ Quizzes / try-yourself counter examples
 {{< /todo >}}
 
 
-## References are pointers
+## References to objects
 [Last time]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
 blocks of data in memory, and **classes**, which describe the structure
 of those blocks.
@@ -40,12 +41,12 @@ a memory location that holds our Enemy data. Here, ```myEnemy``` is a
 **reference**. You may remember this from CS12020 with Andy Starr that
 a similar concept in C is called a "pointer."
 
-{{< todo >}}
-Check over the basic information below.
-{{< /todo >}}
-
+### The type of a reference  
 What is the name of the type of a reference? We need to know this to declare
-a reference. It's just the name of the class. So if we do
+a reference as a variable, either as a local variable or an instance
+variable inside a class. 
+
+The answer is easy: the type is just the name of the class. So if we do
 ```java
 Enemy e;
 ```
@@ -69,35 +70,43 @@ and say "this means ```e``` is an Enemy," but that's because it takes
 too long to say "this means ```e``` is a reference to an object of
 class Enemy." We're lazy like that.
 
+## Instantiation
 
-
-## Back to Java: instantiation
-
-Here's how you would create an Enemy:
-```
+Now that we know how to declare a variable with a reference type,
+here's how you would create an Enemy object and store it in such a variable:
+```java
 Enemy myEnemy = new Enemy();
 ```
-This line of code will:
-* allocate a block of memory big enough to hold the Enemy data, as specified
+This line of code declares a variable ```myEnemy``` of type ```Enemy```, which
+is a reference to an Enemy object. When the line runs, 
+``new Enemy()`` does all the following:
+* allocates a block of memory big enough to hold the Enemy data as specified
 in the class definition;
-* fill in default values for all the fields (instance variables) in that
+* fills in default values for all the fields (instance variables) in that
 block;
-* return the memory address of the data - this is our **reference**;
-* store the reference in the ```myEnemy``` variable.
+* runs the *constructor* of the Enemy class on the new object (this is some code
+we can write to do additional setup on new objects);
+* returns the memory address of the data - this is our **reference**.
+
+The following set of images shows the entire sequence - click to see each one:
+{{<slides "s0">}}
+inst1.svg$We have our local variable ```myEnemy```, but it contains nothing yet. 
+inst2.svg$```new Enemy()``` has allocated a block of memory large enough to hold our Enemy object, but it contains nothing.
+inst3.svg$```new Enemy()``` has initialised the instance variables to their default values.
+inst4.svg$```new Enemy()``` has run the constructor for ```Enemy```, which has done some extra stuff (we'll come to constructors later)
+inst5.svg$```new Enemy()``` has returned a reference to the newly created object (3). It has been stored in ```myEnemy```.
+{{</slides>}}
 
 ### Objects, instances and instantiation
 When we use the "new" keyword like this we make a new **object** which
 belongs to the class, using the class as a kind of template. This object
-is sometimes called an **instance** of that class.
+is sometimes called an [instance](https://www.thefreedictionary.com/instance)
+of that class.
 
 This process is called **instantiation** ("making an instance"),
 and what you get back
 from "new" is a **reference to an new object of that class**. In
 other words, a pointer to a bit of memory containing that object's data.
-
-When we use the name of the class ("Enemy") as the type of a variable,
-it means the variable is a reference to memory laid out according to
-that class definition.
 
 * A **class** is a blueprint or template for creating objects.
 * An **object** is an actual data structure in memory.
@@ -106,6 +115,35 @@ that class definition.
 All objects "belong" to the class which created them, so "Enemy" is the class,
 while the variable "myEnemy" holds a reference to an object of class "Enemy."
 
+{{<spoiler text="Click to show (or hide) another quick quiz">}}
+{{<quiz quiz1>}}
+
+{{<choice "Enemy">}}
+{{<choice "myEnemy">}}
+{{<choice "3">}}
+{{<choice "8">}}
+{{<question answers="1" hint="Remember, the class is the kind of object we are making.">}}
+In the code below, what is the name of the class?
+```java
+Enemy myEnemy = new Enemy();
+```
+{{</question>}}
+
+{{<choice "myEnemy">}}
+{{<choice "int">}}
+{{<choice "reference to an Enemy">}}
+{{<choice "reference to a String">}}
+{{<question answers="3" hint="It is a reference, but it is written as just Enemy">}}
+In the code below, what is the type of the variable ```myEnemy```?
+```java
+Enemy myEnemy = new Enemy();
+```
+{{</question>}}
+
+{{</quiz>}}
+{{</spoiler>}}
+
+## Summing up
 * An object of a class is sometimes called an **instance** of that class.
 * Using the "new" keyword **instantiates** a new object of a class.
 * Objects are referred to by **references**: values

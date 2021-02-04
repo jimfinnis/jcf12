@@ -1,0 +1,22 @@
+{{ $id := .Get 0 }}
+
+<script>
+var slidestmp = {{ .Inner | markdownify}}.trim().split("\n")
+slides=[]
+slidecaptions=[]
+for(const s of slidestmp){
+    dat = s.trim().split('$') // each line is image$caption
+    slides.push(dat[0])
+    slidecaptions.push(dat[1])
+}
+slidesets[{{$id}}] = new Slides({{$id}},slides,slidecaptions)
+</script>
+
+<figure id={{$id}}>
+<img src="" alt="" class="slideimg" onclick="slidesets[{{$id}}].next()"/>
+<div class="slidect"></div>
+<figcaption class="slidecap">
+</figure>
+
+<script>slidesets[{{$id}}].next()</script>
+
