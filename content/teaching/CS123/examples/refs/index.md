@@ -52,7 +52,7 @@ Enemy e;
 ```
 we are declaring ```e``` to be a variable which can hold a reference
 to an Enemy object, just like if we do
-```
+```java
 int x;
 ```
 we are declaring ```x``` to be a variable which can hold an integer.
@@ -70,6 +70,8 @@ and say "this means ```e``` is an Enemy," but that's because it takes
 too long to say "this means ```e``` is a reference to an object of
 class Enemy." We're lazy like that.
 
+
+
 ## Instantiation
 
 Now that we know how to declare a variable with a reference type,
@@ -83,7 +85,8 @@ is a reference to an Enemy object. When the line runs,
 * allocates a block of memory big enough to hold the Enemy data as specified
 in the class definition;
 * fills in default values for all the fields (instance variables) in that
-block;
+block (unlike local variables, instance variables don't have to be given values
+to before they are used, although you really should);
 * runs the *constructor* of the Enemy class on the new object (this is some code
 we can write to do additional setup on new objects);
 * returns the memory address of the data - this is our **reference**.

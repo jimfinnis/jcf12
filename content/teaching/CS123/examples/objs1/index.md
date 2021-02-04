@@ -2,7 +2,7 @@
 title="Objects and methods"
 summary="How are classes different from structs?"
 date=2021-01-19
-weight=3
+weight=10
 hidden=true
 type="example"
 +++
