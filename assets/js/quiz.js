@@ -5,8 +5,8 @@ var questions = {}
 
 var questionchoices = []
 
-var defltpostmsggood = "Well done."
-var defltpostmsgbad = "Try again."
+var defltpostmsggood = ""
+var defltpostmsgbad = ""
 
 var postmsggood = defltpostmsggood
 var postmsgbad= defltpostmsgbad
@@ -119,9 +119,14 @@ Quiz.prototype.submit = function() {
         }
     }
     right = this.getQuestions().length - wrong - missing  
-
+    
+    if(this.getQuestions().length == right){
+        this.resultText = this.postmsggood
+    }else{
+        this.resultText = this.postmsgbad
+    }
     // show result
-    var result = new Result(missing, right, wrong).render(this.id);
+    var result = new Result(missing, right, wrong).render(this);
 };
 
 
@@ -131,22 +136,15 @@ Quiz.prototype.submit = function() {
  * @param {integer} wrong
  */
 function Result(missing, right, wrong) {
-    var table = document.createElement("table");
-    this.html = document.createElement("div");
-    var txt=postmsgbad
+    this.html = document.createElement("table");
     
-    if(missing==0 && wrong==0){
-        txt=postmsggood
-    }
-    
-    this.html.appendChild(document.createTextNode(txt))
-    this.html.appendChild(table)
-
     var icons = [
       '<i class="fas fa-circle-notch"></i>',
       '<i class="fas fa-check"></i>',
       '<i class="fas fa-times"></i>'
     ]
+    
+    
 
     var labels = ["Missing", "Right", "Wrong"],
         tr = document.createElement("tr");
@@ -165,18 +163,25 @@ function Result(missing, right, wrong) {
         // tr.appendChild(score);
     }
 
-    table.appendChild(tr);
+    this.html.appendChild(tr);
 }
 
 
-Result.prototype.render = function(id) {
-    var root = document.getElementById(id)
-    var old = root.getElementsByTagName("table")[0]
+Result.prototype.render = function(quiz) {
+    var root = document.getElementById(quiz.id)
+    var old = root.getElementsByClassName("quiz-results-block")[0]
     if (old) {
         root.removeChild(old);
     }
-    root.appendChild(this.html);
-    return this;
+    
+    var block = document.createElement("div")
+    block.className="quiz-results-block"
+    block.innerHTML=quiz.resultText
+    
+    root.appendChild(block)
+    block.appendChild(this.html)
+    
+    return block;
 };
 
 
@@ -253,12 +258,13 @@ Question.prototype.getOptions = function() {
  */
 Question.prototype.render = function() {
     var fieldset = document.createElement("fieldset"),
-        legend = document.createElement("p"),  // JCF - was "legend"
+        legend = document.createElement("div"),  // JCF - was "legend"
         self = this;
-
+        
     fieldset.id = this.uid;
 
     legend.innerHTML = this.question;
+    legend.className = "quiz-question";
 
     fieldset.appendChild(legend);
 

@@ -8,10 +8,6 @@ type="example"
 topscripts=["js/quiz.js"]
 +++
 
-{{< todo >}}
-Quizzes / try-yourself counter examples
-{{< /todo >}}
-    
 ## What's the problem?
 Remember that all computer programs are **descriptions of data** and
 **operations on data**.
@@ -166,8 +162,24 @@ understand all of it, although you might want to think about the meaning of the
 parts you don't understand.
 {{< svg src="quiz1.svg" title="a Person object in memory" >}}
 
-{{<postmsg good="Not bad!" bad="oops.">}}
 {{<quiz test_quiz>}}
+
+{{<postmsgbad>}}
+Try again - I've added hints to the questions you got wrong.
+{{</postmsgbad>}}
+
+
+{{<postmsggood>}}
+Well done - and you worked out that the data stored at location 3 is a String object.
+I've designed my version of the String object as an integer instance variable (the length of the string)
+followed by memory containing the characters:
+* **3** : the length of the string
+* **A, n, n** : the characters
+
+This isn't how strings are really stored - I don't actually
+know how Java does it, but I'm sure it's a lot more complicated than this!
+{{</postmsggood>}}
+
 
 {{<choice "It is an object of class Person">}}
 {{<choice "It is the Person class">}}
@@ -198,6 +210,7 @@ What is the value stored at location 1?
 What is the meaning of the value 5 at address 3?
 {{</question>}}
 
+{{</quiz>}}
 {{</spoiler>}}
 
 
