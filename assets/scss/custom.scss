@@ -26,14 +26,16 @@ pre {
 
 .dark code {
   font-family: $sta-font-mono, monospace;
-  color: #ddd;
-  background-color: $sta-alert-code-dark-bg;
+/*  color: #ddd;
+  background-color: $sta-alert-code-dark-bg; */
+    background-color: inherit;
 }
 
 code {
   font-family: $sta-font-mono, monospace;
-/*  color: #222; */
-  background-color: $sta-alert-code-bg;
+/*  color: #222; 
+  background-color: $sta-alert-code-bg; */
+    background-color: inherit;
 }
 
 .card-simple {
@@ -107,6 +109,15 @@ code {
     background-color: $sta-alert-code-dark-bg;
     display: none;
 }
+
+.spoiler blockquote {
+    color: #555;
+}
+
+.dark .spoiler blockquote {
+    color: #ccc;
+}
+
 
 .spoiler-link {
     background-color: #888;

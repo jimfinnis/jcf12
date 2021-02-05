@@ -14,7 +14,7 @@ topscripts=["js/quiz.js","js/slides.js"]
 variables containing "pointers" to objects. We can also
 put these references inside objects. Look at this class definition:
 ```java
-class Room {
+public class Room {
     public String text;
     
     public Room north;
@@ -159,7 +159,9 @@ Pay careful attention to steps 4 and 5. Let's look at step 4 in more detail - th
 hall.east = tower;
 ```
 * Remember that the ```tower``` variable is just a number - a location in memory. In our diagram, it has the value 7.
-* ```hall.east``` says "the variable you want is the "east" field inside the object pointed to by the ```hall``` reference." Here, the dot "." **dereferences** the
+* ```hall.east``` says "the variable you want is the ```east``` field
+inside the object pointed to by the ```hall``` reference."
+Here, the dot "." **dereferences** the
 reference, so we can see the fields inside the object it points to.
 * We then copy the value of ```tower``` into this variable - the ```east``` variable of the object indicated by ```hall```.
 * Now both ```tower``` and ```hall.east``` have the same value, so if you go east from "The Hall", the room you arrive in is the one indicated by ```tower```.
@@ -195,4 +197,8 @@ One last small change: we might have objects of classes other than Room, so we'l
 Here is the same thing as an object diagram, of the kind you have seen before:
 
 {{< figure src="obj.png" title="Object diagram" >}}
+
+{{< todo >}}
+Quiz
+{{< /todo >}}
 
