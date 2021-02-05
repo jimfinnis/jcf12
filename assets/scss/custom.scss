@@ -32,7 +32,7 @@ pre {
 
 code {
   font-family: $sta-font-mono, monospace;
-  color: #222;
+/*  color: #222; */
   background-color: $sta-alert-code-bg;
 }
 
@@ -133,7 +133,8 @@ code {
 }
 
 .slidect {
-    font-size:0.76rem;
+    background-color: #88a;
+    color:#fff;
     text-align:center;
 }   
     

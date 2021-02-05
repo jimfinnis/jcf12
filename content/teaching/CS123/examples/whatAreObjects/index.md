@@ -97,7 +97,7 @@ enemy: for example, the hit points for this enemy will be
 ### Objects and classes
 Here is how we would define our data structure in Java:
 ```java
-class Enemy {
+public class Enemy {
     public int x,y;
     public float hp;
     public int ammo;
@@ -109,7 +109,7 @@ that the fields
 can be seen by code outside the class itself. We'll see why that's
 necessary later on.
 
-We often call the fields *instance variables* in classes, and we'll
+Java documentation often calls the fields *instance variables* in classes, and we'll
 see why later.
 
 {{< important >}}
@@ -142,7 +142,7 @@ a real computer has a lot more than 11 memory locations!
 * A **class** is a description of the structure of a block of data in memory
 (there's a bit more, but we'll come to that). Think of a class as a sort of template
 for data, but no actual data: it describes what data will be in the
-objects and what type each data element (instance variable) has.
+objects and what type each data element (field) has.
 You define a class in Java with the "class" keyword.
 * An **object** is the actual data in memory. Each object belongs to
 a particular class, and the class describes what the raw
@@ -171,7 +171,7 @@ Try again - I've added hints to the questions you got wrong.
 
 {{<postmsggood>}}
 Well done - and you worked out that the data stored at location 5 is a String object.
-I've designed my version of the String object as an integer instance variable (the length of the string)
+I've designed my version of the String object as an integer field (the length of the string)
 followed by memory containing the characters:
 * **3** : the length of the string
 * **A, n, n** : the characters
@@ -196,16 +196,16 @@ What is the pink box on the right hand side?
 {{</question>}}
 
 {{<choice "It is a local integer variable">}}
-{{<choice "It is an instance variable in a Person object">}}
+{{<choice "It is a field in a Person object">}}
 {{<question answers="2" hint="What is this value inside?">}}
 What is the value stored at location 1?
 {{</question>}}
 
 
 {{<choice "It is a local integer variable">}}
-{{<choice "It is an integer instance variable in a Person object">}}
-{{<choice "It is an instance variable, a reference to a Person object at location 5">}}
-{{<choice "It is an instance variable, a reference to a String object at location 5">}}
+{{<choice "It is an integer field in a Person object">}}
+{{<choice "It is a field, a reference to a Person object at location 5">}}
+{{<choice "It is a field, a reference to a String object at location 5">}}
 {{<question answers="4" hint="Look at the type of this location, and think what that actually is.">}}
 What is the meaning of the value 5 at address 3?
 {{</question>}}
