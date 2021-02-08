@@ -3,7 +3,7 @@ title="References 2"
 summary="References inside objects"
 date=2021-02-01
 weight=3
-hidden=true
+hidden=false
 type="example"
 topscripts=["js/quiz.js","js/slides.js"]
 +++
@@ -172,6 +172,8 @@ I've changed the diagram notation a little too:
 * Locations in memory which are fields inside an object have a purple background
 and white text, and I've also put a "." in front of the name (to make it clear it is a field).
 
+As before, clicking on the image will move onto the next slide. Read the caption below the slide to see what's changed.
+
 {{<slides "s0">}}
 inst1.svg$Start of ```main```: local variables ```hall``` and ```tower``` exist but have not been given values.
 inst2.svg$```hall = new Room()``` has run - a new Room has been created at location 2, given default field values, and the reference stored in ```hall```.
@@ -189,7 +191,7 @@ hall.east = tower;
 inside the object pointed to by the ```hall``` reference."
 Here, the dot "." **dereferences** the
 reference, so we can see the fields inside the object it points to.
-* We then copy the value of ```tower``` into this variable - the ```east``` variable of the object indicated by ```hall```.
+* We copy the value of ```tower``` into this variable - the ```east``` variable of the object indicated by ```hall```.
 * Now both ```tower``` and ```hall.east``` have the same value, so if you go east from "The Hall", the room you arrive in is the one indicated by ```tower```.
 
 
@@ -306,7 +308,7 @@ I will leave the final word to Lewis Carroll:
     </p>
 </blockquote>
 
-{{<spoiler text="Click to show (or hide) another quick quiz">}}
+{{<spoiler text="Click to show (or hide) another quick quiz, just for fun">}}
 {{<quiz quiz2>}}
 {{<postmsggood>}}
 Well done!
@@ -347,7 +349,7 @@ What is the song?
 {{</quiz>}}
 {{</spoiler>}}
 
-We spend a lot of time in computer science thinking about things-in-themselves and things which refer to them, and this
+We spend a lot of time in computer science thinking about things, and things which refer to them, and this
 piece from *Through the Looking-glass* neatly illustrates the kind of mess you can find yourself in.
 
 

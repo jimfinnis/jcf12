@@ -3,7 +3,7 @@ title="What are objects and classes?"
 summary="What are objects? What problems do they solve? How are classes and objects related?"
 date=2021-01-19
 weight=1
-hidden=true
+hidden=false
 type="example"
 topscripts=["js/quiz.js"]
 +++

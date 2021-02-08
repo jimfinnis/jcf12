@@ -3,7 +3,7 @@ title="References"
 summary="What are references?"
 date=2021-02-01
 weight=2
-hidden=true
+hidden=false
 type="example"
 topscripts=["js/quiz.js","js/slides.js"]
 +++
@@ -54,7 +54,7 @@ we are declaring ```x``` to be a variable which can hold an integer.
 
 {{< important >}}
 Remember, **we are not saying that ```e``` is an Enemy, we are saying
-that ```e``` is a reference to an enemy**. This is a really important
+that ```e``` is a reference to an Enemy**. This is a really important
 point.
 {{< /important >}}
 
@@ -85,7 +85,8 @@ to before they are used, although you really should);
 we can write to do additional setup on new objects);
 * returns the memory address of the data - this is our **reference**.
 
-The following set of images shows the entire sequence - click to see each one:
+The following set of images shows the entire sequence - click to see each one,
+and read the caption underneath to see what's changed:
 {{<slides "s0">}}
 inst1.svg$We have our local variable ```myEnemy```, but it contains nothing yet. 
 inst2.svg$```new Enemy()``` has allocated a block of memory large enough to hold our Enemy object, but it contains nothing.

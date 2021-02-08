@@ -64,11 +64,15 @@ Quiz.prototype.create = function() {
   var root = document.getElementById(this.id);
 
   var form = document.createElement("form"),
-      submit = document.createElement("input"),
-      self = this;
+  submit = document.createElement("input"),
+  self = this;
 
   submit.type = "submit";
-  submit.value = "Submit quiz";
+  if(this.questions.length == 1){
+      submit.value = "Submit answer";
+  } else {
+      submit.value = "Submit answers";
+  }
 
   form.addEventListener("submit", function(e) {
       e.preventDefault();
