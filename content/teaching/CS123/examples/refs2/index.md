@@ -38,10 +38,34 @@ a maze of rooms, each of which connects to four others:
 
 {{< svg src="rooms.svg" title="Part of a maze of rooms linked together" >}}
 
+For example, there will be a Room whose ```text``` is "The Tower", and
+whose ```west``` field contains a reference to another Room whose 
+```text``` is "The Hall."
 
-But what do those references hold initially when we create a Room?
+What else can we say about the maze?
+
+{{<spoiler text="Click to show (or hide) another quick quiz">}}
+{{<quiz quiz1>}}
+{{<postmsggood>}}
+Well done!
+{{</postmsggood>}}
+
+{{<choice "It is undefined" >}}
+{{<choice "It is \"The Tower\"" >}}
+{{<choice "It is an object whose text is \"The Tower\"" >}}
+{{<choice "It is a reference to an object whose text is \"The Tower\"" >}}
+{{<choice "The object does not have an \"east\" reference" >}}
+{{<question answers="4" hint="Look at the diagram - the text in the boxes is the contents of the the \"text\" field, the arrows show the references">}}
+What is the value of the ```east``` reference in the top-left object?
+{{</question>}}
+
+{{</quiz>}}
+{{</spoiler>}}
 
 ### Null references
+What is the value of the ```east``` reference in the room whose text is "The Tower"?
+What do any of the references hold just after we have created a Room but haven't created any links yet?
+
 When we write our class declaration we can choose to give 
 our fields initial values, and when we create an object
 it will get those values. Alternatively we can just leave them with default values.
@@ -61,7 +85,7 @@ yet! This is certainly true in our Room class when we create the first
 Room in the maze.
 
 {{<important>}}
-All references are initialised to a special value called **null**.
+Because of this, all references are initialised to a special value called **null**.
 This means that the reference doesn't point anywhere at all. Any
 attempt to "dereference" it - to follow the reference and access the
 object it points to - will cause a Java exception. This is the
@@ -114,16 +138,18 @@ is null in that Room.
 
 Let's create that structure - this time I'll write a complete Main class with a 
 **main** method - don't worry if you can't quite see how this fits into the idea
-of objects and classes. "Static" methods are a little bit of a cheat to help us write 
-actual code that does things without an needing an object.
+of objects and classes ("static" methods are a little bit of a cheat to help us write 
+actual code that does things without an needing an object).
 
 Normally I would use a *constructor* to set up the room
 name and *setter methods* to manage the connections, but here I'm going to do it by hand so
-you can see what's going on:
+you can see what's going on - again, this is generally a terrible idea:
 
 ```java
 public class Main {
     public static void main(String[] args){
+        // instantiate two rooms, and assign them to two local
+        // variables
         Room hall = new Room();
         Room tower = new Room();
 
@@ -198,7 +224,132 @@ Here is the same thing as an object diagram, of the kind you have seen before:
 
 {{< figure src="obj.png" title="Object diagram" >}}
 
-{{< todo >}}
-Quiz
-{{< /todo >}}
+## Strings
+What about the ```text``` strings? I haven't dealt with those in the diagram above, leaving null references to them.
+This is because String
+objects are "black boxes" - we don't know their internal structure, so I don't know how big they are. This makes them quite
+difficult to draw in a memory diagram
+which shows the addresses (such as in the first set of diagrams <a href="#s0">above</a>). Now we aren't showing the memory
+addresses, we can draw them:
 
+{{< svg src="diag6.svg" title="Strings shown as objects" >}}
+
+Because I don't know their internal structure I can't draw any fields. All I know is that there is some memory which contains
+a representation of some text - so that's what I'm drawing.
+
+Some people might go further, drawing this:
+
+{{< svg src="diag7.svg" title="Strings shown as field data" >}}
+
+This is because although Strings are just objects, and the ```String``` type
+is a reference to a String object, our diagrams would become really messy if
+we drew them as objects with all the time.
+
+
+
+
+## An end note
+You will have noticed that for most of this page I have been very careful about how I refer to objects. I have mostly
+called my rooms "the room in the top-right corner of the diagram" or "the room whose text is 'The Tower'" instead of 
+referring to the room as "The Tower." 
+
+This is deliberate. The only thing about that particular object that makes it "The Tower" is its text. It's very
+easy to get confused between a thing and the name of a thing - or between a thing and a reference to it. In a lot of
+ways, the purpose this entire series of pages is to avoid this confusion. **An object is not the same as a reference to an object**,
+although experienced coders sometimes talk as if it were.
+
+I will leave the final word to Lewis Carroll:
+
+<blockquote>
+  <p>
+      &lsquo;You are sad,&rsquo; the Knight said in an anxious tone: &lsquo;let me sing you a song
+      to comfort you.&rsquo;
+    </p>
+    <p>
+      &lsquo;Is it very long?&rsquo; Alice asked, for she had heard a good deal of poetry
+      that day.
+    </p>
+    <p>
+      &lsquo;It&rsquo;s long,&rsquo; said the Knight, &lsquo;but very, <i>very</i> beautiful. Everybody that
+      hears me sing it&mdash;either it brings the <i>tears</i> into their eyes, or else&mdash;&rsquo;
+    </p>
+    <p>
+      &lsquo;Or else what?&rsquo; said Alice, for the Knight had made a sudden pause.
+    </p>
+    <p>
+      &lsquo;Or else it doesn&rsquo;t, you know. The name of the song is called &ldquo;<i>Haddocks&rsquo;
+      Eyes</i>.&rdquo;&rsquo;
+    </p>
+    <p>
+      &lsquo;Oh, that&rsquo;s the name of the song, is it?&rsquo; Alice said, trying to feel
+      interested.
+    </p>
+    <p>
+      &lsquo;No, you don&rsquo;t understand,&rsquo; the Knight said, looking a little vexed.
+      &lsquo;That&rsquo;s what the name is <i>called</i>. The name really <i>is</i> &ldquo;<i>The Aged Aged Man</i>.&rdquo;&rsquo;
+    </p>
+    <p>
+      &lsquo;Then I ought to have said &ldquo;That&rsquo;s what the <i>song</i> is called&rdquo;?&rsquo; Alice
+      corrected herself.
+    </p>
+    <p>
+      &lsquo;No, you oughtn&rsquo;t: that&rsquo;s quite another thing! The <i>song</i> is called &ldquo;<i>Ways
+      and Means</i>&rdquo;: but that&rsquo;s only what it&rsquo;s <i>called</i>, you know!&rsquo;
+    </p>
+    <p>
+      &lsquo;Well, what <i>is</i> the song, then?&rsquo; said Alice, who was by this time
+      completely bewildered.
+    </p>
+    <p>
+      &lsquo;I was coming to that,&rsquo; the Knight said. &lsquo;The song really <i>is</i> &ldquo;<i>A-sitting On
+      A Gate</i>&rdquo;: and the tune&rsquo;s my own invention.&rsquo;
+    </p>
+</blockquote>
+
+{{<spoiler text="Click to show (or hide) another quick quiz">}}
+{{<quiz quiz2>}}
+{{<postmsggood>}}
+Well done!
+{{</postmsggood>}}
+
+{{<choice "Haddock's Eyes" >}}
+{{<choice "The Aged Aged Man" >}}
+{{<choice "Ways and Means" >}}
+{{<choice "A-sitting on a Gate" >}}
+{{<question answers="1" hint="Read carefully!">}}
+What is the name of the song called?
+{{</question>}}
+
+{{<choice "Haddock's Eyes" >}}
+{{<choice "A-sitting on a Gate" >}}
+{{<choice "Ways and Means" >}}
+{{<choice "The Aged Aged Man" >}}
+{{<question answers="4" hint="Read carefully!">}}
+What is the name of the song?
+{{</question>}}
+
+{{<choice "A-sitting on a Gate" >}}
+{{<choice "Haddock's Eyes" >}}
+{{<choice "Ways and Means" >}}
+{{<choice "The Aged Aged Man" >}}
+{{<question answers="3" hint="Read carefully!">}}
+What is the song called?
+{{</question>}}
+
+{{<choice "Haddock's Eyes" >}}
+{{<choice "A-sitting on a Gate" >}}
+{{<choice "Ways and Means" >}}
+{{<choice "The Aged Aged Man" >}}
+{{<question answers="2" hint="Read carefully!">}}
+What is the song?
+{{</question>}}
+
+{{</quiz>}}
+{{</spoiler>}}
+
+We spend a lot of time in computer science thinking about things-in-themselves and things which refer to them, and this
+piece from *Through the Looking-glass* neatly illustrates the kind of mess you can find yourself in.
+
+
+The [next page]({{< relref "../refsquiz/" >}}) has a handy quiz that will help you see understand some of the common
+mistakes that references can lead to.

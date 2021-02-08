@@ -108,7 +108,6 @@ Quiz.prototype.submit = function() {
         } else {
             q.renderRight();
             for (var choice of choices){             
-
                 // evaluate    
                 if (!q.isRight(choice)) {
                     q.renderWrong();
@@ -239,7 +238,7 @@ Question.prototype.getSelected = function() {
     var checkboxes = document.querySelectorAll("input[name='" + this.uid + "']:checked");
     var choices = []
     checkboxes.forEach((checkbox) => {
-        choices.push(checkbox.value);
+               choices.push(checkbox.value);
     });
     return choices
 };
@@ -370,7 +369,9 @@ Option.prototype.render = function() {
     });
 
     label.appendChild(option);
-    label.appendChild(document.createTextNode(option.value));
+    var span = document.createElement("span")
+    span.innerHTML = option.value
+    label.appendChild(span)
 
     return label;
 };
@@ -382,3 +383,4 @@ Option.prototype.render = function() {
 Option.prototype.getValue = function() {
     return this.value;
 };
+
