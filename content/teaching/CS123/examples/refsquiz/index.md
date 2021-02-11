@@ -8,6 +8,10 @@ type="example"
 topscripts=["js/quiz.js","js/slides.js"]
 +++
 
+{{<important>}}
+{{< embed "assets/toptext.md" >}}
+{{</important>}}
+
 ## Question 1
 Imagine we have the Room class from the [previous page]({{< relref "../refs2/" >}}):
 

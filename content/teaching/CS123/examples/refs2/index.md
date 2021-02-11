@@ -8,6 +8,9 @@ type="example"
 topscripts=["js/quiz.js","js/slides.js"]
 +++
 
+{{<important>}}
+{{< embed "assets/toptext.md" >}}
+{{</important>}}
 
 ## Objects can contain references
 [Last time]({{< relref "../refs/" >}}) we looked at **references**, which are

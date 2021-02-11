@@ -8,6 +8,10 @@ type="example"
 topscripts=["js/quiz.js","js/slides.js"]
 +++
 
+{{<important>}}
+{{< embed "assets/toptext.md" >}}
+{{</important>}}
+
 ## References to objects
 [Last time]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
 blocks of data in memory, and **classes**, which describe the structure

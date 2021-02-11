@@ -8,6 +8,10 @@ type="example"
 topscripts=["js/quiz.js"]
 +++
 
+{{<important>}}
+{{< embed "assets/toptext.md" >}}
+{{</important>}}
+
 ## What's the problem?
 Remember that all computer programs are **descriptions of data** and
 **operations on data**.

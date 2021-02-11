@@ -1,3 +1,10 @@
-{{$file := .Get 0}}
-{{ $file | readFile | markdownify |emojify}}
+{{ $file := .Get 0  }}
 
+{{ if strings.HasSuffix $file ".html" }}
+
+{{  $file  | readFile  | safeHTML }}
+
+{{ else if strings.HasSuffix $file ".md" }}
+{{  $file  | readFile  | markdownify  }}
+
+{{ end }}
