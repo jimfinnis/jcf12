@@ -45,7 +45,8 @@ public class Main {
 
 {{<quiz quiz2>}}
 {{<postmsggood>}}
-Well done! There is only one object in this code, and after ```Room a=b```, both references point to it.
+Well done! There is only one object in this code, and after ```Room b = a```,
+two references ```a``` and ```b``` both point to it.
 {{</postmsggood>}}
 
 {{<choice "It crashes">}}

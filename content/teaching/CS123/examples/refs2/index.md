@@ -182,7 +182,7 @@ inst1.svg$Start of ```main```: local variables ```hall``` and ```tower``` exist 
 inst2.svg$```hall = new Room()``` has run - a new Room has been created at location 2, given default field values, and the reference stored in ```hall```.
 inst3.svg$```tower = new Room()``` has run - a new Room has been created at location 7, given default field values, and the reference stored in ```tower```.
 inst4.svg$```hall.east = tower``` makes the ```east``` reference in ```hall``` refer to the same object as ```tower```
-inst5.svg$```tower.east = hall``` makes the ```west``` reference in ```tower``` refer to the same object as ```hall```
+inst5.svg$```tower.west = hall``` makes the ```west``` reference in ```tower``` refer to the same object as ```hall```
 {{</slides>}}
 
 Pay careful attention to steps 4 and 5. Let's look at step 4 in more detail - the line of code is 

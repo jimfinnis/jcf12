@@ -367,6 +367,8 @@ public class PlayerAppearance implements Appearance {
         
     }
 }
+```
+
 
 #### Default methods in interfaces
 

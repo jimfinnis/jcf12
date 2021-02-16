@@ -48,7 +48,7 @@ that reference. We know that method exists, because it's defined in
 the Enemy class and ```e``` is a member of that class.
 
 We can't use a method like a function because methods get access to all the
-instance variables of the object on which they were called just as if they
+fields of the object on which they were called just as if they
 were local variables. Look again at the example above, in the body
 of the method:
 ```java

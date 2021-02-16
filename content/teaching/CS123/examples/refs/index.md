@@ -17,7 +17,7 @@ topscripts=["js/quiz.js","js/slides.js"]
 blocks of data in memory, and **classes**, which describe the structure
 of those blocks.
 
-Look at this example, in which our object occupies four memory locations
+Look at this example, where our object occupies four memory locations
 starting at address 3:
 
 {{< svg src="struct1.svg" title="an Enemy object in memory" >}}
@@ -37,7 +37,7 @@ Let's create a variable ```myEnemy``` to hold this location:
 
 The ```myEnemy``` variable is really just a number, but that number is 
 a memory location that holds our Enemy data. Here, ```myEnemy``` is a
-**reference**. You may remember this from CS12020 with Andy Starr that
+**reference**. You may remember from CS12020 with Andy Starr that
 a similar concept in C is called a "pointer."
 
 ### The type of a reference  
@@ -45,11 +45,11 @@ What is the name of the type of a reference? We need to know this to declare
 a reference as a variable, either as a local variable or a field
 inside a class. 
 
-The answer is easy: the type is just the name of the class. So if we do
+The answer is easy: the type is just the name of the class. So if we write
 ```java
-Enemy e;
+Enemy myEnemy;
 ```
-we are declaring ```e``` to be a variable which can hold a reference
+we are declaring ```myEnemy``` to be a variable which can hold a reference
 to an Enemy object, just like if we do
 ```java
 int x;
@@ -57,18 +57,30 @@ int x;
 we are declaring ```x``` to be a variable which can hold an integer.
 
 {{< important >}}
-Remember, **we are not saying that ```e``` is an Enemy, we are saying
-that ```e``` is a reference to an Enemy**. This is a really important
+Remember, **we are not saying that ```myEnemy``` is an Enemy, we are saying
+that ```myEnemy``` is a reference to an Enemy**. This is a really important
 point.
 {{< /important >}}
 
 Quite often experienced programmers look at code like
-```Enemy e;```
-and say "this means ```e``` is an Enemy," but that's because it takes
-too long to say "this means ```e``` is a reference to an object of
+```Enemy myEnemy;```
+and say "this means ```myEnemy``` is an Enemy." This is because it takes
+too long to say "this means ```myEnemy``` is a reference to an object of
 class Enemy." We're lazy like that.
 
+### Using references
 
+Let's imagine we have a reference ```myEnemy``` of type ```Enemy```,
+as before. We can use this reference to access the fields inside the
+object. For example, if we wanted to write the value 10 to the ```ammo```
+field, we could write the following:
+```java
+myEnemy.ammo = 10;
+```
+and if we wanted to print out that field, we could write
+```java
+System.out.println(myEnemy.ammo);
+```
 
 ## Instantiation
 
@@ -111,10 +123,12 @@ from "new" is a **reference to an new object of that class**. In
 other words, a pointer to a bit of memory containing that object's data.
 
 * A **class** is a blueprint or template for creating objects.
-* An **object** is an actual data structure in memory.
-* An **instance** of a class is any object which belongs to that class.
+* An **object** is a block of data in memory
 * A **field** or **instance variable** is a piece of data which exists inside a particular instance of a class (later on you'll learn about *class variables*, which
 belong to the entire class and not any particular object).
+* An **instance** of a class is any object which belongs to that class.
+* A **reference** is a piece of data which "points to" an object, through
+which we can access its contents.
 
 All objects "belong" to the class which created them, so "Enemy" is the class,
 while the variable "myEnemy" holds a reference to an object of class "Enemy."
