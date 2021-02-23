@@ -205,19 +205,24 @@ Here it is again:
 
 
 First, we don't need to show all the memory in a single column - we can split
-that column up into sections for the local variables and the two objects. We haven't changed anything in the computer or in the program, we've
-just moved things around in the diagram:
+that column up into sections for the local variables and the two objects. We
+won't changed anything in the computer or in the program, we'll just move
+things around in the diagram:
 
 {{< svg src="diag2.svg" title="Memory diagram split into sections" >}}
 
-When Java allocates memory, creates an object and returns a reference, we don't need to know the numerical value of
-the reference. The actual location in memory is just a number, but we don't need to see it printed out or ever
-treat it as a number. That means we can remove the address numbers from the diagram:
+When Java allocates memory, creates an object and returns a reference, we
+don't need to know the numerical value of the reference. The actual location
+in memory is just a number, but we don't need to see it printed out or ever
+treat it as a number. That means we can remove the address numbers from the
+diagram:
 
 {{< svg src="diag3.svg" title="Address numbers removed" >}}
 
-Note that the references are now shown as the starting points of arrows, pointing at the block of memory (the object) they
-refer to. We can swap over the "variable name" section and the contents section, to make it easier to read:
+Note that the references are now shown as the starting points of arrows,
+pointing at the block of memory (the object) they refer to. We can swap over
+the "variable name" section and the contents section, to make it easier to
+read:
 
 {{< svg src="diag4.svg" title="Variable name and contexts section swapped over" >}}
 

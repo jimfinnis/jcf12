@@ -1,0 +1,37 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface ILogOutput {
+    + output(message:String):void
+}
+
+class Logger {
+    - severityLevel:int
+    - outputs:ArrayList<ILogOutput>
+    
+    + Logger()
+    + log(severity:int,message:String):void
+    + setSeverityLevel(level:int):void
+    + addOutputter(ilo:ILogOutput):void
+}
+
+
+class ConsoleOutput {
+    + output(message:String):void
+}
+
+class FileOutput {
+    + output(message:String):void
+}
+
+class SomeClass {
+    - logger:Logger
+}
+
+Logger "1..1" --> "0..*" ILogOutput:outputs
+SomeClass "1..1" --> "1..1" Logger:logger
+
+ConsoleOutput -up-|> ILogOutput
+FileOutput -up-|> ILogOutput
+
+@enduml

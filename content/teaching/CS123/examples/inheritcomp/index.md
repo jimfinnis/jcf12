@@ -2,7 +2,7 @@
 title = "Favour composition over inheritance"
 summary = "Use 'has a' instead of 'is a' relationships"
 date=2020-12-14  # Add today's date.
-weight = 80
+weight = 1000
 hidden = true
 type="example"
 +++
@@ -86,7 +86,7 @@ Entity will have some kind of default behaviour
 for each method - for example, *makeNoise* might not do anything. In this
 case, Player doesn't override it, so the Player doesn't make any noise.
 
-There are probably going to be lots of other methods (and instance variables too), but this is just
+There are probably going to be lots of other methods (and fields too), but this is just
 an outline.
 
 
@@ -163,7 +163,7 @@ Let's write the two interfaces - they're very simple:
  * Interface for Appearance classes, which control
  * how an Entity looks and sounds.
  * Classes should take the Entity as a parameter of a
- * constructor and store it in an instance variable.
+ * constructor and store it in a field.
  */
 public interface Appearance {
     /**
@@ -182,7 +182,7 @@ public interface Appearance {
 /**
  * Interface which classes which control how an Entity moves.
  * Classes should take the Entity as a parameter of a
- * constructor and store it in an instance variable.
+ * constructor and store it in a field.
  */
 public interface Mover {
     /**
@@ -283,7 +283,7 @@ public class Entity {
     }
 }
 ```
-In this class, there are two private instance variables - the Mover and Appearance
+In this class, there are two private fields - the Mover and Appearance
 used by each entity. There's a constructor which sets up those two
 variables, and then the actual methods for moving, drawing and
 making noises.
@@ -400,7 +400,7 @@ It might seem that interfaces with default methods are just the same
 as abstract classes: both are classes in which some methods don't have
 any code. However, there are still differences:
 * abstract classes can have constructors, interfaces can't
-* abstract classes can have instance variables, interfaces can't.
+* abstract classes can have fields, interfaces can't.
 
 #### Making some entities
 
@@ -427,7 +427,7 @@ is set up:
 * we create the Mover and the Appearance, passing 
 a reference to the player entity into their constructors.
 * The Mover and Appearance each store that
-reference in a private instance variable.
+reference in a private field.
 * Once created, references to
 the Mover and Appearance are set inside the player entity.
 
@@ -532,7 +532,7 @@ But I'm **not going to do it**. Why?
 **Because it looks really strange.** You have two "bare constructors" that
 are just creating objects with no indication of how they are used. The
 objects they make aren't even assigned to variables. Instead, code inside
-the constructors is assigning them to instance variables inside the Entity.
+the constructors is assigning them to fields inside the Entity.
 When a new user comes to read the above code they might
 be very confused.
 

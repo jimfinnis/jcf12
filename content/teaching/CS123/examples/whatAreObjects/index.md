@@ -65,7 +65,7 @@ there are hundreds of enemies?
 
 Also, it would be very useful for organising our code if we could
 call a function and pass all the enemy data
-as single argument, like this:
+as single parameter, like this:
 ```java
 updateEnemy(anEnemy);
 ```

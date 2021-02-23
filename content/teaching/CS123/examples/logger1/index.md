@@ -27,17 +27,17 @@ just logging fatal errors most of the time.
 
 ## Creating and using a logger
 
-Each class could create a logger as a private instance variable:
+Each class could create a logger as a private field:
 ```java
 /**
  * A class which creates its own private logger
  */
 public class SomeClass {
-    /** create a private logger as an instance variable */
+    /** create a private logger as a field */
     private Logger logger = new Logger();
     
     /**
-     * Constructor which uses the logger instance variable
+     * Constructor which uses the logger field
      */
     public SomeClass() {
         logger.log(Logger.INFO,"SomeClass instance created");
@@ -60,7 +60,7 @@ logger object. That means they can all share the same logger, like this:
 
 We can do this by writing the constructor for SomeClass so
 that it takes a Logger as a parameter, which we can then store in
-an instance variable:
+a field:
 ```java
 /**
  * A class which uses a logger provided to it in
@@ -68,12 +68,12 @@ an instance variable:
  */
 public class SomeClass {
 
-    /** instance variable which holds a logger */
+    /** field which holds a reference to a logger */
     private Logger logger;
 
     /**
      * Constructor which takes a reference to a logger
-     * and stores it in an instance variable
+     * and stores it in a field
      * @param logger
      */
     public SomeClass(Logger logger) {
@@ -82,8 +82,7 @@ public class SomeClass {
     }
 
     /** a method which doesn't actually do anything - it's just
-     * an example showing how the logger instance variable might
-     * be used.
+     * an example showing how the logger field might be used.
      */
     public void someMethod(){
         // .. insert code here to actually do something ..
@@ -94,9 +93,9 @@ public class SomeClass {
 }
 ```
 Note that I've had to say ```this.logger``` in the constructor because
-the parameter and the instance variable have the same name. Because
+the parameter and the field have the same name. Because
 the parameter name (and local variable names) takes precedence, I tell
-the compiler "no, I really mean the *instance* variable" by putting
+the compiler "no, I really mean the *field*" by putting
 "this" in front.
 
 
@@ -122,11 +121,11 @@ public class Main {
 We now have three objects sharing the same logger. Remember what's
 happening here: we're creating a single logger, and then passing
 references to that logger (its location in memory) to the three objects,
-which store the reference in an instance variable. So while there
+which store the reference in a field. So while there
 are quite a few references to Logger in the system, there's only one
-actual Logger object. Copying a reference to an object, or passing
+actual Logger object. **Copying a reference to an object, or passing
 it as a parameter, doesn't make a copy of the object. It just gives you
-a new "pointer" to it.
+a new "pointer" to it.**
 
 
 Now each SomeClass object can use the logger (as they do in the SomeClass
@@ -136,6 +135,10 @@ and they'll all be using the same one. To sum up the situation:
 * The constructor of this class takes a reference to an object of another class
 * and makes a copy of that reference for its private use.
 * So we now have three objects with references to a single object.
+
+If you're having difficulty with this idea, go back to
+[my previous pages on references]({{< relref "../refs/" >}}) and revise
+the idea.
 
 ## The Logger itself
 
@@ -158,7 +161,7 @@ We'll implement these with a group of constants inside Logger, which we'll
 declare as "public static final":
 * **public** means that other classes can use them;
 * **static** means that they belong to the class, not to objects of
-the class (they aren't instance variables);
+the class (they aren't fields);
 * **final** means they are constant: once their value has been assigned
 it can never be changed.
 
@@ -201,7 +204,8 @@ public class Logger {
 
     /**
      * The current severity level - messages with a LOWER severity
-     * will be ignored.
+     * will be ignored. The default is INFO, so only DEBUG messages
+     * will be ignored unless we change it.
      */
     private int severityLevel=INFO;
 
@@ -212,8 +216,7 @@ public class Logger {
     }
 
     /**
-     * the actual logging method, which calls performLog - an
-     * abstract method -to do something with the message
+     * the actual logging method, which prints the message
      * if the severity of the message is higher than or equal
      * to the current severity level
      * @param severity
@@ -257,8 +260,8 @@ we want to make sure they are in range[^1].
 Also note that there is no getter for the severity level. This is
 deliberate - I don't want people to be able to find out what the current
 severity level is from outside, because that might be abused. I'm not
-sure how, I just have a feeling. There's a principle - "YAGNI" - "You
-Ain't Gonna Need It", and I think getting the severity level is something
+sure how, I just have a feeling. There's a principle - "YAGNI" ("You
+Ain't Gonna Need It") -  and I think getting the severity level is something
 you shouldn't need.
 
 ## What next?

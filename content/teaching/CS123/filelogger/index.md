@@ -120,6 +120,7 @@ It will:
 the FileWriter or we have called *close()* on our FileLogger), 
 * if it isn't null, it will write the message to the file
 * and then "flush" the file (see below).
+
 If anything goes wrong in this process an exception will happen. We'll catch this exception, and
 print the message we were trying to log to the console (it's better than nothing) and also the actual
 exception.
