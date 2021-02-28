@@ -13,7 +13,7 @@ image:
 This page contains information my CS12320 tutorial groups may
 find useful.
 
-## Tutorial 7 class diagram and UML tools
+## Tutorial 5 class diagram and UML tools
 
 Here is the diagram I produced for the MONSTER LAND "game" code, generated
 using [PlantUML](https://plantuml.com). This takes a text description

@@ -65,6 +65,8 @@ What is the value of the ```east``` reference in the top-left object?
 {{</quiz>}}
 {{</spoiler>}}
 
+<a name="nulls"></a>
+
 ### Null references
 What is the value of the ```east``` reference in the room whose text is "The Tower"?
 What do any of the references hold just after we have created a Room but haven't created any links yet?

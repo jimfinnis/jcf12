@@ -82,6 +82,7 @@ and if we wanted to print out that field, we could write
 System.out.println(myEnemy.ammo);
 ```
 
+<a name="instantiation"></a>
 ## Instantiation
 
 Now that we know how to declare a variable with a reference type,
