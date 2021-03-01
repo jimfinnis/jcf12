@@ -4,7 +4,7 @@
 # If this is true, items which have "hidden" set to true will not
 # be shown in lists.
 
-# hidethings = true
+hidethings = true
 
 ############################
 ## Theme

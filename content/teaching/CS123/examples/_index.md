@@ -23,11 +23,14 @@ part of my PGCTHE (Postgraduate Certificate in Teaching in Higher Education)
 coursework. The aim is to identify a problem in teaching/learning,
 try something that should help, and see how well it works.
 
-As part of the "evaluation" stage of the project, I will be running a very
+As part of the "evaluation" stage of the project, I am be running a very
 short survey to find out how helpful you found these pages. All the data from the
-survey will be completely anonymous, and I'll be eternally grateful to you if
-you choose to fill it in. There will be more details on the survey when it's
-complete.
+survey will be completely anonymous, and 
+I'll be eternally grateful to you if
+you choose to fill it in. 
+
+**[<div style="text-align:center;">
+Click here to go to the survey.</div>](https://forms.gle/DxT2jSaau1i29MVq8)**
 {{</important>}}
 
 ## The pages
