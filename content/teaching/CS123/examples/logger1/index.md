@@ -4,12 +4,18 @@ summary = "An 'error logger' from an old project"  # Add a page description.
 date=2020-12-14  # Add today's date.
 weight = 100
 type = "example"
-hidden = true
+#hidden = true
 +++
 
 ## Introduction
 In this example I'll talk about how we can make links between objects,
-using real code from a real project I've worked on.
+using real code from a real project I've worked on. We'll cover:
+* references (again!)
+* abstract classes
+* favouring composition over inheritance:
+There's [another page on this topic]({{<relref "../inheritcomp/">}}) too!
+
+
 
 Let's imagine that we want to create some kind of logging system so
 that we can see warning messages. There will be a Logger object, or

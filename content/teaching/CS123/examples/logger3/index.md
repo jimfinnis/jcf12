@@ -4,7 +4,7 @@ summary = "Changing what the logger does by plugging in an output object"
 date=2020-12-14  # Add today's date.
 weight = 102
 type = "example"
-hidden = true
+#hidden = true
 +++
 
 ## The problem

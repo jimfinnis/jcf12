@@ -4,7 +4,7 @@ summary = "Changing what the logger does by making it abstract and using subclas
 date=2020-12-14  # Add today's date.
 weight = 101
 type = "example"
-hidden = true
+#hidden = true
 +++
 
 ## Introduction
