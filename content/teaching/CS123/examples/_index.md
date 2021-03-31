@@ -8,14 +8,19 @@ type="cs123"
 
 {{<important>}}
 ## Introduction
-While marking some second-year assignments last year, I found that a number
-of students were still having trouble with the ideas behind classes, objects
-and references. These aren't easy concepts to grasp, and some of you may still be a little
-confused about exactly what classes, objects and references really *are*.
 
-I've written these pages to help with that confusion by trying to 
-show you what an object is in the computer's memory, and by adding
-some little quizzes on the way.
+While marking some second-year assignments last year, I found that a number of
+students were still having trouble with the ideas behind classes, objects and
+references. These are important concepts, and without a good understanding of
+them you will find programming difficult. I have found in the past that a
+different point of view can help - a look at what classes, objects and
+references **really are** inside the computer's memory. You'll see that the
+basic ideas are very simple.
+
+These web pages shouldn't take long to read, and you can come back to them
+whenever you feel confused about object-oriented programming. There are
+also some short quizzes to help engage your brain and to let you know if your
+understanding is correct.
 
 ### The PGCTHE and survey
 On a personal note, the pages are part of an Action Research Plan, forming
