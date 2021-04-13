@@ -41,6 +41,5 @@ Click here to go to the survey.</div>](https://forms.gle/DxT2jSaau1i29MVq8)**
 ## The pages
 Now, the pages themselves. The **first four pages** describe objects, classes and
 references. The other pages show examples of real
-code which link objects together in interesting ways. We'll let you know
-when those pages become available.
+code which link objects together in interesting ways.
 
