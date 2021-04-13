@@ -2,9 +2,14 @@
 title = "Favour composition over inheritance"
 summary = "Use 'has a' instead of 'is a' relationships"
 date=2020-12-14  # Add today's date.
-weight = 1000
+weight = 99
 #hidden = true
-type="example"
+blocktitle="More pages"
+blocktext="""
+These extra pages are useful once you fully understand how objects, classes and references work.
+The first gives you a another way of changing object functionality instead of using inheritance.
+The "logging" pages work through some real code, building a logging system using different techniques.
+"""
 +++
 
 ## Introduction

@@ -3,7 +3,7 @@ title = "Objects, classes and references"  # Add a page title.
 summary = "Some pages to help you understand these concepts"  # Add a page description.
 date=2020-12-14  # Add today's date.
 categories= ["cs123"]
-type="cs123"
+type="examples"
 +++
 
 {{<important>}}
@@ -39,8 +39,8 @@ Click here to go to the survey.</div>](https://forms.gle/DxT2jSaau1i29MVq8)**
 {{</important>}}
 
 ## The pages
-Now, the pages themselves. The first few describe objects, classes and
-references. Later pages (yet to be written) will show examples of real
+Now, the pages themselves. The **first four pages** describe objects, classes and
+references. The other pages show examples of real
 code which link objects together in interesting ways. We'll let you know
 when those pages become available.
 
