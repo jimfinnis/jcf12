@@ -4,6 +4,7 @@ summary = "Use 'has a' instead of 'is a' relationships"
 date=2020-12-14  # Add today's date.
 weight = 99
 #hidden = true
+type = "example"
 blocktitle="More pages"
 blocktext="""
 These extra pages are useful once you fully understand how objects, classes and references work.
