@@ -4,7 +4,7 @@ title: PCOT
 summary: "PCOT (PanCam Operations Toolkit) is a Python application and
 library for processing data obtained from the PanCam cameras on the
 Rosalind Franklin ExoMars rover."
-tags: ["artificial endocrine system", "phd","UESMANN"]
+tags: ["pcot","mars","python"]
 
 ---
 
