@@ -49,3 +49,7 @@ image (normally it is confined to any ROIs), and then
 reimpose the ROIs onto the image for viewing.
  The output is the image shown above, and is also shown in the PCOT app view.
 
+
+## Calibration
+Much of the PCOT work will be calibrating images. See 
+[here]({{<relref "../maths/">}}).
