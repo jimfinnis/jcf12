@@ -113,7 +113,7 @@ if (myReference == null) {
 ```
 
 {{<spoiler text="A historical note (click to show/hide)">}}
-The inventor of the null reference (or "null pointer" in its original form) is
+The inventor of the null reference is
 famous computer scientist [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare). He now wishes he had never done it:
 
 > I call it my billion-dollar mistake. It was the invention of the null
@@ -208,7 +208,7 @@ Here it is again:
 
 First, we don't need to show all the memory in a single column - we can split
 that column up into sections for the local variables and the two objects. We
-won't changed anything in the computer or in the program, we'll just move
+won't change anything in the computer or in the program, we'll just move
 things around in the diagram:
 
 {{< svg src="diag2.svg" title="Memory diagram split into sections" >}}

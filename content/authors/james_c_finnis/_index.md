@@ -18,12 +18,14 @@ organizations:
   url: "http://users.aber.ac.uk/jcf12/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: "Research interests: artificial neuroendocrine systems, unusual neural network architectures, autonomous off-road driving."
+bio: "Research interests: artificial neuroendocrine systems, unusual neural network architectures, autonomous off-road driving, image processing."
 
 interests:
 - Artificial Intelligence
 - Artificial Endocrine Systems
 - Modulatory Neural Networks
+- Multispectral Image Processing
+- Autonomous Off-road Driving
 
 education:
   courses:
@@ -70,9 +72,15 @@ email: ""
 ---
 
 Dr James Finnis is a lecturer in Computer Science at Aberystwyth University.
-While he is currently teaching-only, his research interests include artificial
+His research interests include artificial
 neuroendocrine and neuromodulatory systems, modulatory neural network
-architectures, and intelligent robotics (particularly autonomous off-road
-driving). He spent over 20 years working in the games industry before
+architectures, intelligent robotics (particularly autonomous off-road
+driving), and multispectral image processing.
+
+He is also working as part of the [Aberystwyth ExoMars](https://exomars.wales/) team,
+writing [software]({{<relref "../../research/pcot/landing/">}}) to help scientists and engineers
+analyse data from the *Rosalind Franklin* rover.
+
+He spent over 20 years working in the games industry before
 moving into academia.
 
