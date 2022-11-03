@@ -9,7 +9,7 @@ image:
 
 ## Timesheets
 A template Excel timesheet and some useful information
-[can be found here](timesheet/).
+[can be found here]({{<relref "../timesheet/">}}).
 
 ## Other information
 
