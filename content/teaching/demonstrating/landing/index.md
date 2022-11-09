@@ -7,12 +7,6 @@ image:
   preview_only: true
 ---
 
-## Timesheets
-A template Excel timesheet and some useful information
-[can be found here]({{<relref "../timesheet/">}}).
-
-## Other information
-
 The presentation for demonstrators can be found here:
 
 * [As a PowerPoint file](/downloads/dem.pptx)
@@ -32,7 +26,12 @@ you can hear him.
 
 Here are the contacts:
 
-* Glenwen Morgans ([gsm@aber.ac.uk](mailto:gsm.aber.ac.uk)) for admin matters
-* Carys Pike ([cyl@aber.ac.uk](mailto:cyl.aber.ac.uk)) may also be useful
+* Glenwen Morgans ([gsm@aber.ac.uk](mailto:gsm@aber.ac.uk)) for admin matters
+* Carys Pike ([cyl@aber.ac.uk](mailto:cyl@aber.ac.uk)) may also be useful
 
 You should have had a Discord invite by email.
+
+## Timesheets
+A template Excel timesheet and some useful information
+[can be found here]({{<relref "../timesheet/">}}).
+
