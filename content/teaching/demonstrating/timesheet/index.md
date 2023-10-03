@@ -1,5 +1,5 @@
 +++
-date=2022-11-03
+date=2023-10-03
 title = "Timesheets"
 subtitle =  "A timesheet template and some useful information"
 summary = "A timesheet template and some useful information"
@@ -22,8 +22,8 @@ even if you have only worked a few hours that month.
 the following month**
 * If hours worked fall within the following month payment will be made
 in the following salary run i.e where the last days of one month fall
-into the week ending of the next month for example 31st October 2022 will
-fall into week ending 6th November 2022 therefore any hours claimed for
+into the week ending of the next month for example 31st October 2023 will
+fall into week ending 6th November 2023 therefore any hours claimed for
 the 31st will be entered as a November claim and paid at the end of December.
 * You should avoid accumulating hours as this will have implications on the
 amount of tax and National Insurance that you pay.
