@@ -1,5 +1,5 @@
 +++
-date=2023-10-03
+date=2023-10-27
 title = "Timesheets"
 subtitle =  "A timesheet template and some useful information"
 summary = "A timesheet template and some useful information"
@@ -32,15 +32,16 @@ will be added once they have been received from Payroll.
 
 </div>
 
-* **Any timesheets received after the deadline will not be processed until
-the following month**
-* Avoid accumulating hours as this will have implications on the
-amount of tax and National Insurance that you pay.
-* Forward your completed timesheet **via email only** to 
-[gsm@aber.ac.uk](mailto:gsm@aber.ac.uk) by the deadline above, **with a copy
-to the supervisor** of the module you are demonstrating for.
+* All timesheet claims must be confirmed and signed by the supervisor of
+the module you are demonstrating for **before** being submitted for processing **via email only** to 
+[gsm@aber.ac.uk](mailto:gsm@aber.ac.uk) by the deadline above.
+* Any timesheets received after the deadline will not be processed until
+the following month
 * Payment will be processed so that you will be paid on the last working day
 of the month following the month you are submitting for.
+* Avoid accumulating hours as this will have implications on the
+amount of tax and National Insurance that you pay.
+
 
 If you have any questions about timesheets, contact Glenwen
 on [gsm@aber.ac.uk](mailto:gsm@aber.ac.uk).
