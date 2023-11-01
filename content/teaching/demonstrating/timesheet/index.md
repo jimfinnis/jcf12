@@ -6,8 +6,8 @@ summary = "A timesheet template and some useful information"
 type =  "unindexed"
 +++
 
-A timesheet template can be downloaded as an Word document
-[from this link](/downloads/DemonstratorTimesheetTemplate2023.docx).
+A timesheet template can be downloaded as an Excel spreadsheet
+[from this link](/downloads/AberworksTimesheet.xlsx).
 
 
 When completing your timesheet:
@@ -41,6 +41,8 @@ the following month
 of the month following the month you are submitting for.
 * Avoid accumulating hours as this will have implications on the
 amount of tax and National Insurance that you pay.
+* Because the worksheets are submitted electronically, electronic signatures
+are acceptable. Do not print out the worksheets to get them signed.
 
 
 If you have any questions about timesheets, contact Glenwen
