@@ -92,16 +92,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>The class for the AberLED shield. One object of this class, called <b>AberLED</b>, is automatically created (similar to how Serial works). Yes, all this time you've been writing C++, not C. You should put <code>AberLED.</code> before every function, so <code>AberLED.begin()</code> instead of just <code><a class="el" href="classAberLEDClass.html#a1834aed792d7ae72b8e3d9e0a0b0f3a1" title="Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the ...">begin()</a></code>.  
+<p>The class for the AberLED shield. One object of this class, called <b>AberLED</b>, is automatically created (similar to how Serial works). Yes, all this time you've been writing C++, not C. You should put <code>AberLED.</code> before every function, so <code>AberLED.begin()</code> instead of just <code><a class="el" href="classAberLEDClass.html#a9ac39fc57f650781df9e4e5c8d6ca10c" title="Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the ...">begin()</a></code>.  
  <a href="classAberLEDClass.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AberLED_8h_source.html">AberLED.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1834aed792d7ae72b8e3d9e0a0b0f3a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#a1834aed792d7ae72b8e3d9e0a0b0f3a1">begin</a> (bool useTFT=false, bool interrupt=true)</td></tr>
-<tr class="memdesc:a1834aed792d7ae72b8e3d9e0a0b0f3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the LED.  <a href="#a1834aed792d7ae72b8e3d9e0a0b0f3a1">More...</a><br /></td></tr>
-<tr class="separator:a1834aed792d7ae72b8e3d9e0a0b0f3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac39fc57f650781df9e4e5c8d6ca10c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#a9ac39fc57f650781df9e4e5c8d6ca10c">begin</a> (<a class="el" href="AberLED_8h.html#ad44955cb590e5a3a741779ec5fd3010c">AberLEDFlags</a> flags=<a class="el" href="AberLED_8h.html#ad44955cb590e5a3a741779ec5fd3010caa4dde2d5a5396f7261ed5bcb92d47236">AF_TFTDISPLAY</a>, uint8_t *colourMap=NULL)</td></tr>
+<tr class="memdesc:a9ac39fc57f650781df9e4e5c8d6ca10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the LED.  <a href="#a9ac39fc57f650781df9e4e5c8d6ca10c">More...</a><br /></td></tr>
+<tr class="separator:a9ac39fc57f650781df9e4e5c8d6ca10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e3eecb06bb46c1e9cb2cd4878c12428"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428">swap</a> ()</td></tr>
 <tr class="memdesc:a1e3eecb06bb46c1e9cb2cd4878c12428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly written back buffer becomes the front buffer and is displayed.  <a href="#a1e3eecb06bb46c1e9cb2cd4878c12428">More...</a><br /></td></tr>
 <tr class="separator:a1e3eecb06bb46c1e9cb2cd4878c12428"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,28 +137,28 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a23650c51fa3ba8be83be7764952add79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The class for the AberLED shield. One object of this class, called <b>AberLED</b>, is automatically created (similar to how Serial works). Yes, all this time you've been writing C++, not C. You should put <code>AberLED.</code> before every function, so <code>AberLED.begin()</code> instead of just <code><a class="el" href="classAberLEDClass.html#a1834aed792d7ae72b8e3d9e0a0b0f3a1" title="Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the ...">begin()</a></code>. </p>
-<dl class="section warning"><dt>Warning</dt><dd>If you are using a TFT display, you should call <code>AberLED.begin(true)</code> instead!</dd></dl>
-<p>Calling <a class="el" href="classAberLEDClass.html#a1834aed792d7ae72b8e3d9e0a0b0f3a1" title="Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the ...">begin()</a> will initialise the display, setting all the pins to the appropriate mode and setting up the interrupt handler. Thereafter, every nth of a second the Arduino will automatically send the front buffer to the matrix. Calling <a class="el" href="classAberLEDClass.html#ae217246be7afb83cfe6f735a21123ee8" title="Call this to write to the back buffer directly. It returns a pointer to the buffer: a set of 8 16-bit...">getBuffer()</a> will give a pointer to the back buffer, which can be be written to. Alternatively, pixels can be written by calling <a class="el" href="classAberLEDClass.html#a43ddef766829f04755d10e64311bffb4" title="This sets the given pixel in the back buffer to the given value. The pixel values are 0 (off)...">set()</a> with x,y coordinates and a colour (GREEN, RED, YELLOW or BLACK). Once writing is complete, calling <a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428" title="Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly wr...">swap()</a> will exchange the front and back buffers, so that the Arduino will now write the new front buffer to the matrix every interrupt tick.</p>
+<div class="textblock"><p>The class for the AberLED shield. One object of this class, called <b>AberLED</b>, is automatically created (similar to how Serial works). Yes, all this time you've been writing C++, not C. You should put <code>AberLED.</code> before every function, so <code>AberLED.begin()</code> instead of just <code><a class="el" href="classAberLEDClass.html#a9ac39fc57f650781df9e4e5c8d6ca10c" title="Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the ...">begin()</a></code>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>If you are using an bicolor LED display, you should call <code>AberLED.begin(AF_LEDDISPLAY)</code>!</dd></dl>
+<p>Calling <a class="el" href="classAberLEDClass.html#a9ac39fc57f650781df9e4e5c8d6ca10c" title="Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the ...">begin()</a> will initialise the display, setting all the pins to the appropriate mode and setting up the interrupt handler. Thereafter, every nth of a second the Arduino will automatically send the front buffer to the matrix. Calling <a class="el" href="classAberLEDClass.html#ae217246be7afb83cfe6f735a21123ee8" title="Call this to write to the back buffer directly. It returns a pointer to the buffer: a set of 8 16-bit...">getBuffer()</a> will give a pointer to the back buffer, which can be be written to. Alternatively, pixels can be written by calling <a class="el" href="classAberLEDClass.html#a43ddef766829f04755d10e64311bffb4" title="This sets the given pixel in the back buffer to the given value. The pixel values are 0 (off)...">set()</a> with x,y coordinates and a colour (GREEN, RED, YELLOW or BLACK). Once writing is complete, calling <a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428" title="Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly wr...">swap()</a> will exchange the front and back buffers, so that the Arduino will now write the new front buffer to the matrix every interrupt tick.</p>
 <p>The format of the buffers is 8 16-bit integers: unsigned shorts. Each integer represents a single row. Each pixel - individual LED - is represented by 2 adjacent bits with the most significant bit being red and the least significant bit being green. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8h_source.html#l00077">77</a> of file <a class="el" href="AberLED_8h_source.html">AberLED.h</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8h_source.html#l00087">87</a> of file <a class="el" href="AberLED_8h_source.html">AberLED.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1834aed792d7ae72b8e3d9e0a0b0f3a1"></a>
+<a class="anchor" id="a9ac39fc57f650781df9e4e5c8d6ca10c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void AberLEDClass::begin </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useTFT</em> = <code>false</code>, </td>
+          <td class="paramtype"><a class="el" href="AberLED_8h.html#ad44955cb590e5a3a741779ec5fd3010c">AberLEDFlags</a>&#160;</td>
+          <td class="paramname"><em>flags</em> = <code><a class="el" href="AberLED_8h.html#ad44955cb590e5a3a741779ec5fd3010caa4dde2d5a5396f7261ed5bcb92d47236">AF_TFTDISPLAY</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>interrupt</em> = <code>true</code>&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>colourMap</em> = <code>NULL</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,13 +171,13 @@ Static Public Member Functions</h2></td></tr>
 <p>Initialises all pin modes, clears the buffers, starts the interrupt and begins to output data to the LED. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">useTFT</td><td>the display is a TFT screen, not a matrix of LEDs </td></tr>
-    <tr><td class="paramname">interrupt</td><td>the interrupt will not be not used and the display must be refreshed manually by calling <a class="el" href="classAberLEDClass.html#a937bbdb6ec493dd3e0ae585c5e71f9b6" title="Use only when interrupts are disabled - copies the front buffer to the display. ">refresh()</a> frequently! </td></tr>
+    <tr><td class="paramname">flags</td><td>the flags to use - AF_LEDDISPLAY for a bicolor LED display, AF_TFTDISPLAY for a TFT display, AF_NOINTERRUPT to use disable interrupts. If you specify AF_NOINTERRUPT, the display will not be refreshed automatically and you will have to call <a class="el" href="classAberLEDClass.html#a937bbdb6ec493dd3e0ae585c5e71f9b6" title="Use only when interrupts are disabled - copies the front buffer to the display. ">refresh()</a> frequently. </td></tr>
+    <tr><td class="paramname">colourMap</td><td>a pointer to an array of 9 8-bit integers - each triple defines how to convert the 2-bit colour into RGB. The first 3 bytes are for BLACK, the next 3 for GREEN, the next 3 for RED and the last 3 for YELLOW. The default is the "standard" colours but this could be useful for people with colour vision deficiencies. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00147">147</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00154">154</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +196,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Set all pixels in the back buffer to black. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00292">292</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00313">313</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +215,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Call this to write to the back buffer directly. It returns a pointer to the buffer: a set of 8 16-bit ints, each pair of bits representing a pixel. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00270">270</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00291">291</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -241,7 +241,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00257">257</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00278">278</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +267,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00262">262</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00283">283</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -313,7 +313,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Use only when interrupts are disabled - copies the front buffer to the display. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00355">355</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00379">379</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -357,7 +357,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00277">277</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00298">298</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +410,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly written back buffer becomes the front buffer and is displayed. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00214">214</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00235">235</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +448,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 24 2023 13:44:05 for AberLED shield library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 2 2023 16:09:24 for AberLED shield library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

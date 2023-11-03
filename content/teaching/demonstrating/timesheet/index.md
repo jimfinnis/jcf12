@@ -42,8 +42,33 @@ of the month following the month you are submitting for.
 * Avoid accumulating hours as this will have implications on the
 amount of tax and National Insurance that you pay.
 * Because the worksheets are submitted electronically, electronic signatures
-are acceptable. Do not print out the worksheets to get them signed.
-
+are acceptable. 
+* If you are printing out your timesheets to obtain signatures, please make sure you send a scanned electronic copy only to Glenwen - not the paper copy.
 
 If you have any questions about timesheets, contact Glenwen
 on [gsm@aber.ac.uk](mailto:gsm@aber.ac.uk).
+
+
+## How this works in practice
+
+Every slot in your timesheet has to be signed by a supervisor or you will
+not be paid. This may be awkward for students who are doing slots in
+multiple modules, but any process which gets a fully signed timesheet in
+Glenwen's mailbox by the deadline is acceptable.
+
+Possible options are:
+
+* Email only - this is OK for one or two modules:
+    * Email the timesheet to the supervisor for the first set of slots
+    * get signed timesheet back,
+    * email the timesheet to the supervisor for the second set of slots
+    * get signed timesheet back 
+    * repeat until all slots signed
+    * email to Glenwen
+* Put the timesheet on your [Onedrive](https://faqs.aber.ac.uk/?searchkeyword=OneDrive&amp;language=en)
+and share a link with the supervisors. Once all slots are signed, email to Glenwen.
+* Print out the timesheet, get all supervisors to sign, scan the signed timesheet and email to Glenwen
+* Keep the timesheet on your laptop, get all supervisors to sign there, email to Glenwen.
+
+We're aware that this situation is not ideal, but it's necessary. We're looking into alternatives but
+may not be able to implement them until next year.
