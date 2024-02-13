@@ -1,9 +1,9 @@
 +++
-date=2023-10-27
-title = "Timesheets"
-subtitle =  "A timesheet template and some useful information"
-summary = "A timesheet template and some useful information"
-type =  "unindexed"
+date=2024-02-13
+title="Timesheets"
+subtitle= "A timesheet template and some useful information"
+summary="A timesheet template and some useful information"
+type="unindexed"
 +++
 
 A timesheet template can be downloaded as an Excel spreadsheet
@@ -18,17 +18,30 @@ including the minutes e.g. start time 14:00 finish time 17:30
 (you may work up to 15 hours per week) across all AberWorks roles.
 * Students working on a Student Visa will only be able to work hours that remain compliant with their Visa.
 * Submit your hours every month (by the required deadlines as noted below)
-even if you have only worked a few hours that month. The deadlines for 2024
-will be added once they have been received from Payroll.
+even if you have only worked a few hours that month. 
+
+Note that May and October have a few days that are included as part
+of the previous month for accounting reasons. Months affected by this
+are in bold text.
 
 
 <div style="margin-bottom:20px">
 
 |Month claimed|Submission deadline|
 |-------|-------|
-|October|6th November 2023|
-|November|4th December 2023|
-|December|4th January 2023|
+|December 2023|3rd January 2024|
+|January 2024|5th February 2024|
+|February 2024|4th March 2024|
+|March 2024|1st April 2024|
+|**1st April to 3rd May 2024**|6th May 2024|
+|**remainder of May 2024**|3rd June 2024|
+|June 2024|1st July 2024|
+|July 2024|5th August 2024|
+|August 2024|2nd September 2024|
+|**1st September to 4th October 2024**|7th October 2024|
+|**remainder of October 2024**|4th November 2024|
+|November 2024|2nd December 2024|
+|December 2024|6th January 2024|
 
 </div>
 

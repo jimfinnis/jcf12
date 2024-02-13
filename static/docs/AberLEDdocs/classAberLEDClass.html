@@ -123,6 +123,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3aed4bb10b0aeaa80ab878d3e190291f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#a3aed4bb10b0aeaa80ab878d3e190291f">getTicks</a> ()</td></tr>
 <tr class="memdesc:a3aed4bb10b0aeaa80ab878d3e190291f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of interrupt ticks which occurred in the last <a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428" title="Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly wr...">swap()</a>-swap() cycle.  <a href="#a3aed4bb10b0aeaa80ab878d3e190291f">More...</a><br /></td></tr>
 <tr class="separator:a3aed4bb10b0aeaa80ab878d3e190291f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196441e63212557ad88a26143e55d602"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#a196441e63212557ad88a26143e55d602">clearText</a> ()</td></tr>
+<tr class="memdesc:a196441e63212557ad88a26143e55d602"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the string which is written to the text area on a TFT display.  <a href="#a196441e63212557ad88a26143e55d602">More...</a><br /></td></tr>
+<tr class="separator:a196441e63212557ad88a26143e55d602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c9770aefb87ef5d6b23a4525ff1afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#ae2c9770aefb87ef5d6b23a4525ff1afa">addToText</a> (const char *s)</td></tr>
+<tr class="memdesc:ae2c9770aefb87ef5d6b23a4525ff1afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a string to the text area on a TFT display. Does nothing if the display is not a TFT display. This just stores the data in an internal variable, the actual writing is done when <a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428" title="Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly wr...">swap()</a> is called. If the resulting string would be too long, nothing is done.  <a href="#ae2c9770aefb87ef5d6b23a4525ff1afa">More...</a><br /></td></tr>
+<tr class="separator:ae2c9770aefb87ef5d6b23a4525ff1afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fbc2c89bbe772a4323879fc488e7f9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAberLEDClass.html#a4fbc2c89bbe772a4323879fc488e7f9f">addToText</a> (int n)</td></tr>
+<tr class="memdesc:a4fbc2c89bbe772a4323879fc488e7f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a number to the text area - see the string version for details.  <a href="#a4fbc2c89bbe772a4323879fc488e7f9f">More...</a><br /></td></tr>
+<tr class="separator:a4fbc2c89bbe772a4323879fc488e7f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -144,6 +153,46 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="AberLED_8h_source.html#l00087">87</a> of file <a class="el" href="AberLED_8h_source.html">AberLED.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae2c9770aefb87ef5d6b23a4525ff1afa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AberLEDClass::addToText </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Append a string to the text area on a TFT display. Does nothing if the display is not a TFT display. This just stores the data in an internal variable, the actual writing is done when <a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428" title="Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly wr...">swap()</a> is called. If the resulting string would be too long, nothing is done. </p>
+
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00300">300</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fbc2c89bbe772a4323879fc488e7f9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AberLEDClass::addToText </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a number to the text area - see the string version for details. </p>
+
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00314">314</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a9ac39fc57f650781df9e4e5c8d6ca10c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +226,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00154">154</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00158">158</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +245,26 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Set all pixels in the back buffer to black. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00313">313</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00356">356</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a196441e63212557ad88a26143e55d602"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AberLEDClass::clearText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>clear the string which is written to the text area on a TFT display. </p>
+
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00291">291</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +283,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Call this to write to the back buffer directly. It returns a pointer to the buffer: a set of 8 16-bit ints, each pair of bits representing a pixel. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00291">291</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00334">334</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -241,7 +309,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00278">278</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00321">321</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +335,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00283">283</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00326">326</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -286,7 +354,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Return the number of interrupt ticks which occurred in the last <a class="el" href="classAberLEDClass.html#a1e3eecb06bb46c1e9cb2cd4878c12428" title="Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly wr...">swap()</a>-swap() cycle. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00105">105</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00109">109</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -313,7 +381,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Use only when interrupts are disabled - copies the front buffer to the display. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00379">379</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00411">411</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -357,7 +425,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00298">298</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00341">341</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -391,7 +459,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00078">78</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00088">88</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +478,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Call this code to finish drawing operations. It swaps the back and front buffer, so that the newly written back buffer becomes the front buffer and is displayed. </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00235">235</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00259">259</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -437,7 +505,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>return the version string </p>
 
-<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00099">99</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
+<p>Definition at line <a class="el" href="AberLED_8cpp_source.html#l00027">27</a> of file <a class="el" href="AberLED_8cpp_source.html">AberLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +516,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 2 2023 16:09:24 for AberLED shield library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 17 2023 13:27:22 for AberLED shield library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
