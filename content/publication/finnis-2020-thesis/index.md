@@ -7,7 +7,7 @@ publication_types: ["7"]
 abstract: 'My PhD thesis, exploring the UESMANN neural network architecture
 which can learn two (or possibly more) functions in a single set of weights
 and can be trained using gradient descent.'
-featured: true
+featured: false
 tags: ["artificial endocrine system", "phd","robot","homeostasis","UESMANN"]
 ---
 

@@ -11,7 +11,7 @@ abstract: >
     problem, written for the layperson.
 
 
-featured: false
+featured: true
 publication: "*Artificial Intelligence and Law*"
 tags: ["AI","law","Turing"]
 ---
