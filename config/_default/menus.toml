@@ -43,6 +43,11 @@
   name = "Contact"
   url = "#contact"
   weight = 60
+  
+[[main]]
+  name = "Office Hours"
+  url = "#officehours"
+  weight = 70
  
 # this is a menu link to an actual page. 
 #[[main]]

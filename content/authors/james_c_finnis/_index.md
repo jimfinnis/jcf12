@@ -20,6 +20,14 @@ organizations:
 # Short bio (displayed in user profile at end of posts)
 bio: "Research interests: artificial neuroendocrine systems, unusual neural network architectures, autonomous off-road driving, image processing."
 
+
+wibble: "wobble wubble"
+
+officehours:
+- 12:00 until 13:00 on Thursdays
+- 10:00 until 11:00 on Fridays
+
+
 interests:
 - Artificial Intelligence
 - Artificial Endocrine Systems

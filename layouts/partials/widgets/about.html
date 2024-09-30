@@ -63,7 +63,7 @@
           </a>
         </li>
         {{ end }}
-      </ul>
+     </ul>
 
     </div>
   </div>
@@ -73,6 +73,35 @@
     {{ if and $page.Params.widget $page.Title }}<h1>{{ $page.Title | markdownify | emojify }}</h1>{{ end }}
 
     {{ $person_page.Content }}
+
+    {{/*
+      This is a JCF block.
+      Add the office hours to the authors/james_c_finnis/_index.md page
+    */}}
+
+    <div class="col-12">
+    <div class="row">
+      <a name="officehours"> </a>
+      <h3>Office hours</h3>
+    </div>
+    <div class="row">
+      <p>I can be found in my office and am available for a chat
+        at the following times.
+        If you would like to meet outside these hours, please email
+        me and I'll see what I can do.
+      </p>
+      {{ with $person.officehours }}
+      <ul>
+        {{ range . }}
+        <li>{{ . | markdownify | emojify }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      <p>Note that <b>these hours may change</b> due to timetable
+        changes and workload (they could go down during heavy marking
+        periods).</p>
+    </div>
+    </div>
 
     <div class="row">
 
@@ -105,5 +134,4 @@
       {{ end }}
 
     </div>
-  </div>
 </div>
