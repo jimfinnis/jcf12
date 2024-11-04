@@ -14,8 +14,7 @@ The presentation for demonstrators can be found here:
 
 And here is the Panopto recording:
 
-* [Link to video](https://aberystwyth.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62050cc7-4a71-43cb-b3ae-b09100d74c60)
-
+* [Link to video](https://aberystwyth.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59559045-fe8e-470c-bc01-b1fd00c9cfb5)
 Some additional notes are also available
 
 * [As a word document](/downloads/howto.docx)
