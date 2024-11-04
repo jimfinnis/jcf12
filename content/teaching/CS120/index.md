@@ -1,5 +1,5 @@
 ---
-date: 2020-03-16
+date: 2023-11-06
 title: CS12020
 subtitle: Introduction to Programming
 summary: Introduction to Programming
@@ -23,10 +23,12 @@ the CS12020 area on Blackboard.
 
 ### Downloading and installing a new version of the library
 
-The latest version is **2.6**, dated **7th December 2015**.
-You can check which version you have by looking near the top of AberLED.h.
-To install the latest
-version:
+The latest version is **3.2**, dated **16th November 2023** and codenamed
+**ETERNAL EVENING**. If you have a TFT display, it will show the version when
+it start up. If you have a bicolor LED matrix, you will need to
+look for the version() function in AberLED.cpp inside the library.
+
+To install the latest version:
 * Find your libraries directory - it should be something like Documents/Arduino/libraries in your home directory.
 * Delete the existing AberLED directory.
 * Download and reinstall the AberLED library as described in the first worksheet,

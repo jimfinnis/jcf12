@@ -24,8 +24,8 @@ bio: "Research interests: artificial neuroendocrine systems, unusual neural netw
 wibble: "wobble wubble"
 
 officehours:
-- 12:00 until 13:00 on Thursdays
-- 10:00 until 11:00 on Fridays
+- 11:10 until 12:00 on Mondays
+- 11:10 until 12:00 on Tuesdays
 
 
 interests:
