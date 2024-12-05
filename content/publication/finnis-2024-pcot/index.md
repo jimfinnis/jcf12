@@ -12,3 +12,8 @@ url_code: "https://github.com/AU-ExoMars/PCOT/"
 
 tags: ["multispectral", "open-source", "remote sensing", "software", "spectroscopy","Mars"]
 ---
+
+Note that there are some formatting errors in the source code examples 
+in the online version
+and the published PDF available from the DOI link. We're working on it. For now,
+the version you can download from here is the preprint.
