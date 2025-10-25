@@ -1,3 +1,4 @@
 #!/bin/bash
+hugo
 rsync -avz --delete --progress public/ jcf12@central.aber.ac.uk:public_html/
 ssh -t jcf12@central.aber.ac.uk "cd public_html && fixwebperms && ls -l"

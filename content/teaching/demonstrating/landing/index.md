@@ -1,11 +1,21 @@
 ---
-date: 2024-12-04
+date: 2025-10-23
 title: Demonstrators
 subtitle: Useful information for demonstrators
 summary: Presentation and notes on good demonstrator practice
 image:
   preview_only: true
 ---
+
+
+{{% alert note %}}
+
+**The process for handling timesheets has changed since last year.
+Please read the [timesheets page]({{<relref "../timesheet/">}}) carefully
+for details.**
+
+{{% /alert %}}
+
 
 The presentation for demonstrators can be found here:
 
@@ -30,12 +40,11 @@ Some additional notes are also available:
 
 Here are the other admin contacts:
 
-* **Glenwen Morgans** ([gsm@aber.ac.uk](mailto:gsm@aber.ac.uk)) with timesheets and timesheet issues
+* **Academic Operations** ([acadops@aber.ac.uk](mailto:acadops@aber.ac.uk)) with timesheets and timesheet issues - 
+<font color="red">Please add "AberWorks Demonstrator: Computer Science" to the subject</font>, replacing
+Computer Science with your department if necessary. This will ensure your email reaches the right person.
 * **Carys Pike** ([cyl@aber.ac.uk](mailto:cyl@aber.ac.uk)) for general admin - session allocation and employment
 * **Jim Finnis (me)** ([jcf12@aber.ac.uk](mailto:jcf12@aber.ac.uk)) for matters to do with demonstrating.
-
-
-You should get a Discord invite by email.
 
 ## Timesheets
 A template Excel timesheet and some useful information

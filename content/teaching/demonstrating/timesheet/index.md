@@ -1,17 +1,31 @@
 +++
-date=2025-01-17
+date=2025-10-23
 title="Timesheets"
 subtitle= "A timesheet template and some useful information"
 summary="A timesheet template and some useful information"
 type="unindexed"
 +++
 
+{{% alert warning %}}
+
+Changes from last year:
+
+* You must create a separate timesheet for each module you demonstrate
+* You must email the completed timesheets to the lecturer, not to Academic Operations (or anyone else)
+**well before the deadline** if possible (to give them time to process it)
+
+**This is an interim process while the Head of Academic Operations looks at
+how timesheets should be handled in the longer term.**
+
+{{% /alert %}}
+
 A timesheet template can be downloaded as an Excel spreadsheet
 [from this link](/downloads/AberworksTimesheet.xlsx).
 
+When completing your timesheets:
 
-When completing your timesheet:
-
+* Keep a separate timesheet for each module you demonstrate.
+* Add the supervisor's name (the lecturer) for each session.
 * Insert the start and finish time in 24 hour clock format,
 including the minutes e.g. start time 14:00 finish time 17:30.
 * Only claim for work that has actually been completed
@@ -40,46 +54,23 @@ even if you have only worked a few hours that month.
 
 </div>
 
-* All timesheet claims must be confirmed and signed by the supervisor of
-the module you are demonstrating for **before** being submitted for
-processing **as an attached document via email only** to 
-[gsm@aber.ac.uk](mailto:gsm@aber.ac.uk) by the deadline above.
+* Send the time sheet **as an attached document via email only** to the supervisor **before**
+the deadline above, to give them time to confirm it and send it on.
 * Any timesheets received after the deadline will not be processed until
 the following month.
 * Payment will be processed so that you will be paid on the last working day
 of the month following the month you are submitting for.
 * Avoid accumulating hours as this will have implications on the
 amount of tax and National Insurance that you pay.
-* Because the worksheets are submitted electronically, electronic signatures
-are acceptable. 
-* If you are printing out your timesheets to obtain signatures,
-please make sure you send a scanned electronic copy only to
-Glenwen - not the paper copy.
 
-If you have any questions about timesheets, contact Glenwen
-on [gsm@aber.ac.uk](mailto:gsm@aber.ac.uk).
+If you have any questions about timesheets, contact Academic Operations
+on [acadops@aber.ac.uk](mailto:acadops@aber.ac.uk). Remember to mark the email 
+"AberWorks Demonstrator: Computer Science" (or your department).
 
 
-## How this works in practice
+{{% alert info %}}
 
-Every slot in your timesheet has to be signed by a supervisor or you will
-not be paid. This may be awkward for students who are doing slots in
-multiple modules, but any process which gets a fully signed timesheet in
-Glenwen's mailbox by the deadline is acceptable.
+We're aware that this process is not ideal, but it's necessary due to the limitations of shared mailboxes like
+acadops@aber.ac.uk. We're looking into alternatives but may not be able to implement them until next year.
 
-Possible options are:
-
-* Email only - this is OK for one or two modules:
-    * Email the timesheet to the supervisor for the first set of slots
-    * get signed timesheet back,
-    * email the timesheet to the supervisor for the second set of slots
-    * get signed timesheet back 
-    * repeat until all slots signed
-    * email to Glenwen
-* Put the timesheet on your [Onedrive](https://faqs.aber.ac.uk/?searchkeyword=OneDrive&amp;language=en)
-and share a link with the supervisors. Once all slots are signed, email to Glenwen.
-* Print out the timesheet, get all supervisors to sign, scan the signed timesheet and email to Glenwen
-* Keep the timesheet on your laptop, get all supervisors to sign there, email to Glenwen.
-
-We're aware that this situation is not ideal, but it's necessary. We're looking into alternatives but
-may not be able to implement them until next year.
+{{% /alert %}}
