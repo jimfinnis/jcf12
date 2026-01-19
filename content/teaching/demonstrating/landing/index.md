@@ -1,5 +1,5 @@
 ---
-date: 2025-10-23
+date: 2025-12-17
 title: Demonstrators
 subtitle: Useful information for demonstrators
 summary: Presentation and notes on good demonstrator practice
@@ -10,7 +10,7 @@ image:
 
 {{% alert note %}}
 
-**The process for handling timesheets has changed since last year.
+**The process for handling timesheets has changed since last semester.
 Please read the [timesheets page]({{<relref "../timesheet/">}}) carefully
 for details.**
 
