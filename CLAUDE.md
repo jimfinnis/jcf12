@@ -4,16 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Jim Finnis's personal/university website (published at `https://users.aber.ac.uk/jcf12/`). It's a static Hugo site built on the **Source Themes Academic** theme (now "Wowchemy"), pulled in as a git submodule at `themes/academic`. There is no test suite or linter. Build success plus a look at the rendered page is the check.
+Jim Finnis's personal/university website (published at `https://users.aber.ac.uk/jcf12/`). It's a static Hugo site built on the **Source Themes Academic** theme (now "Wowchemy"), vendored into the repo at `themes/academic` (a frozen April 2020 copy; it used to be a submodule). There is no test suite or linter. Build success plus a look at the rendered page is the check.
 
 ## Commands
 
-- First-time setup: `git submodule update --init --recursive` (pulls the theme). Needs **Hugo extended**.
+- Needs **Hugo extended**.
 - Build: `hugo` (output goes to `public/`, which is gitignored along with `resources/`)
 - Local preview: `./view.sh` (`hugo server --baseURL http://127.0.0.1/`) serves on port 1313. `viewext.sh` and `runOnVM` bind to an external/VM interface.
 - New content: `hugo new --kind post blog/<name>`, or create a directory under `content/<section>/` by hand.
 - Deploy to production: `./deploy` (builds, rsyncs `public/` to `jcf12@central.aber.ac.uk:public_html/`, then runs `fixwebperms`). `./deployToTest` deploys to `test.pale.org`. These publish the site, so don't run them unless asked.
-- `update_academic.sh` updates the theme submodule. The site is pinned to an old Academic version (`netlify.toml` says Hugo 0.66) and may not survive theme upgrades.
 
 ## Architecture
 
@@ -30,7 +29,7 @@ Jim Finnis's personal/university website (published at `https://users.aber.ac.uk
 
 ## Running a 2020 theme on modern Hugo
 
-The theme is from 2020, but the site is built with a much newer Hugo (0.154). When a theme template breaks, copy it into the matching path under top-level `layouts/` and fix the copy. Don't edit the `themes/academic` submodule. Overrides already in place for this reason: `partials/marketing/google_analytics.html`, `publication/single.html`, `authors/list.html`, `index.json`, `partials/widgets/people.html`, `partials/site_head.html`.
+The theme is from 2020, but the site is built with a much newer Hugo (0.154). When a theme template breaks, prefer copying it into the matching path under top-level `layouts/` and fixing the copy, so local changes stay separate from the original theme. Overrides already in place for this reason: `partials/marketing/google_analytics.html`, `publication/single.html`, `authors/list.html`, `index.json`, `partials/widgets/people.html`, `partials/site_head.html`.
 
 - `.Path` is now a logical path (`/authors/foo`), not a file path, so the old `path.Base (path.Split .Path).Dir` idiom now returns the parent section. Use `path.Base .Path`.
 - Relative `ref`/`relref` from a leaf bundle's `index.md` resolve from the **parent section**, not the bundle directory. From `examples/refs/index.md`, link a sibling as `relref "refs2/"`, not `"../refs2/"`.
