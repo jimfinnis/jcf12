@@ -8,7 +8,7 @@ type="example"
 topscripts=["js/quiz.js","js/slides.js"]
 +++
 
-[Earlier]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
+[Earlier]({{< relref "whatAreObjects/" >}}) we looked at **objects**, which are
 blocks of data in memory, and **classes**, which describe how those blocks
 are made up.
 
@@ -83,7 +83,7 @@ don't worry about them for now).
 * Methods can be public and private too!
 
 ## A tidier Room
-The [Room class from our previous example]({{< relref "../refs2/">}})
+The [Room class from our previous example]({{< relref "refs2/">}})
 is just a description of a block of data, with public fields and no methods.
 This is a **really bad idea**. It's usually good practice to make
 all fields private, only accessing them via members.
@@ -115,7 +115,7 @@ several ways to write the same class!
 
 The first step will be adding a **constructor**. This is a special
 method which runs when we do ```new Room()```, and it runs
-on the freshly [instantiated]({{<relref "../refs/#instantiation">}}) object after default field values are set
+on the freshly [instantiated]({{<relref "refs/#instantiation">}}) object after default field values are set
 but before anything else. 
 
 We can provide parameters, and those go
@@ -232,7 +232,7 @@ but sometimes it might not be possible to go in a particular direction.
 Our class will use null references for that case: a reference
 which doesn't point to any object. This is the default for references -
 if they aren't set to a value, they are null. I talk about null
-references [here]({{<relref "../refs2/#nulls">}}). 
+references [here]({{<relref "refs2/#nulls">}}). 
 
 It would be good to check whether we can go in a particular direction or not.
 We could so something like

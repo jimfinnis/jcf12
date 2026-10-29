@@ -14,7 +14,7 @@ topscripts=["js/quiz.js","js/slides.js"]
 {{</important>}}
 
 ## Question 1
-Imagine we have the Room class from the [previous page]({{< relref "../refs2/" >}}):
+Imagine we have the Room class from the [previous page]({{< relref "refs2/" >}}):
 
 ```java
 public class Room {
@@ -103,4 +103,5 @@ What does this code print to the console?
 {{<choice "(null)">}}
 {{<question answers="1" hint="This should be easy after the last question.">}}
 What is the string at ```c.text``` when this program is on the ```println``` line?
+{{</question>}}
 {{</quiz>}}

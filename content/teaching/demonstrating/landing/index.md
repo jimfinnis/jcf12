@@ -11,7 +11,7 @@ image:
 {{% alert note %}}
 
 **The process for handling timesheets has changed since last semester.
-Please read the [timesheets page]({{<relref "../timesheet/">}}) carefully
+Please read the [timesheets page]({{<relref "timesheet/">}}) carefully
 for details.**
 
 {{% /alert %}}
@@ -48,5 +48,5 @@ Computer Science with your department if necessary. This will ensure your email 
 
 ## Timesheets
 A template Excel timesheet and some useful information
-[can be found here]({{<relref "../timesheet/">}}).
+[can be found here]({{<relref "timesheet/">}}).
 

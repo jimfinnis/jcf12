@@ -13,7 +13,7 @@ topscripts=["js/quiz.js","js/slides.js"]
 {{</important>}}
 
 ## References to objects
-[Last time]({{< relref "../whatAreObjects/" >}}) we looked at **objects**, which are
+[Last time]({{< relref "whatAreObjects/" >}}) we looked at **objects**, which are
 blocks of data in memory, and **classes**, which describe the structure
 of those blocks.
 
@@ -171,6 +171,6 @@ Enemy myEnemy = new Enemy();
 * Objects are referred to by **references**: values
 holding the location of an object in memory.
 
-[Next time]({{< relref "../refs2/" >}}) we'll look at how objects
+[Next time]({{< relref "refs2/" >}}) we'll look at how objects
 can hold references to other objects - and how we can complex
 structures using this idea.

@@ -51,7 +51,7 @@ is also stored in a Diamond topic. If there's no camera present, this
 all gets faked with random data from a Python script.
 * A Python script **scrapes a local weather station and tide data website**,
 again storing the value in Diamond Apparatus.
-* Much of this data is read by an [Angort]({{< relref "../angort/" >}})
+* Much of this data is read by an [Angort]({{< relref "angort/" >}})
 program called **magic.ang**. This is a frankly insane script that reads all
 the "environmental" data and converts it into "music" data (so, for example,
 "amount of movement" and "temperature" might be combined into "loudness

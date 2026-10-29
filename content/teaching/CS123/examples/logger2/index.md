@@ -9,7 +9,7 @@ type = "example"
 
 ## Introduction
 
-[Last time]({{<relref "../logger1/">}}) we built a very simple logging system based around the **Logger** class, where several objects can share
+[Last time]({{<relref "logger1/">}}) we built a very simple logging system based around the **Logger** class, where several objects can share
 a single Logger object like this:
 
 {{< figure src="../logger1/obj2.png" >}}
@@ -80,7 +80,7 @@ public class Main {
 
 At the moment, the Logger class itself doesn't do much except print the message.
 Here's the *log()* method (the entire
-class can be found [in the previous example]({{< relref "../logger1/#loggercode">}})):
+class can be found [in the previous example]({{< relref "logger1/#loggercode">}})):
 ```java
     /**
      * the actual logging method, which calls performLog - an abstract method -
@@ -267,10 +267,10 @@ Logger is really a ConsoleLogger, the *performLog* in ConsoleLogger is the one
 that will run, and we'll see a message on the console.
 
 We could write a FileLogger too, and I've put that in a
-[separate page]({{< ref "../../filelogger/" >}}) because while it's quite long and involved, most of
+[separate page]({{< ref "../filelogger/" >}}) because while it's quite long and involved, most of
 that complication isn't necessary to understanding the core idea of abstract
 classes.
 
 
-[In the next section]({{< ref "../logger3/" >}}), we'll look at how to make this a little tidier
+[In the next section]({{< ref "logger3/" >}}), we'll look at how to make this a little tidier
 and more flexible by **favouring composition over inheritance**.

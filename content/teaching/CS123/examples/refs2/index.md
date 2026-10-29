@@ -13,7 +13,7 @@ topscripts=["js/quiz.js","js/slides.js"]
 {{</important>}}
 
 ## Objects can contain references
-[Last time]({{< relref "../refs/" >}}) we looked at **references**, which are
+[Last time]({{< relref "refs/" >}}) we looked at **references**, which are
 variables containing "pointers" to objects. We can also
 put these references inside objects. Look at this class definition:
 ```java
@@ -363,5 +363,5 @@ We spend a lot of time in computer science thinking about things, and things whi
 piece from *Through the Looking-glass* neatly illustrates the kind of mess you can find yourself in.
 
 
-The [next page]({{< relref "../refsquiz/" >}}) has a handy quiz that will help you see understand some of the common
+The [next page]({{< relref "refsquiz/" >}}) has a handy quiz that will help you see understand some of the common
 mistakes that references can lead to.

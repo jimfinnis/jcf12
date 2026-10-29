@@ -9,8 +9,8 @@ type = "example"
 
 ## The problem
 
-[Last time]({{<relref "../logger2/">}}) we modified the logging system we built in
-[the first logging example]({{<relref "../logger1/">}}) so that we could change the
+[Last time]({{<relref "logger2/">}}) we modified the logging system we built in
+[the first logging example]({{<relref "logger1/">}}) so that we could change the
 behaviour by creating a new subclass of Logger. This left the actual logging method
 in the Logger abstract, so that the subclasses could provide it in different ways.
 Here's the UML diagram:
@@ -227,4 +227,4 @@ public class Main {
 ```
 
 It's probably a good idea to read 
-[my other page on this]({{<relref "../inheritcomp/">}}) too!
+[my other page on this]({{<relref "inheritcomp/">}}) too!

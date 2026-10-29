@@ -219,7 +219,7 @@ What is the meaning of the value 5 at address 3?
 
 
 
-[Next]({{< relref "../refs/" >}}) we'll look at **references**,
+[Next]({{< relref "refs/" >}}) we'll look at **references**,
 which are how objects can link to and even "contain" other objects.
 
 

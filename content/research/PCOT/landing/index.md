@@ -54,4 +54,4 @@ reimpose the ROIs onto the image for viewing.
 
 ## Calibration
 Much of the PCOT work will be calibrating images. See 
-[here]({{<relref "../maths/">}}).
+[here]({{<relref "maths/">}}).

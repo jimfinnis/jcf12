@@ -13,7 +13,7 @@ using real code from a real project I've worked on. We'll cover:
 * references (again!)
 * abstract classes
 * favouring composition over inheritance:
-There's [another page on this topic]({{<relref "../inheritcomp/">}}) too!
+There's [another page on this topic]({{<relref "inheritcomp/">}}) too!
 
 
 
@@ -143,7 +143,7 @@ and they'll all be using the same one. To sum up the situation:
 * So we now have three objects with references to a single object.
 
 If you're having difficulty with this idea, go back to
-[my previous pages on references]({{< relref "../refs/" >}}) and revise
+[my previous pages on references]({{< relref "refs/" >}}) and revise
 the idea.
 
 ## The Logger itself
@@ -298,7 +298,7 @@ Reinventing the wheel is not a complete waste of time,
 provided that you are aware that you are doing it. It's often a good
 way to practice coding.
 
-[In the next example]({{<relref "../logger2/">}}) we'll look at how to change what the logging
+[In the next example]({{<relref "logger2/">}}) we'll look at how to change what the logging
 system actually does in a flexible way.
 Sometimes we might want to write to a file,
 sometimes we might want to write to the console, or even pop up a message.
