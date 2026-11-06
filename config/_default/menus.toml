@@ -45,8 +45,8 @@
   weight = 60
   
 [[main]]
-  name = "Office Hours"
-  url = "#officehours"
+  name = "Office"
+  url = "#office"
   weight = 70
  
 # this is a menu link to an actual page. 

@@ -43,7 +43,10 @@ subtitle = ""
   icon = "python"
   icon_pack = "fab"
   name = "Python"
-  description = "Several extensive projects including my own media management system"
+  description = """
+  Several large projects including PCOT and Pasti (described
+  in the 'Research' section). PCOT is around 50,000 lines of code and
+  is extensively used in the ExoMars PanCam project."""
 
 [[feature]]
   icon = "brain"

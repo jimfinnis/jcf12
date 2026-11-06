@@ -1,5 +1,5 @@
 ---
-date: 2024-11-09
+date: 2026-10-29
 title: CS21120
 subtitle: Algorithm Design and Data Structures
 summary: Algorithm Design and Data Structures
@@ -9,7 +9,5 @@ image:
 
 ---
 
-The correct version of the CMU Pronouncing Dictionary for my tests
-can be downloaded by right-clicking on this link:
-
-[Download cmudict.dict](/downloads/cmudict.dict)
+This page will contain useful extra information for the CS21120
+module if it is needed.
