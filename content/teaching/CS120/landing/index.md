@@ -23,8 +23,8 @@ the CS12020 area on Blackboard.
 
 ### Downloading and installing a new version of the library
 
-The latest version is **3.2**, dated **16th November 2023** and codenamed
-**ETERNAL EVENING**. If you have a TFT display, it will show the version when
+The latest version is **3.4**, dated **5th January 2025** and codenamed
+**FRIENDLY FROG**. If you have a TFT display, it will show the version when
 it start up. If you have a bicolor LED matrix, you will need to
 look for the version() function in AberLED.cpp inside the library.
 
